@@ -4,7 +4,7 @@ import Project from './Project';
 
 const Work = () => {
     return (
-        <div>
+        <div id="work">
             <h2>Projects</h2>
             <p>
                 In order to put my expertise to test, I'm always building projects that expand and go beyond my current knowledge, I love to investigate new technologies and try new things.

@@ -1,11 +1,11 @@
 import React from "react";
-import aboutImg from '../../assets/images/about-img.png'
+import aboutImg from '../assets/images/about-img.png'
 
 
 
 function About() {
     return (
-        <div className="about-div">
+        <div id="about" className="about-div">
             <h2>About me</h2>
             <div className="about-text-container">
                 <div className="left-about">
