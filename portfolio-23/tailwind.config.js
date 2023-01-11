@@ -21,17 +21,18 @@ module.exports = {
       'gray-light': '#d3dce6',
     },
     fontFamily: {
-      sans: ['Kaldera', 'sans-serif'],
-      serif: ['GT-Flexa', 'serif'],
+      Kaldera: ['Kaldera', 'sans-serif'],
+      GT_Flexa: ['GT-Flexa', 'serif'],
+      Bebas_Neue: ['Bebas Neue', 'cursive'],
     },
     fontSize: {
       sm: '0.8rem',
       base: '1rem',
       xl: '1.25rem',
-      '2xl': '1.563rem',
-      '3xl': '1.953rem',
-      '4xl': '3.441rem',
-      '5xl': '5.052rem',
+      '2xl': '2.563rem',
+      '3xl': '3.953rem',
+      '4xl': '5.441rem',
+      '5xl': '8.25rem',
     }
 
   },
