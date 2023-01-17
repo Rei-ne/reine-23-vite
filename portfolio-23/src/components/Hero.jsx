@@ -6,7 +6,7 @@ import React from "react";
 
 function Hero() {
     return (
-        <div id="hero" className="hero-section ">
+        <div id="hero" className="hero-section h-screen">
 
             {/* <div className="image-container-mobile">
     <img className='reine-img' src={reine} alt="reine-image" />
@@ -14,8 +14,8 @@ function Hero() {
 </div> */}
             {/* REINE DEV headline */}
             <div className="text-mint text-center">
-                <h1 className="font-Kaldera text-3xl lg:text-5xl">REINE</h1>
-                <h1 className="font-Kaldera text-3xl lg:text-5xl ">DEV.</h1>
+                <h1 className="font-Kaldera text-3xl md:text-4xl lg:text-5xl">REINE</h1>
+                <h1 className="font-Kaldera text-3xl md:text-4xl lg:text-5xl ">DEV.</h1>
                 <div className="">
                     <p className="font-GT_Flexa text-sm lg:text-base">Hello, I'm Toyosi, a software developer and I'm constantly evolving.</p>
                 </div>

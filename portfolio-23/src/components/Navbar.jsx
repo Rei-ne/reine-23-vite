@@ -1,45 +1,27 @@
-import './index.scss';
-import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom'
-import LogoS from '../../assets/images/devlogo.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+
 
 const Navbar = () => {
 
 
     return (
 
-        <div className="nav-bar">
-            <nav className="desktop">
-                <NavLink exact='true' activeclassname='active' className='nav-link' to='/'>
-                    HOME
-                </NavLink>
-                <NavLink exact='true' activeclassname='active' className='nav-link' to='/about'>
-                    ABOUT ME
-                </NavLink>
-                <NavLink exact='true' activeclassname='active' className='nav-link' to='/work'>
-                    MY WORK
-                </NavLink>
-                <NavLink exact='true' activeclassname='active' className='nav-link' to='/contact'>
-                    CONTACT ME
-                </NavLink>
+        <header className="navbar bg-black flex justify-around items-center py-[25px] border-2 border-b-black">
+            {/* desktop nav --- tab and big screens */}
+            <nav className="sm:hidden md:flex lg:flex fixed text-mint gap-5 bg-black">
+                <AnchorLink href="#hero" className='nav-link'>HOME</AnchorLink>
+                <AnchorLink href="#about">ABOUT</AnchorLink>
+                <AnchorLink href="#work">WORKS</AnchorLink>
+                <AnchorLink href="#contact">CONTACT</AnchorLink>
             </nav>
-            <nav className="mobile">
-                <NavLink exact='true' activeclassname='active' className='nav-link' to='/'>
-                    HOME
-                </NavLink>
-                <NavLink exact='true' activeclassname='active' className='nav-link' to='/about'>
-                    ABOUT
-                </NavLink>
-                <NavLink exact='true' activeclassname='active' className='nav-link' to='/work'>
-                    WORKS
-                </NavLink>
-                <NavLink exact='true' activeclassname='active' className='nav-link' to='/contact'>
-                    CONTACT
-                </NavLink>
+            {/* moble nav --- small screens */}
+            <nav className="flex md:hidden lg:hidden text-mint bg-black">
+                <AnchorLink href="#hero" className='nav-link'>HOME</AnchorLink>
+                <AnchorLink href="#about" className='nav-link'>ABOUT</AnchorLink>
+                <AnchorLink href="#work" className='nav-link'>WORKS</AnchorLink>
+                <AnchorLink href="#contact" className='nav-link'>CONTACT</AnchorLink>
             </nav>
-        </div>
+        </header>
     )
 
 }
