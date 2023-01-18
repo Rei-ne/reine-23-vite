@@ -10,7 +10,7 @@ import Work from '../components/Work'
 const Home = () => {
     return (
         <>
-            <div className="flex flex-col justify-center items-center text-mint bg-black">
+            <div className="flex flex-col justify-center items-center max-w-fit text-mint bg-black">
                 <Hero />
                 <About />
                 <Work />

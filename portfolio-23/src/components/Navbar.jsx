@@ -6,10 +6,10 @@ const Navbar = () => {
 
     return (
 
-        <header className="navbar bg-black flex justify-around items-center py-[25px] border-2 border-b-black">
+        <header className="navbar font-Bebas_Neue bg-black flex justify-around items-center py-[25px] border-2 border-b-black">
             {/* desktop nav --- tab and big screens */}
-            <nav className="sm:hidden md:flex lg:flex fixed text-mint gap-5 bg-black">
-                <AnchorLink href="#hero" className='nav-link'>HOME</AnchorLink>
+            <nav className="sm:hidden md:flex lg:flex fixed w-full text-mint gap-5 bg-black">
+                <AnchorLink href="#hero" className='text-mint nav-link'>HOME</AnchorLink>
                 <AnchorLink href="#about">ABOUT</AnchorLink>
                 <AnchorLink href="#work">WORKS</AnchorLink>
                 <AnchorLink href="#contact">CONTACT</AnchorLink>

@@ -5,8 +5,8 @@ import aboutImg from '../assets/images/about-img.png'
 
 function About() {
     return (
-        <div id="about" className="about-div">
-            <h2>About me</h2>
+        <section id="about" className="about-div">
+            <h2 className="sm:text-2xl md:text-3xl uppercase flex justify-center items-center font-Bebas_Neue">About me</h2>
             <div className="about-text-container">
                 <div className="left-about">
                     <p>I’m Toyosi Odukale (REINE), and I am constantly evolving.</p>
@@ -24,7 +24,7 @@ function About() {
             </div>
             {/* my stack */}
             {/* <Stack/> */}
-        </div>
+        </section>
 
 
     )

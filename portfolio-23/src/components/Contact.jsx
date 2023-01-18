@@ -3,8 +3,8 @@ import React from 'react'
 
 const Contact = () => {
     return (
-        <div id="contact">
-            <h2>Contact Me</h2>
+        <section id="contact">
+            <h2 className="font-Bebas_Neue sm:text-2xl md:text-3xl uppercase flex justify-center items-center">Contact Me</h2>
             <p>Let's unlock together the next level of possibilities!</p>
             <p>Contact me if you’ve got remote opportunities, internships, collaborations or you just wanna say hello 👋
 
@@ -14,7 +14,7 @@ const Contact = () => {
 
                 </form>
             </div>
-        </div>
+        </section>
     )
 }
 
