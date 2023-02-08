@@ -1,9 +1,7 @@
 import React from "react";
 import NowPlaying from './NowPlaying'
 import Time from "./Time";
-// import reine from '../../assets/images/reine-img.png'
-// import background from '../../assets/images/Ellipse.png'
-// import HeroBar from "./HeroBar";
+
 
 
 function Hero() {
@@ -13,10 +11,6 @@ function Hero() {
 
             <section id="hero" className="hero-section flex flex-col justify-center items-center h-screen relative">
 
-                {/* <div className="image-container-mobile">
-<img className='reine-img' src={reine} alt="reine-image" />
-<img className='background-svg' src={background} alt="background-svg" />
-</div> */}
 
                 {/* REINE DEV headline */}
                 <div className="text-mint flex flex-col justify-center items-center text-center">
