@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.scss'
 import { useState, useEffect } from 'react'
 
 
@@ -16,7 +15,7 @@ const Time = () => {
     });
 
     return (
-        <div className='timer-container'>
+        <div className=''>
             <p> {date.toLocaleTimeString('en-US', {
 
                 timeStyle: 'short',

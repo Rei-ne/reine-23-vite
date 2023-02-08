@@ -1,12 +1,16 @@
 import React from 'react'
-import "./spotifyBar.scss"
-import spotify from '../../assets/images/Vector.png'
+import spotify from '../assets/images/Vector.png'
 
 const NowPlaying = () => {
     return (
-        <div className='np-div'>
-            <img src={spotify} alt="" />
-            <p> Now Playing</p>
+        <div className='flex gap-5 p-2 text-gray uppercase'>
+            <div>
+                <img src={spotify} alt="" />
+
+            </div>
+            <div>
+                <p className=""> Not Playing</p>
+            </div>
         </div>
     )
 }

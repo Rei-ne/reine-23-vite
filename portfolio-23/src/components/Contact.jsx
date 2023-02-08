@@ -3,7 +3,7 @@ import React from 'react'
 
 const Contact = () => {
     return (
-        <section id="contact">
+        <section className="flex flex-col justify-center items-center h-screen" id="contact">
             <h2 className="font-Bebas_Neue sm:text-2xl md:text-3xl uppercase flex justify-center items-center">Contact Me</h2>
             <p>Let's unlock together the next level of possibilities!</p>
             <p>Contact me if you’ve got remote opportunities, internships, collaborations or you just wanna say hello 👋
