@@ -3,13 +3,13 @@ import spotify from '../assets/images/Vector.png'
 
 const NowPlaying = () => {
     return (
-        <div className='flex gap-5 p-2 text-gray uppercase'>
-            <div>
-                <img src={spotify} alt="" />
+        <div className='flex gap-5 p-2 w-1/2 text-gray uppercase'>
+            <div className='w-6 h-6'>
+                <img className='p-1 w-full h-full' src={spotify} alt="" />
 
             </div>
             <div>
-                <p className=""> Not Playing</p>
+                <p className="text-sm"> Not Playing</p>
             </div>
         </div>
     )

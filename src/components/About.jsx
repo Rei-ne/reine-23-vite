@@ -5,10 +5,10 @@ import aboutImg from '../assets/images/about-img.png'
 
 function About() {
     return (
-        <section id="about" className="about-div m-t-6 flex flex-col justify-center items-center">
+        <section id="about" className="h-fit md:h-screen about-div mt-10 flex flex-col justify-center items-center">
             <h2 className="sm:text-3xl md:text-4xl uppercase flex justify-center items-center font-Bebas_Neue">About me</h2>
-            <div className="text-gray-light md:flex md:flex-row md:justify-around md:items-center md:h-4/5">
-                <div className="font-GT_Flexa p-6 md:w-1/3 text-sm max-w-prose leading-8 left-about ">
+            <div className="max-h-1/4 w-4/5 text-gray-light md:flex md:flex-row md:justify-around md:items-center md:h-4/5">
+                <div className="font-GT_Flexa p-6 md:w-1/3 text-sm max-w-prose leading-8 left-about">
                     <p>I’m Toyosi Odukale (REINE), and I am constantly evolving.</p>
                     <p>I say that because right now I’m a frontend developer that aspires to be a fullstack blockchain engineer someday.</p>
                     <p>My first dive into development was in August 2021, when I decided to transition from conventional application technical support, and take time out to give this new found interest all my attention. </p>
