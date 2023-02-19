@@ -5,6 +5,16 @@ module.exports = {
   ],
   purge: [],
   theme: {
+    extend: {
+      height: {
+        '8': '100px',
+        '10': '150px',
+        '15': '242px',
+        '16': '300px',
+        '17': '320px',
+        '18': '456px',
+      }
+    },
     screens: {
       sm: '215px',
       md: '768px',
@@ -32,10 +42,10 @@ module.exports = {
       base: '1rem',
       xl: '1.125rem',
       '2xl': '2.563rem',
-      '3xl': '3.953rem',
-      '4xl': '5.441rem',
+      '3xl': '100px',
+      '4xl': '120px',
       '5xl': '8.25rem',
-    }
+    },
 
   },
   variants: {},
