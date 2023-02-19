@@ -1,6 +1,6 @@
 import React from 'react';
 // import './index.scss';
-import varenaImg from '../assets/images/varena.png'
+
 import Project from './Project';
 
 const projects = [
@@ -8,25 +8,25 @@ const projects = [
         id: 1,
         title: "Varena",
         description: "A play to earn nft battle game built with 2d physics and javascript",
-        img: varenaImg,
+
     },
     {
         id: 2,
         title: "Spotify SongPortal",
         description: "a web3 dapp built with react js and solidity that let's users send songs on goerli testnet",
-        img: varenaImg,
+
     },
     {
         id: 3,
         title: "The Folk",
         description: "A website for a music distribution and talent management company built with nextjs and tailwind",
-        img: varenaImg,
+
     },
     {
         id: 4,
         title: "Reine DEV",
         description: "A portfolio website for a software developer built with React(vite) and tailwind",
-        img: varenaImg,
+
     }
 ]
 
@@ -44,7 +44,7 @@ const Work = () => {
 
             </div>
             {projects.map((project) => (
-                <Project key={project.id} title={project.title} description={project.description} img={project.img} />
+                <Project key={project.id} title={project.title} description={project.description} />
 
             ))}
             <div className="sm:w-4/5">
