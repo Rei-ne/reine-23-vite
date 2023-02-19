@@ -1,6 +1,6 @@
 import React from 'react';
 // import './index.scss';
-import varenaImg from '../assets/images/varena.png'
+import varenaImg from '../assets/images/varena.PNG'
 import Project from './Project';
 
 const projects = [
