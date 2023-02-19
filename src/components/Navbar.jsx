@@ -18,7 +18,7 @@ const Navbar = () => {
 
             </nav>
             {/* moble nav --- small screens */}
-            <nav className="flex w-full fixed bottom-0 left-2 h-20 text-base justify-around items-center border-t-2 border-b-2 border-mint md:hidden lg:hidden text-mint bg-black">
+            <nav className="flex w-full fixed bottom-0 left-2 h-5 text-base justify-around items-center border-t-2 border-b-2 border-mint md:hidden lg:hidden text-mint bg-black">
                 <AnchorLink href="#hero" className='tracking-wide'>HOME</AnchorLink>
                 <AnchorLink href="#about" className='tracking-wide'>ABOUT</AnchorLink>
                 <AnchorLink href="#work" className='tracking-wide'>WORKS</AnchorLink>
