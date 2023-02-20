@@ -19,7 +19,7 @@ function Hero() {
 
                 </div>
                 {/* REINE DEV headline */}
-                <div className="text-mint flex flex-col justify-center gap-10 sm:h-18 sm:w-full relative items-center text-center mb-4">
+                <div className="text-mint flex flex-col justify-center sm:h-18 sm:w-full relative items-center text-center mb-4">
                     <div className="absolute flex flex-col justify-center align-center inset-y inset-x-0 pt-12 mt-12 z-10 font-normal sm:h-16">
                         <div className="sm:w-full flex justify-center align-center  h-8 p-0 m-0  ">
                             <h1 className="sm:w-80 object-contain font-Kaldera text-justify sm:text-2xl text-3xl  lg:text-5xl">REINE</h1>
@@ -31,7 +31,7 @@ function Hero() {
                     </div>
                     <div className="absolute bottom-0 sm:h-5 sm:w-4/5 max-w-prose p-2 leading-4 md:w-4/5 lg:w-full">
                         <p className=" w-full font-GT_Flexa text-gray-light text-sm lg:text-1xl">Toyosi Odukale,
-                            <br />software developer.</p>
+                            <br />Software Developer.</p>
                     </div>
                 </div>
             </section>
