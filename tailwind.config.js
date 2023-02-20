@@ -21,10 +21,10 @@ module.exports = {
       }
     },
     screens: {
-      sm: '215px',
+      sm: '105px',
       md: '768px',
-      lg: '1260px',
-      xl: '1440px',
+      lg: '1050px',
+      xl: '1260px',
     },
     colors: {
       'mint': '#dbfff8',
@@ -47,6 +47,7 @@ module.exports = {
       sm: '0.8rem',
       base: '12px',
       xl: '32px',
+      '1xl': '1rem',
       '2xl': '80px',
       '3xl': '100px',
       '4xl': '120px',
