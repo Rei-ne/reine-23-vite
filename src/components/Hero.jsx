@@ -10,7 +10,7 @@ function Hero() {
         <>
             <section id="hero" className="hero-section flex flex-col justify-center items-center h-screen w-4/5 relative">
                 {/* mobile hero img */}
-                <div className=" absolute inset-x-0  w-full h-18 mt-16 md:hidden lg:hidden">
+                <div className="absolute inset-x-0  w-full h-18 mt-16 md:hidden lg:hidden">
                     <div className="relative flex justify-center content-center w-full h-16">
                         <img className='h-full object-cover object-top z-10' src={reine} alt="reine-image" />
                         <img className='absolute h-24 mt-12 mr-4 z-0' src={background} alt="background-svg" />
@@ -19,7 +19,7 @@ function Hero() {
 
                 </div>
                 {/* REINE DEV headline */}
-                <div className="text-mint flex flex-col justify-center gap-10 sm:h-18 sm:w-full relative items-center text-center">
+                <div className="border text-mint flex flex-col justify-center gap-10 sm:h-18 sm:w-full relative items-center text-center">
                     <div className="absolute flex flex-col justify-center align-center inset-y inset-x-0 pt-12 mt-12 z-10 font-normal sm:h-16">
                         <div className="sm:w-full flex justify-center align-center  h-8 p-0 m-0  ">
                             <h1 className="sm:w-80 object-contain font-Kaldera text-justify sm:text-2xl text-3xl  lg:text-5xl">REINE</h1>

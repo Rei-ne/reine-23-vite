@@ -4,9 +4,9 @@ import spotify from '../assets/images/Vector.png'
 const NowPlaying = () => {
     return (
         <div className='flex p-2
-         w-1/2 text-gray uppercase'>
-            <div className='w-fit h-2'>
-                <img className='p-1 w-full h-full' src={spotify} alt="" />
+         w-fit text-gray uppercase'>
+            <div className=''>
+                <img className=' p-1 object-contain h-full' src={spotify} alt="" />
 
             </div>
             <div className="p-1 flex justify-center items-center text-sm">
