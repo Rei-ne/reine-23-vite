@@ -10,7 +10,7 @@ const NowPlaying = () => {
 
             </div>
             <div className="p-1 flex justify-center items-center text-sm">
-                <p className="font-GT_Flexa text-base text-left uppercase"> Not connected</p>
+                <p className="font-GT_Flexa px-1 text-base text-left uppercase"> Not connected</p>
             </div>
         </div>
     )

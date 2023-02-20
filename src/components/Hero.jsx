@@ -29,8 +29,9 @@ function Hero() {
                         </div>
 
                     </div>
-                    <div className=" absolute inset-x-0 bottom-0 sm:h-5 sm:w-full md:w-4/5 lg:w-full">
-                        <p className="font-GT_Flexa text-gray-light text-sm lg:text-1xl">Hello, I’m Toyosi, a software developer and i’m Constantly evolving..</p>
+                    <div className="absolute bottom-0 sm:h-5 sm:w-4/5 max-w-prose p-2 leading-4 md:w-4/5 lg:w-full">
+                        <p className=" w-full font-GT_Flexa text-gray-light text-sm lg:text-1xl">Toyosi Odukale,
+                            <br />software developer.</p>
                     </div>
                 </div>
             </section>
