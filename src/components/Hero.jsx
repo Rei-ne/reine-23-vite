@@ -19,19 +19,19 @@ function Hero() {
 
                 </div>
                 {/* REINE DEV headline */}
-                <div className="text-mint flex flex-col justify-center sm:h-18 sm:w-full relative items-center text-center mb-4">
-                    <div className="absolute flex flex-col justify-center align-center inset-y inset-x-0 pt-12 mt-12 z-10 font-normal sm:h-16">
-                        <div className="sm:w-full flex justify-center align-center  h-8 p-0 m-0  ">
+                <div className="text-mint flex flex-col justify-center sm:h-18 sm:w-full relative items-center text-center mb-4 ">
+                    <div className="absolute lg:flex flex-col justify-center items-center inset-y inset-x-0 pt-12 mt-8 lg:m-0 z-10 font-normal sm:h-16 lg:z-0 lg:justify-around">
+                        <div className="sm:w-full flex justify-center align-center  h-8 p-0 m-0 lg:h-auto ">
                             <h1 className="sm:w-80 object-contain font-Kaldera text-justify sm:text-2xl text-3xl  lg:text-5xl">REINE</h1>
                         </div>
-                        <div className="sm:w-full flex  justify-center align-center h-8 p-0 m-0">
+                        <div className="sm:w-full flex  justify-center align-center h-8 p-0 m-0 lg:h-auto">
                             <h1 className="sm:w-80 object-contain font-Kaldera text-justify sm:text-2xl text-3xl  lg:text-5xl ">DEV.</h1>
                         </div>
 
                     </div>
-                    <div className="absolute bottom-0 sm:h-5 sm:w-4/5 max-w-prose p-2 leading-4 md:w-4/5 lg:w-full">
-                        <p className=" w-full font-GT_Flexa text-gray-light text-sm lg:text-1xl">Toyosi Odukale,
-                            <br />Software Developer.</p>
+                    <div className="absolute bottom-0 sm:h-5 sm:w-4/5 max-w-prose p-2 leading-4 md:w-4/5 lg:w-full lg:h-5">
+                        <p className="w-full font-GT_Flexa text-gray-light text-sm lg:text-1xl">
+                            Software Developer, Talent Manager</p>
                     </div>
                 </div>
             </section>
