@@ -35,6 +35,12 @@ a{
   color: #dbfff8;
 }
 
+div .grayscale{
+
+  filter: saturate(0);
+
+}
+
 
 /* #root {
   max-width: 1280px;
