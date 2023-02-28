@@ -22,10 +22,10 @@ function Hero() {
                 <div className="text-mint sm:h-18 sm:w-full relative flex  justify-center align-center items-center text-center ">
                     <div className="sm:w-full md:border-none flex flex-col justify-center items-center pt-2 mt-8 md:m-0 z-10 font-normal sm:mt-20 sm:h-14 lg:z-0 md:h-full ">
                         <div className="sm:w-full flex justify-center align-center sm:h-6 md:h-10 p-0 m-0 ">
-                            <h1 className="sm:w-80 object-contain font-Kaldera text-justify sm:text-2xl  md:text-4xl lg:text-5xl">REINE</h1>
+                            <h1 className="sm:w-80 object-contain font-Kaldera text-justify sm:text-3xl  md:text-4xl lg:text-5xl">REINE</h1>
                         </div>
                         <div className="sm:w-full flex  justify-center align-center sm:h-6 md:h-10 p-0 mt-1">
-                            <h1 className="sm:w-80 object-contain font-Kaldera text-justify sm:text-2xl md:text-4xl lg:text-5xl">DEV.</h1>
+                            <h1 className="sm:w-80 object-contain font-Kaldera text-justify sm:text-3xl md:text-4xl lg:text-5xl">DEV.</h1>
                         </div>
 
                     </div>
@@ -36,7 +36,7 @@ function Hero() {
                 </div>
             </section>
 
-            <div className="border-t-2 w-full hidden md:absolute md:bottom-0  h-8 border-gray  md:flex justify-between items-center px-16">
+            <div className="border-t-2 w-full hidden md:absolute md:bottom-0  h-7 border-gray  md:flex justify-between items-center px-16">
                 <NowPlaying />
                 <div className="flex flex-row gap-2">
                     <Time />
