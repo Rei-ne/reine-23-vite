@@ -35,7 +35,7 @@ const Work = () => {
         <section id="work" className='h-fit w-full about-div mt-20 flex flex-col justify-center items-center'>
             <h2 className="sm:text-2xl md:text-3xl uppercase flex justify-center items-center font-Bebas_Neue">PROJECTS</h2>
             <div className="sm:w-4/5 md:w-4/5 ">
-                <p className='text-gray-light font-GT_Flexa p-6  text-justify text-sm max-w-prose leading-8'>
+                <p className='md:hidden text-gray-light font-GT_Flexa p-6  text-justify text-sm max-w-prose leading-8'>
                     In order to put my skills to test, I build projects that expand and go beyond my current knowledge.
                     <br /> I love to investigate new technologies and try new things.
                 </p>

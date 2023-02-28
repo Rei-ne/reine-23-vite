@@ -15,7 +15,7 @@ const Time = () => {
     });
 
     return (
-        <div className='flex items-center justify-center border-l border-r border-mint w-1/5'>
+        <div className='flex items-center justify-center border-l border-r border-mint w-20'>
             <p className='font-GT_Flexa text-base'> {date.toLocaleTimeString('en-US', {
 
                 timeStyle: 'short',
