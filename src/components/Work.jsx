@@ -8,24 +8,27 @@ const projects = [
         id: 1,
         title: "Varena",
         description: "A play to earn nft battle game built with 2d physics and javascript",
-
+        category: "javascript",
     },
     {
         id: 2,
         title: "Spotify SongPortal",
         description: "a web3 dapp built with react js and solidity that let's users send songs on goerli testnet",
+        category: "web3",
 
     },
     {
         id: 3,
         title: "The Folk",
         description: "A website for a music distribution and talent management company built with nextjs and tailwind",
+        category: "website",
 
     },
     {
         id: 4,
         title: "Reine DEV",
         description: "A portfolio website for a software developer built with React(vite) and tailwind",
+        category: "website",
 
     }
 ]
@@ -42,7 +45,8 @@ const Work = () => {
             </div>
             <div className='md:w-full'>
                 {projects.map((project) => (
-                    <Project key={project.id} title={project.title} description={project.description} />
+                    <Project key={project.id} title={project.title} description={project.description}
+                        category={project.category} />
 
                 ))}
             </div>

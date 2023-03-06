@@ -19,19 +19,19 @@ function Hero() {
 
                 </div>
                 {/* REINE DEV headline */}
-                <div className="text-mint sm:h-18 sm:w-full relative flex  justify-center align-center items-center text-center ">
-                    <div className="sm:w-full md:border-none flex flex-col justify-center items-center pt-2 mt-8 md:m-0 z-10 font-normal sm:mt-20 sm:h-14 lg:z-0 md:h-full ">
-                        <div className="sm:w-full flex justify-center align-center sm:h-6 md:h-10 p-0 m-0 ">
-                            <h1 className="sm:w-80 object-contain font-Kaldera text-justify sm:text-3xl  md:text-4xl lg:text-5xl">REINE</h1>
+                <div className="text-mint sm:h-18 sm:w-full relative flex  justify-center align-center items-center text-center md:h-17  lg:h-18 md:justify-evenly">
+                    <div className="sm:w-full  flex flex-col justify-center items-center pt-2 mt-8 md:m-0 z-10 font-normal sm:mt-20 sm:h-14 lg:z-0 md:h-15 md:justify-start md:mt-0">
+                        <div className="sm:w-full flex justify-center align-center sm:h-6  p-0 m-0">
+                            <h1 className="sm:w-80 max-w-lg object-contain font-Kaldera text-justify sm:text-3xl  md:text-3xl lg:base ">REINE</h1>
                         </div>
-                        <div className="sm:w-full flex  justify-center align-center sm:h-6 md:h-10 p-0 mt-1">
-                            <h1 className="sm:w-80 object-contain font-Kaldera text-justify sm:text-3xl md:text-4xl lg:text-5xl">DEV.</h1>
+                        <div className="sm:w-full flex  justify-center align-center sm:h-6  p-0 mt-1">
+                            <h1 className="sm:w-80 object-contain font-Kaldera text-justify sm:text-3xl md:text-3xl lg:base">DEV.</h1>
                         </div>
 
                     </div>
-                    <div className="absolute bottom-0 sm:h-5  max-w-prose p-2 leading-4 w-full lg:h-5">
+                    <div className="absolute bottom-0 sm:h-5 md:flex max-w-prose p-2 leading-4 w-full lg:h-5">
                         <p className="w-full font-GT_Flexa text-gray-light text-sm lg:text-1xl">
-                            Software Developer, Talent Manager</p>
+                            Software Developer, developing herself...</p>
                     </div>
                 </div>
             </section>

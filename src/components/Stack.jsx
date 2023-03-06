@@ -55,8 +55,9 @@ const Stack = () => {
         <div className='flex justify-center items-center flex-row flex-wrap gap-10'>
 
             {icons.map(icon => (
-                <div className='h-7 w-7 border border-mint flex justify-center items-center' key={icon.id}>
-                    <img src={icon.image} />
+                <div className='h-7 w-7 border border-mint flex flex-col justify-between items-center' key={icon.id}>
+                    <img className='p-2 h-4 mt-2' src={icon.image} />
+                    <p className='font-GT_Flexa text-base p-2'>{icon.title}</p>
                 </div>
             ))}
 
