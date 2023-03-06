@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import { ScrollToTop } from './Components/ScrollToTop';
+// import { ScrollToTop } from './Components/ScrollToTop';
 import {
   BrowserRouter,
   Routes,
@@ -16,7 +16,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
         {/* NAVBAR /> */}
         <Navbar />
         <Routes>
