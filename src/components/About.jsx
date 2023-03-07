@@ -10,9 +10,9 @@ function About() {
             <h2 className="sm:text-2xl md:text-2xl uppercase flex justify-center items-center font-Bebas_Neue">About me</h2>
             <div className="max-h-1/4 w-4/5 text-gray-light md:flex flex-wrap md:flex-col lg:flex-row md:justify-around md:items-center md:h-4/5">
                 <div className="font-GT_Flexa p-6 md:w-fit lg:w-1/3 text-sm max-w-prose leading-8 left-about">
-                    <p className="my-2">I’m Toyosi Odukale (REINE), and I am constantly evolving.</p>
-                    <p className="my-2">I say that because right now I’m a frontend developer that aspires to be a blockchain engineer someday.</p>
-                    <p className="my-2">My first dive into development was in August 2021, when I decided to transition from bank application support, and take time out to give this new found interest all my attention. </p>
+                    <p className="my-2">Hello there 👋, my name is Toyosi Odukale (REINE), and I am constantly evolving.</p>
+                    <p className="my-2">I say that because right now I’m an ex-banker, turned software developer that is currently learning blockchain engineering.</p>
+                    <p className="my-2">My first dive into development was in August 2021, when I decided to transition from banking application support, and take time out to give this new found interest all my attention. </p>
                 </div>
                 <div className="font-GT_Flexa p-6 flex  flex-col justify-center items-center md:w-1/3">
                     <img className="bg-black grayscale text-gray w-fit object-contain md:h-full" src={aboutImg} alt="about reine dev" />
@@ -20,7 +20,7 @@ function About() {
                 </div>
                 <div className="right-about p-6 md:w-fit lg:w-1/3 text-sm leading-8 font-GT_Flexa">
                     <p className="my-2">So far I have learned a whole lot about programming languages like javascript and solidity and I am able to apply these skills in my daily life with how I create my art.</p>
-                    <p className="my-2">I am interested in blockchain development, technical writing, and creative development.</p>
+                    <p className="my-2">I am interested in smart contract development, technical writing, and talent management.</p>
                     <p className="my-2">I love music!
                         When I'm not coding, I'm listening to music or hanging out with my friends and listening to music with them 😀</p>
                 </div>
@@ -32,7 +32,7 @@ function About() {
 
 
             <div className="mt-8 w-4/5 text-left flex items-end font-GT_Flexa h-4 text-gray-light text-base border-t  border-gray-light">
-                <p>
+                <p className="px-8">
                     ENOUGH TALK 🤫, TIME TO SEE WHAT I’VE BUILT.
                 </p>
             </div>
