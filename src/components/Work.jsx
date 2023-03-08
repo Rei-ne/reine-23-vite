@@ -20,7 +20,7 @@ const projects = [
     {
         id: 3,
         title: "The Folk",
-        description: "A website for a music distribution and talent management company built with nextjs and tailwind",
+        description: "A website for a music distribution and talent management company built with React(vite) and tailwind",
         category: "website",
 
     },
@@ -43,7 +43,7 @@ const Work = () => {
                     <br /> I love to investigate new technologies and try new things.
                 </p>
             </div>
-            <div className='md:w-full'>
+            <div className='flex items-center justify-center flex-col md:w-full'>
                 {projects.map((project) => (
                     <Project key={project.id} title={project.title} description={project.description}
                         category={project.category} />
