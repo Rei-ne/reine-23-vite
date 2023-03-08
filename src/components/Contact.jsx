@@ -4,15 +4,22 @@ import React from 'react'
 const Contact = () => {
     return (
         <section className="font-GT_Flexa md:h-screen about-div mt-10 mb-10 flex flex-col  items-center h-screen" id="contact">
-            <h2 className="font-Bebas_Neue sm:text-2xl md:text-3xl uppercase flex justify-center items-center">Contact Me</h2>
+            <h2 className="font-Bebas_Neue sm:text-2xl md:text-3xl uppercase flex justify-center items-center">GET IN TOUCH</h2>
             <div className="font-GT_Flexa w-4/5 p-6 md:w-fit text-sm max-w-prose text-justify leading-8 text-gray-light">
                 <p>Contact me if you’ve got remote opportunities, internships, collaborations or you just wanna say hello 👋</p>
-                <p>
-                    You can also send me an <a className='text-mint font-bold' href="mailto:reinetoyosii@gmail.com">email</a> if contact forms aren't your thing.
-                </p>
+                {/* <p>
+                    You can also send me an <a className='text-mint font-bold' ">email</a> if contact forms aren't your thing.
+                </p> */}
             </div>
+            <div className='md:hidden'>
+                <button className='font-GT_Flexa uppercase border border-mint rounded-full w-10 h-5'>
+                    <a href="mailto:reinetoyosii@gmail.com">
+                        send a mail
+                    </a>
 
-            <div className='w-4/5 h-14 mb-6 bg-gray-200'>
+                </button>
+            </div>
+            <div className='sm:hidden md:hidden w-4/5 h-14 mb-6 bg-gray-200'>
                 <form className="form font-GT_Flexa text-gray-light w-4/5 h-fit bg-gray-200" action="">
                     <div className="px-4 bg-gray-200">
                         <label htmlFor="Name" className="">

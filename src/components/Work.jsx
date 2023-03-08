@@ -53,7 +53,7 @@ const Work = () => {
 
             <div className="sm:w-4/5">
                 <p className='text-gray-light font-GT_Flexa p-6 md:w-fit  text-sm max-w-prose leading-8'>
-                    Other projects are available on github. Follow me let's connect on <a className='text-mint font-bold' href="https://github.com/Rei-ne" target='_blank' >github</a> and <a className='text-mint font-bold' href="https://reine.hashnode.dev/" target='_blank'>hashnode</a>
+                    My resume and other projects are available on <a className='text-mint font-bold' href="https://github.com/Rei-ne" target='_blank' >github</a>. You can also follow my journey on  <a className='text-mint font-bold' href="https://www.linkedin.com/in/toyosi-odukale/" target='_blank'>linkedin</a> and <a className='text-mint font-bold' href="https://reine.hashnode.dev/" target='_blank' >hashnode</a>
                 </p>
             </div>
 

@@ -12,7 +12,7 @@ function About() {
                 <div className="font-GT_Flexa p-6 md:w-fit lg:w-1/3 text-sm max-w-prose leading-8 left-about">
                     <p className="my-2">Hello there 👋, my name is Toyosi Odukale (REINE), and I am constantly evolving.</p>
                     <p className="my-2">I say that because right now I’m an ex-banker, turned software developer that is currently learning blockchain engineering.</p>
-                    <p className="my-2">My first dive into development was in August 2021, when I decided to transition from banking application support, and take time out to give this new found interest all my attention. </p>
+                    <p className="my-2">My first dive into web development was in August 2021, when I decided to transition from banking application support, to take time out and give this new found interest all my attention. </p>
                 </div>
                 <div className="font-GT_Flexa p-6 flex  flex-col justify-center items-center md:w-1/3">
                     <img className="bg-black grayscale text-gray w-fit object-contain md:h-full" src={aboutImg} alt="about reine dev" />

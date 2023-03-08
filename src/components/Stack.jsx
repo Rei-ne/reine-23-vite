@@ -10,15 +10,14 @@ import hardhat from '../assets/icons/file-type-hardhat.png';
 const icons = [
     {
         id: 1,
-        title: "ethers",
-        image: ethers,
+        title: "javascript",
+        image: javascript,
 
     },
     {
         id: 2,
-        title: "react",
-        image: reactImg,
-
+        title: "solidity",
+        image: solidity,
     },
     {
         id: 3,
@@ -28,14 +27,14 @@ const icons = [
     },
     {
         id: 4,
-        title: "javascript",
-        image: javascript,
+        title: "ethers",
+        image: ethers,
 
     },
     {
         id: 5,
-        title: "solidity",
-        image: solidity,
+        title: "react",
+        image: reactImg,
     },
     {
         id: 6,
@@ -55,6 +54,7 @@ const Stack = () => {
         <div className='flex justify-center items-center flex-row flex-wrap gap-10'>
 
             {icons.map(icon => (
+
                 <div className='h-7 w-7 border border-mint flex flex-col justify-between items-center' key={icon.id}>
                     <img className='p-2 h-4 mt-2' src={icon.image} />
                     <p className='font-GT_Flexa text-base p-2'>{icon.title}</p>
