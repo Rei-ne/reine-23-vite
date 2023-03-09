@@ -9,26 +9,34 @@ const projects = [
         title: "Varena",
         description: "A play to earn nft battle game built with 2d physics and javascript",
         category: "javascript",
+        githubLink: null,
+        liveLink: "https://varena.app/",
     },
     {
         id: 2,
         title: "Spotify SongPortal",
-        description: "a web3 dapp built with react js and solidity that let's users send songs on goerli testnet",
+        description: "A web3 app built with react js and solidity that let's users send messages on goerli testnet",
         category: "web3",
+        githubLink: "https://github.com/Rei-ne/spotify-goerli",
+        liveLink: "https://spotify-songportal.rei-ne.repl.co/",
 
     },
-    {
-        id: 3,
-        title: "The Folk",
-        description: "A website for a music distribution and talent management company built with React(vite) and tailwind",
-        category: "website",
+    // {
+    //     id: 3,
+    //     title: "The Folk",
+    //     description: "A website for a music distribution and talent management company built with React(vite) and tailwind",
+    //     category: "website",
+    //     githubLink: null,
+    //     liveLink: "https://varena.app/",
 
-    },
+    // },
     {
         id: 4,
         title: "Reine DEV",
         description: "A portfolio website for a software developer built with React(vite) and tailwind",
         category: "website",
+        githubLink: null,
+        liveLink: "https://reine.dev/",
 
     }
 ]
@@ -46,7 +54,7 @@ const Work = () => {
             <div className='flex items-center justify-center flex-col md:w-full'>
                 {projects.map((project) => (
                     <Project key={project.id} title={project.title} description={project.description}
-                        category={project.category} />
+                        category={project.category} githubLink={project.githubLink} liveLink={project.liveLink} />
 
                 ))}
             </div>

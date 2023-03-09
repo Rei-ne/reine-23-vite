@@ -40,7 +40,7 @@ function Hero() {
                 <NowPlaying />
                 <div className="flex flex-row gap-2">
                     <Time />
-                    <div className="">
+                    <div className="font-GT_Flexa uppercase text-gray text-base">
                         <p>Lagos, NG</p>
                     </div>
                 </div>
