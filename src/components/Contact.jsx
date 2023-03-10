@@ -4,7 +4,7 @@ import React from 'react'
 const Contact = () => {
     return (
         <section className="font-GT_Flexa md:h-screen about-div mt-10 mb-10 flex flex-col  items-center h-screen" id="contact">
-            <h2 className="font-Bebas_Neue sm:text-2xl md:text-3xl uppercase flex justify-center items-center">GET IN TOUCH</h2>
+            <h2 className="font-Bebas_Neue sm:text-3xl md:text-3xl px-2 uppercase flex justify-center items-center">GET IN TOUCH</h2>
             <div className="font-GT_Flexa w-4/5 p-6 md:w-fit text-sm max-w-prose text-justify leading-8 text-gray-light">
                 <p>Contact me if you’ve got remote opportunities, internships, collaborations or you just wanna say hello 👋</p>
                 {/* <p>

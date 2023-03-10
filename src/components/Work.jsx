@@ -7,7 +7,7 @@ const projects = [
     {
         id: 1,
         title: "Varena",
-        description: "A play to earn nft battle game built with 2d physics and javascript",
+        description: "A play to earn nft battle game built with matter.js and react.js",
         category: "javascript",
         githubLink: null,
         liveLink: "https://varena.app/",
@@ -15,7 +15,7 @@ const projects = [
     {
         id: 2,
         title: "Spotify SongPortal",
-        description: "A web3 app built with react js and solidity that let's users send messages on goerli testnet",
+        description: "A web3 app built with react.js and solidity that lets users interact with my smart contract on goerli testnet",
         category: "web3",
         githubLink: "https://github.com/Rei-ne/spotify-goerli",
         liveLink: "https://spotify-songportal.rei-ne.repl.co/",
@@ -34,9 +34,18 @@ const projects = [
         id: 4,
         title: "Reine DEV",
         description: "A portfolio website for a software developer built with React(vite) and tailwind",
-        category: "website",
-        githubLink: null,
+        category: "javascript",
+        githubLink: "https://github.com/Rei-ne/reine-23-vite",
         liveLink: "https://reine.dev/",
+
+    },
+    {
+        id: 5,
+        title: "Kobe Webpage",
+        description: "A tribute webpage for Kobe Bryant built with html and css",
+        category: "html",
+        githubLink: "https://github.com/Rei-ne/Tribute_Page",
+        liveLink: "https://rei-ne.github.io/Tribute_Page/",
 
     }
 ]
@@ -44,7 +53,7 @@ const projects = [
 const Work = () => {
     return (
         <section id="work" className='h-fit w-full about-div mt-20 flex flex-col justify-center items-center'>
-            <h2 className="sm:text-2xl md:text-3xl uppercase flex justify-center items-center font-Bebas_Neue">PROJECTS</h2>
+            <h2 className="sm:text-3xl md:text-3xl uppercase flex justify-center items-center font-Bebas_Neue">PROJECTS</h2>
             <div className="sm:w-4/5 md:w-4/5 ">
                 <p className='md:hidden text-gray-light font-GT_Flexa p-6  text-justify text-sm max-w-prose leading-8'>
                     In order to put my skills to test, I build projects that expand and go beyond my current knowledge.

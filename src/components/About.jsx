@@ -7,11 +7,11 @@ import Stack from "./Stack";
 function About() {
     return (
         <section id="about" className="h-full mt-10 flex flex-col justify-center items-center">
-            <h2 className="sm:text-2xl md:text-2xl uppercase flex justify-center items-center font-Bebas_Neue">About me</h2>
+            <h2 className="sm:text-3xl md:text-3xl uppercase flex justify-center items-center font-Bebas_Neue">About me</h2>
             <div className="max-h-1/4 w-4/5 text-gray-light md:flex flex-wrap md:flex-col lg:flex-row md:justify-around md:items-center md:h-4/5">
                 <div className="font-GT_Flexa p-6 md:w-fit lg:w-1/3 text-sm max-w-prose leading-8 left-about">
                     <p className="my-2">Hello there 👋, my name is Toyosi Odukale (REINE), and I am constantly evolving.</p>
-                    <p className="my-2">I say that because right now I’m an ex-banker, turned frontend developer that is currently learning blockchain engineering.</p>
+                    <p className="my-2">I say that because right now I’m an ex-banker, turned frontend developer that is currently learning blockchain development.</p>
                     <p className="my-2">My first dive into web development was in August 2021, when I decided to transition from banking application support, to take time out and give this new found interest all my attention. </p>
                 </div>
                 <div className="font-GT_Flexa p-6 flex  flex-col justify-center items-center h-full md:w-1/3">
@@ -31,7 +31,7 @@ function About() {
             </div>
 
 
-            <div className="mt-8 w-4/5 text-center flex items-end font-GT_Flexa h-4 text-gray-light text-base border-t  border-gray-light">
+            <div className="mt-8 w-4/5 sm:text-left text-center flex items-end font-GT_Flexa h-4 text-gray-light text-base border-t  border-gray-light">
                 <p className="px-8">
                     ENOUGH TALK 🤫, TIME TO SEE WHAT I’VE BUILT.
                 </p>

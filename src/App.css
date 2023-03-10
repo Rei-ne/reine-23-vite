@@ -40,7 +40,26 @@ div .grayscale{
   filter: saturate(0);
 
 }
+/* Scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #dbfff8;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #dbfff8;
+}
 
 /* #root {
   max-width: 1280px;
