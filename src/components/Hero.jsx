@@ -8,7 +8,7 @@ import background from '../assets/images/Ellipse.png';
 function Hero() {
     return (
         <>
-            <section id="hero" className="hero-section  h-screen w-4/5 relative flex flex-col justify-center items-center md:justify-start">
+            <section id="hero" className="hero-section h-screen w-4/5 relative flex flex-col justify-center items-center md:justify-start">
                 {/* mobile hero img */}
                 <div className="absolute inset-x-0 w-full h-18 mt-16 md:hidden lg:hidden">
                     <div className="relative flex justify-center content-center w-full h-16">
@@ -19,28 +19,28 @@ function Hero() {
 
                 </div>
                 {/* REINE DEV headline */}
-                <div className="text-mint sm:h-18 sm:w-full relative flex  justify-center align-center items-center text-center md:h-17  lg:h-18 md:justify-evenly">
-                    <div className="sm:w-full  flex flex-col justify-center items-center pt-2 mt-8 md:m-0 z-10 font-normal sm:mt-20 sm:h-14 lg:z-0 md:h-15 md:justify-start md:mt-0">
+                <div className="text-mint sm:h-18 sm:w-full relative flex  justify-center  items-center text-center md:h-17 md:mt-20 lg:h-17 lg:mt-16 md:justify-evenly">
+                    <div className="sm:w-full  flex flex-col justify-center items-center pt-2  md:m-0 z-10 font-normal sm:mt-20 sm:h-14 lg:z-0 md:h-15 md:justify-start md:mt-0 lg:gap-6">
                         <div className="sm:w-full flex justify-center align-center sm:h-6  p-0 m-0">
-                            <h1 className="sm:w-80 max-w-lg object-contain font-Kaldera text-justify sm:text-3xl  md:text-3xl lg:base ">REINE</h1>
+                            <h1 className="sm:w-80 max-w-lg object-contain font-Kaldera text-justify sm:text-3xl  md:text-3xl lg:text-4xl ">REINE</h1>
                         </div>
-                        <div className="sm:w-full flex  justify-center align-center sm:h-6  p-0 mt-1">
-                            <h1 className="sm:w-80 object-contain font-Kaldera text-justify sm:text-3xl md:text-3xl lg:base">DEV.</h1>
+                        <div className="sm:w-full flex  justify-center  sm:h-6  p-0 mt-1">
+                            <h1 className="sm:w-80 object-contain font-Kaldera text-justify sm:text-3xl md:text-3xl lg:text-4xl">DEV.</h1>
                         </div>
 
                     </div>
-                    <div className="absolute bottom-0 sm:h-5 md:flex max-w-prose p-2 leading-4 w-full lg:h-5">
-                        <p className="w-full font-GT_Flexa text-gray-light text-sm lg:text-1xl">
+                    <div className="absolute  bottom-0 sm:h-5 md:flex md:items-end max-w-prose p-2 leading-4 w-full lg:h-5 lg:mt-4">
+                        <p className="w-full  items-bottom font-GT_Flexa text-gray-light text-sm lg:text-1xl">
                             Software Developer, developing herself...</p>
                     </div>
                 </div>
             </section>
 
-            <div className="border-t-2 w-full hidden md:absolute md:bottom-0  h-7 border-gray  md:flex justify-between items-center px-16">
+            <div className="border-t-2 w-full hidden md:absolute md:bottom-0  h-6 border-gray  md:flex justify-between items-center px-16">
                 <NowPlaying />
                 <div className="flex flex-row gap-2">
                     <Time />
-                    <div className="font-GT_Flexa uppercase text-gray text-base">
+                    <div className="font-GT_Flexa uppercase text-gray text-text-4xl">
                         <p>Lagos, NG</p>
                     </div>
                 </div>

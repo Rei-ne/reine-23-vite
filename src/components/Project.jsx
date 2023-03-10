@@ -40,7 +40,7 @@ const Project = ({ title, description, category, liveLink, githubLink }) => {
                     <p className='font-GT_Flexa uppercase  max-w-prose text-gray-light md:text-1xl lg:text-1xl'>{category}</p>
                 </div>
 
-                <div className='flex flex-row justify-around  w-1/2 absolute right-0 bottom-0 mb-8 p-2'>
+                <div className='flex flex-row justify-around items-center sm:w-1/3 sm:mb-6 w-1/2 absolute right-0 bottom-0 mb-8 p-2'>
 
                     {githubLink ?
                         <a href={githubLink} target="_blank"> <img className='cursor-pointer' key={icons[0].id} src={icons[0].iconImg} alt="" /></a> : null
