@@ -4,7 +4,7 @@ import reine from '../assets/images/reine-img.png'
 const Contact = () => {
     return (
         <section className="font-GT_Flexa md:h-screen about-div mt-10 mb-10 flex flex-row justify-center  items-center h-screen" id="contact">
-            <div className='sm:hidden md:flex w-1/2'>
+            <div className='sm:hidden md:flex items-center justify-center w-1/2'>
                 <img src={reine} alt="a picture of reine" />
             </div>
             <div className='flex flex-col items-center justify-center md:w-1/2'>
@@ -15,9 +15,9 @@ const Contact = () => {
                     You can also send me an <a className='text-mint font-bold' ">email</a> if contact forms aren't your thing.
                 </p> */}
                 </div>
-                <div className='mt-10 md:hidden'>
+                <div className='mt-10'>
                     <button className='font-GT_Flexa uppercase border border-mint rounded-full w-10 h-5'>
-                        <a href="mailto:reinetoyosii@gmail.com">
+                        <a className='no-underline' href="mailto:reinetoyosii@gmail.com">
                             send a mail
                         </a>
 

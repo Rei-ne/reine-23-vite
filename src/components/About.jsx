@@ -21,8 +21,7 @@ function About() {
                 <div className="right-about p-6 md:w-fit lg:w-1/3 text-sm leading-8 font-GT_Flexa">
                     <p className="my-2">So far I have learned a whole lot about programming languages like javascript and solidity and I am able to apply these skills in my daily life with how I create my art.</p>
                     <p className="my-2">I am also interested in smart contract development, technical writing, and talent management.</p>
-                    <p className="my-2">I love music!
-                        When I'm not coding, I am listening to music or hanging out with my friends and listening to music with them 😀</p>
+                    <p className="my-2">Music is another passion of mine, and when I'm not coding, you can usually find me either listening to music on my <a href="https://open.spotify.com/user/31iptodfoldd453eq6tbmv4x6qlu?si=3c8bc7bf41b04de2" target="_blank">own</a> or enjoying it with my friends 😀</p>
                 </div>
                 <div className="flex flex-col gap-5 justify-center items-center ">
                     <p className="font-GT_Flexa">MY STACK</p>
