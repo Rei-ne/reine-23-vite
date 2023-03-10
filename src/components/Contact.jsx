@@ -10,7 +10,7 @@ const Contact = () => {
             <div className='flex flex-col items-center justify-center md:w-1/2'>
                 <h2 className="font-Bebas_Neue sm:text-3xl md:text-3xl px-2 uppercase flex justify-center items-center">GET IN TOUCH</h2>
                 <div className="flex flex-col items-center justify-center sm:h-14  font-GT_Flexa w-4/5 p-6 md:w-fit text-sm max-w-prose text-justify leading-8 text-gray-light">
-                    <p>Contact me if you’ve got remote opportunities, internships, collaborations or you just wanna say hello 👋</p>
+                    <p>Contact me if you’ve got remote opportunities, internships, collaborations or you just want to say hello 👋</p>
                     {/* <p>
                     You can also send me an <a className='text-mint font-bold' ">email</a> if contact forms aren't your thing.
                 </p> */}
