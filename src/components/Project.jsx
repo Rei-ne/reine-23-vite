@@ -28,11 +28,11 @@ const Project = ({ title, description, category, liveLink, githubLink }) => {
             <div className="md:pl-4 md:flex md:flex-col md:justify-around md:w-3/5 lg:w-3/5 lg:ml-32 border-mint md:h-full lg:flex-col">
                 {/* text */}
                 <div className='flex items-center justify-start text-left w-full'>
-                    <h2 className='text-xl md:text-2xl lg:text-4.5 text-mint '>{title}</h2>
+                    <h2 className='text-xl sm:tracking-widest md:tracking-normal md:text-2xl lg:text-4.5 text-mint '>{title}</h2>
                 </div>
                 {/* description */}
                 <div className='flex items-center h-fit w-2/3 md:w-fit md:h-auto justify-start text-left  '>
-                    <p className='font-GT_Flexa max-w-prose leading-8 text-gray-light sm:text-base md:text-base'>{description}</p>
+                    <p className='font-GT_Flexa max-w-prose sm:leading-6 leading-8 text-gray-light sm:text-base md:text-base'>{description}</p>
                 </div>
 
                 {/* category */}
