@@ -60,6 +60,7 @@ module.exports = {
       '2xl': '2rem',
       '3xl': '5rem',
       '4xl': '120px',
+      '4.5': '3.8rem',
       '5xl': '8.25rem',
     },
 
