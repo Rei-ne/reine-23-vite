@@ -1,10 +1,10 @@
 // import { useState } from 'react'
 // import { ScrollToTop } from './Components/ScrollToTop';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+// import {
+//   BrowserRouter,
+//   Routes,
+//   Route,
+// } from "react-router-dom";
 
 import Homepage from "./pages/Homepage"
 import './App.css';
@@ -15,15 +15,15 @@ function App() {
 
   return (
     <div>
-      <BrowserRouter>
-        {/* <ScrollToTop /> */}
-        {/* NAVBAR /> */}
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-        </Routes>
+      {/* <BrowserRouter> */}
+      {/* <ScrollToTop /> */}
 
-      </BrowserRouter>
+      <Navbar />
+      {/* <Routes>
+          <Route path="/" element={} />
+        </Routes> */}
+      <Homepage />
+      {/* </BrowserRouter> */}
 
     </div>
   )

@@ -41,11 +41,11 @@ const projects = [
     },
     {
         id: 5,
-        title: "Kobe Webpage",
-        description: "A tribute webpage for Kobe Bryant built with html and css",
-        category: "html",
-        githubLink: "https://github.com/Rei-ne/Tribute_Page",
-        liveLink: "https://rei-ne.github.io/Tribute_Page/",
+        title: "Metabnb",
+        description: "A landing page built with react and styled components (css-in-js)",
+        category: "javacript",
+        githubLink: "https://github.com/Rei-ne/metabnb",
+        liveLink: "https://reine-metabnb.netlify.app/",
 
     }
 ]

@@ -13,9 +13,10 @@ import arrowIcon from '../assets/icons/Nav-Arrow_1.png'
 
 
 const Home = () => {
-    // scroll to top state that shows on scroll after hero section
+    // scroll to top state for the arrow button
     const [showButton, setShowButton] = useState(false);
 
+    // useEffect that brings up the arrow button that shows on scroll after hero section
     useEffect(() => {
         const handleScrollButtonVisibility = () => {
             window.pageYOffset > 100 ? setShowButton(true) : setShowButton(false);
@@ -26,7 +27,7 @@ const Home = () => {
             window.removeEventListener('scroll', handleScrollButtonVisibility);
         };
     }, []);
-
+    // function to scroll to top of screen
     const handleScrollToTop = () => {
         window.scrollTo({ top: 0, behaviour: 'smooth' });
     }
@@ -44,8 +45,6 @@ const Home = () => {
                 {showButton && (
                     <div className='sm:hidden border md:flex fixed bottom-0 right-0 mr-12 mb-10 bg-black  z-50 border-mint h-6 w-6 '>
                         <img className=' h-full w-fit rotate-90 cursor-pointer p-2' src={arrowIcon} alt="scrollToTop" onClick={handleScrollToTop} />
-
-
                     </div>
                 )
                 }
