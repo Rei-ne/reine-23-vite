@@ -19,8 +19,8 @@ function Hero() {
 
                 </div>
                 {/* REINE DEV headline */}
-                <div className="text-mint sm:h-18 sm:w-full relative flex  justify-center  items-center text-center md:h-17 md:mt-20 lg:h-17 lg:mt-16 md:justify-evenly">
-                    <div className="sm:w-full  flex flex-col justify-center items-center pt-2  md:m-0 z-10 font-normal sm:mt-20 sm:h-14 lg:z-0 md:h-15 md:justify-start md:mt-0 lg:gap-6">
+                <div className="text-mint sm:h-18 sm:w-full relative flex  justify-center  items-center text-center md:h-fit  lg:h-17 lg:mt-16 md:justify-evenly md:border border-mint">
+                    <div className="sm:w-full  flex flex-col justify-center items-center pt-2  md:m-0 z-10 font-normal sm:mt-20 sm:h-14 lg:z-0 md:h-fit md:justify-start md:mt-0 lg:gap-6">
                         <div className="sm:w-full flex justify-center align-center sm:h-6  p-0 m-0">
                             <h1 className="sm:w-80 max-w-lg object-contain font-Kaldera text-justify sm:text-3xl  md:text-3xl lg:text-4xl ">REINE</h1>
                         </div>
