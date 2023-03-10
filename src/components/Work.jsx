@@ -43,7 +43,7 @@ const projects = [
         id: 5,
         title: "Metabnb",
         description: "A landing page built with react and styled components (css-in-js)",
-        category: "javacript",
+        category: "javascript",
         githubLink: "https://github.com/Rei-ne/metabnb",
         liveLink: "https://reine-metabnb.netlify.app/",
 
