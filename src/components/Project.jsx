@@ -36,19 +36,34 @@ const Project = ({ title, description, category, liveLink, githubLink }) => {
                 </div>
 
                 {/* category */}
-                <div className='sm:hidden md:flex items-center  w-1/2 md:w-10 md:mr-10 justify-center text-center h-auto p-2 mt-10 absolute right-0 top-0 lg:w-10 lg:mr-48'>
+                <div className='sm:hidden md:flex items-center   md:w-10 md:mr-10 justify-center text-center h-auto p-2 mt-10 absolute right-0 top-0 lg:w-10 lg:mr-48'>
                     <p className='font-GT_Flexa uppercase  max-w-prose text-gray-light md:text-1xl lg:text-1xl'>{category}</p>
                 </div>
 
-                <div className='flex flex-row justify-around items-center sm:w-1/3 sm:mb-6 w-1/2  lg:w-10 lg:mr-48 absolute right-0 bottom-0 mb-8 p-2'>
+                <div className='flex flex-row justify-evenly items-center sm:w-1/3 sm:mb-6 md:justify-evenly w-1/3  lg:w-10 lg:mr-48 absolute right-0 bottom-0 mb-8 p-2'>
 
                     {githubLink ?
-                        <a href={githubLink} target="_blank"> <img className='cursor-pointer' key={icons[0].id} src={icons[0].iconImg} alt="" /></a> : null
-
+                        <div className='flex flex-col items-center justify-center p-2 gap-1  h-4 '>
+                            <div className='h-2 mt-1'>
+                                <a href={githubLink} target="_blank"> <img className='h-full cursor-pointer' key={icons[0].id} src={icons[0].iconImg} alt="github-icon" /></a>
+                            </div>
+                            <p className='text-base'>code</p>
+                        </div>
+                        : null
 
                     }
-                    {liveLink ? <a href={liveLink} target="_blank">
-                        <img className='cursor-pointer' key={icons[1].id} src={icons[1].iconImg} alt="" /></a> : null
+
+
+                    {liveLink ?
+                        <div className='flex flex-col items-center justify-center text-justify px-2 gap-1  h-4 '>
+                            <div className='h-2 mt-1'>
+                                <a href={liveLink} target="_blank">
+                                    <img className=' h-full cursor-pointer' key={icons[1].id} src={icons[1].iconImg} alt="live-icon" /></a>
+                            </div>
+                            <p className='text-base'>live</p>
+
+                        </div>
+                        : null
 
                     }
 
