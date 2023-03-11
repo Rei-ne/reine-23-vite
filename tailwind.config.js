@@ -3,7 +3,6 @@ module.exports = {
     "./components/**/*.{js, jsx}",
     "./pages/**/*.{js, jsx}",
   ],
-  purge: [],
   theme: {
     extend: {
       height: {
