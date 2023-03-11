@@ -44,23 +44,22 @@ const Project = ({ title, description, category, liveLink, githubLink }) => {
 
                     {githubLink ?
                         <div className='flex flex-col items-center justify-center p-2 gap-1  h-4 '>
-                            <div className='h-2 mt-1'>
-                                <a href={githubLink} target="_blank"> <img className='h-full cursor-pointer' key={icons[0].id} src={icons[0].iconImg} alt="github-icon" /></a>
+                            <div className='h-1 lg:h-2 mt-1'>
+                                <a href={githubLink} target="_blank"> <img className='h-auto lg:h-fit cursor-pointer' key={icons[0].id} src={icons[0].iconImg} alt="github-icon" /></a>
                             </div>
-                            <p className='text-base'>code</p>
+                            <p className='font-GT_Flexa text-base'>code</p>
                         </div>
                         : null
 
                     }
 
-
                     {liveLink ?
                         <div className='flex flex-col items-center justify-center text-justify px-2 gap-1  h-4 '>
-                            <div className='h-2 mt-1'>
+                            <div className='h-1 lg:h-2 mt-1'>
                                 <a href={liveLink} target="_blank">
-                                    <img className=' h-full cursor-pointer' key={icons[1].id} src={icons[1].iconImg} alt="live-icon" /></a>
+                                    <img className=' h-auto lg:h-fit cursor-pointer' key={icons[1].id} src={icons[1].iconImg} alt="live-icon" /></a>
                             </div>
-                            <p className='text-base'>live</p>
+                            <p className='font-GT_Flexa text-base'>live</p>
 
                         </div>
                         : null
