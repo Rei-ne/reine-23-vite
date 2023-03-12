@@ -28,17 +28,17 @@ const Contact = () => {
     };
 
     return (
-        <section className="font-GT_Flexa md:h-screen about-div mt-10 mb-10 flex flex-row justify-center  items-center h-screen" id="contact">
+        <section className="font-GT_Flexa  mt-10 mb-10 flex flex-row justify-center  items-center h-screen" id="contact">
             <div className='sm:hidden md:flex items-center justify-center w-1/2'>
                 <img src={reine} alt="a picture of reine" />
             </div>
-            <div className='flex flex-col items-center justify-center md:w-1/2'>
+            <div className='flex flex-col items-center justify-center border h-full border-mint md:w-1/2'>
                 <h2 className="font-Bebas_Neue sm:text-3xl md:text-3xl px-2 uppercase flex text-center justify-center items-center">GET IN TOUCH</h2>
-                <div className="flex flex-col items-center justify-center sm:h-14  font-GT_Flexa w-4/5 p-6 md:w-fit text-sm max-w-prose text-justify leading-8 text-gray-light">
-                    <p>Contact me if you’ve got remote opportunities, internships, collaborations or you just want to say hello 👋</p>
-                    {/* <p>
-                    You can also send me an <a className='text-mint font-bold' ">email</a> if contact forms aren't your thing.
-                </p> */}
+                <div className="flex flex-col items-center justify-center sm:h-14  font-GT_Flexa w-4/5 p-6 md:w-fit text-sm max-w-prose text-left leading-8 text-gray-light">
+                    <p className='w-full'>Contact me if you’ve got remote job opportunities, web development gigs, collaborations or you just want to say hello 👋</p>
+                    <p className='w-full'>
+                        You can send me an <a href="mailto:reinetoyosii@gmail.com" className='text-mint font-bold'>email</a> if contact forms aren't your thing.
+                    </p>
                 </div>
                 <div className='mt-10 md:hidden'>
                     <button className='font-GT_Flexa uppercase border border-mint rounded-full w-10 h-5'>
@@ -50,8 +50,7 @@ const Contact = () => {
                 </div>
                 {/* form */}
                 <div className='sm:hidden md:flex w-4/5 h-fit mb-6 bg-gray-200'>
-                    <form className="font-GT_Flexa text-gray-light w-full h-fit flex flex-col bg-inherit max-w-md rounded shadow mx-auto p-6" onSubmit={handleSubmit}>
-
+                    <form className="font-GT_Flexa text-gray-light md:w-4/5  h-full flex flex-col bg-inherit max-w-md rounded shadow mx-auto" onSubmit={handleSubmit}>
                         <div className="styled-input">
                             <input type="text" required value={name}
                                 onChange={e => setName(e.target.value)} />
@@ -85,7 +84,7 @@ const Contact = () => {
                 </div>
             </div>
 
-        </section>
+        </section >
     )
 }
 

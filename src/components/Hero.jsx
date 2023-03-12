@@ -36,7 +36,7 @@ function Hero() {
                 </div>
             </section>
 
-            <div className="border-t-2 w-full hidden md:absolute md:bottom-0 md:h-2 lg:h-6 border-gray bg-black  md:flex justify-between items-center z-10 py-2 px-16">
+            <div className="border-t-2 w-full hidden md:absolute md:bottom-0 md:h-4 lg:h-6 border-gray bg-black  md:flex justify-between items-center z-10 py-2 px-16">
                 <NowPlaying />
                 <div className="flex flex-row gap-2">
                     <Time />
