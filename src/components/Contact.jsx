@@ -32,11 +32,11 @@ const Contact = () => {
             <div className='sm:hidden md:flex items-center justify-center w-1/2'>
                 <img src={reine} alt="a picture of reine" />
             </div>
-            <div className='flex flex-col items-center justify-center border h-full border-mint md:w-1/2'>
+            <div className='flex flex-col items-center justify-center md:border h-full border-mint md:w-1/2'>
                 <h2 className="font-Bebas_Neue sm:text-3xl md:text-3xl px-2 uppercase flex text-center justify-center items-center">GET IN TOUCH</h2>
                 <div className="flex flex-col items-center justify-center sm:h-14  font-GT_Flexa w-4/5 p-6 md:w-fit text-sm max-w-prose text-left leading-8 text-gray-light">
                     <p className='w-full'>Contact me if you’ve got remote job opportunities, web development gigs, collaborations or you just want to say hello 👋</p>
-                    <p className='w-full'>
+                    <p className='hidden md:flex w-full'>
                         You can send me an <a href="mailto:reinetoyosii@gmail.com" className='text-mint font-bold'>email</a> if contact forms aren't your thing.
                     </p>
                 </div>

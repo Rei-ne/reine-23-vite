@@ -3,9 +3,11 @@ import NowPlaying from './NowPlaying'
 import Time from "./Time";
 import reine from '../assets/images/reine-img.png';
 import background from '../assets/images/Ellipse.png';
-
-
+import TypeWriter from "./TypeWriter";
+import "../styles/Hero.scss"
 function Hero() {
+    const text = "Software Developer, developing herself"
+
     return (
         <>
             <section id="hero" className="hero-section h-screen w-4/5 relative flex flex-col justify-center items-center md:justify-start">
@@ -19,19 +21,21 @@ function Hero() {
 
                 </div>
                 {/* REINE DEV headline */}
-                <div className="text-mint sm:h-18 sm:w-full relative flex  justify-center  items-center text-center md:h-auto md:py-10 lg:h-17 lg:mt-16 md:justify-between ">
-                    <div className="sm:w-full  flex flex-col justify-center items-center pt-2  md:m-0 z-10 font-normal sm:mt-20 sm:h-14 lg:z-0 md:h-full  md:justify-start md:mt-0 lg:gap-6">
-                        <div className="sm:w-full flex justify-center align-center sm:h-6  p-0 m-0">
-                            <h1 className="sm:w-80 max-w-lg object-contain font-Kaldera text-justify sm:text-3xl  md:text-3xl lg:text-4xl ">REINE</h1>
+                <div className="text-mint sm:h-18 sm:w-full relative flex  justify-center  items-center text-center md:h-fit md:py-10 lg:h-17 lg:mt-16 md:justify-between ">
+                    <div className="sm:w-full  flex flex-col justify-center items-center pt-2  md:m-0 z-10 font-normal sm:mt-20 sm:h-14 lg:z-0 md:h-fit  md:justify-start md:mt-0 lg:gap-6 lg:h-16">
+                        <div className="sm:w-full flex justify-center align-center sm:h-6  p-0 m-0 md:h-fit md:max-h-screen">
+                            <h1 className="sm:w-80 max-w-lg object-contain font-Kaldera text-justify sm:text-3xl  md:text-3xl lg:text-4xl">REINE</h1>
                         </div>
-                        <div className="sm:w-full flex  justify-center  sm:h-6  p-0 mt-1">
+                        <div className="sm:w-full flex  justify-center sm:h-6 md:h-fit p-0 mt-1">
                             <h1 className="sm:w-80 object-contain font-Kaldera text-justify sm:text-3xl md:text-3xl lg:text-4xl">DEV.</h1>
                         </div>
 
                     </div>
-                    <div className="absolute  bottom-0 sm:h-5 md:flex md:items-end max-w-prose p-2 leading-4 w-full lg:h-5 lg:mt-4">
-                        <p className="w-full  items-bottom font-GT_Flexa text-gray-light text-sm lg:text-1xl">
-                            Software Developer, developing herself...</p>
+                    <div className="absolute  bottom-0 sm:h-5 md:hidden lg:flex lg:items-end max-w-prose items-center justify-center p-2 leading-4 w-full lg:h-5 lg:mt-16">
+                        <span>
+                            <TypeWriter className="w-fit flex items-center justify-center font-GT_Flexa text-gray-light text-sm lg:text-1xl blinking-cursor" text={text} />
+                        </span>
+
                     </div>
                 </div>
             </section>
