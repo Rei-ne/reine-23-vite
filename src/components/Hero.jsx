@@ -4,7 +4,8 @@ import Time from "./Time";
 import reine from '../assets/images/reine-img.png';
 import background from '../assets/images/Ellipse.png';
 import TypeWriter from "./TypeWriter";
-import "../styles/Hero.scss"
+
+
 function Hero() {
     const text = "Software Developer, developing herself"
 
