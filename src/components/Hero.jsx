@@ -4,7 +4,7 @@ import Time from "./Time";
 import reine from '../assets/images/reine-img.png';
 import background from '../assets/images/Ellipse.png';
 import TypeWriter from "./TypeWriter";
-
+import '../styles/Hero.css';
 
 function Hero() {
     const text = "Software Developer, developing herself"
@@ -32,11 +32,10 @@ function Hero() {
                         </div>
 
                     </div>
-                    <div className="absolute  bottom-0 sm:h-5 md:hidden lg:flex lg:items-end max-w-prose items-center justify-center p-2 leading-4 w-full lg:h-5 lg:mt-16">
-                        <span>
-                            <TypeWriter className="w-fit flex items-center justify-center font-GT_Flexa text-gray-light text-sm lg:text-1xl blinking-cursor" text={text} />
+                    <div className="absolute bottom-0 sm:h-fit md:hidden flex lg:flex lg:items-end items-center justify-center p-2 leading-4 sm:w-fit lg:w-full lg:h-5 lg:mt-16">
+                        <span className="inline">
+                            <TypeWriter className="w-fit flex items-center justify-center font-GT_Flexa text-gray-light text-sm lg:text-1xl" text={text} />
                         </span>
-
                     </div>
                 </div>
             </section>

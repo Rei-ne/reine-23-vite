@@ -22,7 +22,7 @@ const TypeWriter = ({ text }) => {
   }, [currentText, text]);
 
 
-  return <div>{currentText}</div>
+  return <p className='blinking-cursor'>{currentText}</p>
 
 }
 
