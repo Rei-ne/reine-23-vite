@@ -28,20 +28,18 @@ function Contact() {
     };
 
     return (
-        <section className="font-GT_Flexa  mt-10 mb-10 flex flex-col md:flex-row md:flex-wrap justify-center  items-center h-screen relative" id="contact">
+        <section className="font-GT_Flexa  mt-10 mb-10 flex flex-col md:flex-row md:flex-wrap justify-center  items-center h-screen relative w-full" id="contact">
             <h2 className="font-Bebas_Neue sm:text-3xl md:text-3xl px-2 uppercase flex text-center justify-center items-center w-full">GET IN TOUCH</h2>
-            <div className='sm:hidden md:flex items-center justify-center w-1/2 h-16'>
-                {/* <img className="w-fit h-16" src={reine} alt="a picture of reine" /> */}
-            </div>
-            <div className='flex flex-col items-center justify-center md:justify-around h-auto w-4/5 md:w-1/2'>
-                <div className="flex flex-col items-center justify-center sm:h-10 h-12 font-GT_Flexa p-6 text-sm max-w-prose text-left leading-8 text-gray-light lg:max-w-md">
-                    <div className='flex items-center h-auto w-full justify-center text-left'>
-                        <p className='max-w-prose sm:leading-6 leading-8 text-gray-light sm:text-sm lg:text-base sm:text-center md:text-left' >Contact me if you’ve got remote job opportunities, web development gigs, collaborations or you just want to say hello 👋</p>
+
+            <div className='flex flex-col items-center justify-center md:justify-around h-auto w-4/5 '>
+                <div className="flex flex-col items-center justify-center sm:h-10 h-12 font-GT_Flexa p-6 text-sm w-4/5 max-w-prose text-left leading-8 text-gray-light ">
+                    <div className='inline items-center h-auto w-full justify-center text-center'>
+                        <p className='max-w-prose sm:leading-6 leading-8 text-gray-light sm:text-sm lg:text-base sm:text-center md:text-center' >Contact me if you’ve got remote job opportunities, web development gigs, collaborations or you just want to say hello 👋</p>
                     </div>
-                    <div className='sm:hidden md:inline items-center h-fit w-full md:h-auto justify-start text-left'>
+                    <div className='sm:hidden md:inline items-center h-fit w-full md:h-auto justify-start text-center'>
                         <p className='max-w-prose sm:hidden md:inline leading-8 text-gray-light sm:text-base lg:text-base' >You can send me an <a className='text-bold underline' href="mailto:reinetoyosii@gmail.com">
                             email
-                        </a> if contact forms aren't your thing</p>
+                        </a> if contact forms aren't your thing.</p>
                     </div>
                 </div>
                 <div className='md:hidden'>
@@ -53,7 +51,7 @@ function Contact() {
                     </button>
                 </div>
                 {/* contact form */}
-                <div className='sm:hidden md:flex max-w-md w-full h-fit bg-gray-200 mt-6 relative'>
+                <div className='sm:hidden md:flex md:max-w-md  w-full h-fit bg-gray-200 mt-6 relative'>
                     <form className="font-GT_Flexa text-gray-light md:w-4/5 max-h-md flex flex-col justify-center  bg-inherit rounded shadow mx-auto" onSubmit={handleSubmit}>
                         <div className='w-full pr-8'>
                             <div className="styled-input">

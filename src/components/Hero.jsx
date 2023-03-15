@@ -11,7 +11,7 @@ function Hero() {
 
     return (
         <>
-            <section id="hero" className="hero-section h-screen w-4/5 relative flex flex-col justify-center items-center md:justify-start">
+            <section id="hero" className="hero-section h-screen w-4/5 relative flex flex-col justify-center items-center md:justify-center lg:justify-start">
                 {/* mobile hero img */}
                 <div className="absolute inset-x-0 w-full h-18 mt-16 md:hidden lg:hidden">
                     <div className="relative flex justify-center content-center w-full h-16">
@@ -22,7 +22,7 @@ function Hero() {
 
                 </div>
                 {/* REINE DEV headline */}
-                <div className="text-mint sm:h-18 sm:w-full relative flex  justify-center  items-center text-center md:h-auto md:py-10 lg:h-17 lg:mt-16 md:justify-between ">
+                <div className="text-mint sm:h-18 sm:w-full relative flex  justify-center  items-center text-center md:h-16 md:py-10 lg:h-17 lg:mt-16 md:justify-between ">
                     <div className="sm:w-full  flex flex-col justify-center items-center pt-2  md:m-0 z-10 font-normal sm:mt-20 sm:h-14 lg:z-0 md:h-fit  md:justify-start md:mt-0 lg:gap-6 lg:h-16">
                         <div className="sm:w-full flex justify-center align-center sm:h-6  p-0 m-0 md:h-fit md:max-h-screen">
                             <h1 className="sm:w-80 max-w-lg object-contain font-Kaldera text-justify sm:text-3xl  md:text-3xl lg:text-4xl">REINE</h1>

@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 
 import { useLocation } from 'react-router-dom';
 import arrowIcon from '../assets/icons/Nav-Arrow_1.png'
+import Footer from '../components/Footer';
 
 
 const Home = () => {
@@ -48,7 +49,7 @@ const Home = () => {
                     </div>
                 )
                 }
-
+                <Footer />
 
             </div>
 

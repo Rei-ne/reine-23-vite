@@ -23,7 +23,7 @@ const icons = [
 
 const Project = ({ title, description, category, liveLink, githubLink }) => {
     return (
-        <div className='px-6 py-4 font-Kaldera relative text-center md:h-14 h-full w-4/5 lg:w-full sm:border   my-1 border-gray flex flex-col justify-between items-start'>
+        <div className='px-6 py-4 font-Kaldera relative text-center md:h-14 h-full w-4/5 lg:w-full sm:border   my-1 lg:my-0 border-gray flex flex-col justify-between items-start'>
 
             <div className="md:pl-4 md:flex md:flex-col md:justify-around md:w-3/5 lg:w-3/5 lg:ml-32 border-mint md:h-full lg:flex-col">
                 {/* text */}
