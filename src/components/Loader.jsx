@@ -1,19 +1,48 @@
-import React from 'react'
 import '../styles/Loader.scss'
-
+import { React, useState, useEffect } from "react";
+import gsap from "gsap";
+import TypeWriter from './TypeWriter';
 
 const Loader = () => {
-    return (
-        <div className='loader border h-screen bg-black text-mint'>
 
-            <div className="sm:w-full flex justify-center align-center sm:h-6 md:h-10 p-0 m-0 ">
-                <h2 className="sm:w-80 object-contain font-GT_Flexa text-center text-3xl">REINE IS COOKING...</h2>
+
+    const [loadInterval, setLoadInterval] = useState(null);
+    const text = "REINE IS COOKING..."
+    useEffect(() => {
+
+        const num = document.querySelector("#number");
+        let c = 0;
+        const interval = setInterval(() => {
+
+            num.innerHTML = c + "%";
+            c++;
+            if (c === 101) {
+                clearInterval(interval);
+                gsap.to(".loading__box", {
+                    duration: 1,
+                    opacity: 0,
+                })
+                gsap.to(".loading", {
+                    duration: 1,
+                    display: "none",
+                })
+                setLoadInterval(null);
+
+            }
+        }, 40);
+        setLoadInterval(interval);
+    }, []);
+
+    return (
+        <div id="loader" className='h-screen bg-black  text-mint flex justify-center w-full items-center relative'>
+            <div className='loading flex flex-col  justify-center h-full w-full items-center '>
+                <div className="w-full flex justify-center items-center sm:h-6 md:h-10 p-0 m-0 text-mint">
+                    <TypeWriter className="sm:w-80 object-contain font-GT_Flexa text-center sm:text-2xl text-3xl" text={text} />
+
+                </div>
             </div>
-            <div className="sm:w-full flex  justify-center align-center sm:h-6 md:h-10 p-0 mt-1">
-                <h2 className="sm:w-80 object-contain font-GT_Flexa text-center text-3xl">ARE YOU READY?</h2>
-            </div>
-            <div className='font-Kaldera'>
-                <h1>100%</h1>
+            <div className='loading__counter font-Kaldera h-fit w-fit flex items-center justify-center absolute right-0 bottom-0'>
+                <div id='number' className="h-fit w-full text-3xl loading__counter--number " data-interval={loadInterval}>0%</div>
             </div>
         </div>
     )

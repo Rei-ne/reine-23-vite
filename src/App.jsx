@@ -1,33 +1,45 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 // import { ScrollToTop } from './Components/ScrollToTop';
 // import {
 //   BrowserRouter,
 //   Routes,
 //   Route,
 // } from "react-router-dom";
-
+import { useEffect } from "react";
+import { useRef } from "react";
 import Homepage from "./pages/Homepage"
 import './App.css';
 import Navbar from './components/Navbar';
-import Footer from "./components/Footer";
+import Loader from './components/Loader';
 
 function App() {
 
+  const [loading, setLoading] = useState(true);
 
+  {
+    setTimeout(() => {
+      setLoading(false)
+    }, 4500)
+  }
   return (
-    <div>
-      {/* <BrowserRouter> */}
-      {/* <ScrollToTop /> */}
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div >
+          {/* <BrowserRouter> */}
+          {/* <ScrollToTop /> */}
 
-      <Navbar />
-      {/* <Routes>
+          <Navbar />
+          {/* <Routes>
           <Route path="/" element={} />
-        </Routes> */}
-      <Homepage />
-      <Footer />
-      {/* </BrowserRouter> */}
+          </Routes> */}
+          <Homepage />
+          {/* </BrowserRouter> */}
 
-    </div>
+        </div>
+      )}
+    </>
   )
 }
 
