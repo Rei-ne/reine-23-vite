@@ -11,7 +11,7 @@
   -moz-animation: 1s blink step-end infinite;
   -ms-animation: 1s blink step-end infinite;
   -o-animation: 1s blink step-end infinite;
-  animation: 1s blink steps(2) infinite;
+  animation: 1s blink step-end infinite;
 }
 
 @keyframes blink {

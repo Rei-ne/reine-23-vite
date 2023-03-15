@@ -10,10 +10,10 @@ const Navbar = () => {
             {/* desktop nav --- tab and big screens */}
             <nav className="sm:hidden md:flex h-2 lg:flex md:items-center md:justify-end font-GT_Flexa bg-black px-10 py-10  w-full text-sm text-mint gap-5 ">
                 <div className="flex font-light h-2 px-10 py-5 justify-around items-center w-2/5 ">
-                    <AnchorLink href="#hero" className='tracking-wide text-left text-mint p-2 no-underline'>HOME</AnchorLink>
-                    <AnchorLink href="#about" className='tracking-wide text-left p-2 no-underline' >ABOUT</AnchorLink>
-                    <AnchorLink href="#work" className='tracking-wide p-2 text-left no-underline'>WORKS</AnchorLink>
-                    <AnchorLink href="#contact" className='tracking-wide p-2 text-left no-underline' >CONTACT</AnchorLink>
+                    <AnchorLink href="#hero" className='tracking-wide text-left text-mint p-2 no-underline hover:underline hover:font-bold'>HOME</AnchorLink>
+                    <AnchorLink href="#about" className='tracking-wide text-left p-2 no-underline hover:underline hover:font-bold' >ABOUT</AnchorLink>
+                    <AnchorLink href="#work" className='tracking-wide p-2 text-left no-underline hover:underline hover:font-bold'>WORKS</AnchorLink>
+                    <AnchorLink href="#contact" className='tracking-wide p-2 text-left no-underline hover:underline hover:font-bold' >CONTACT</AnchorLink>
                 </div>
 
             </nav>
