@@ -43,7 +43,7 @@ const Home = () => {
 
                 {/* scroll to top button */}
                 {showButton && (
-                    <div className='sm:hidden border md:flex fixed bottom-0 right-0 mr-12 mb-10 bg-black  z-50 border-mint h-6 w-6 '>
+                    <div className='sm:hidden border md:flex fixed bottom-0 right-0 mr-12 mb-10 bg-black  z-50 border-mint h-4 w-4 '>
                         <img className=' h-full w-fit rotate-90 cursor-pointer p-2 hover:bg-gray-dark' src={arrowIcon} alt="scrollToTop" onClick={handleScrollToTop} />
                     </div>
                 )

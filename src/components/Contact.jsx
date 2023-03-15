@@ -1,7 +1,6 @@
 import React from 'react'
-import reine from '../assets/images/reine-img.png'
 import { useState } from 'react'
-
+import arrow from '../assets/icons/Nav-Arrow_1.png'
 import '../styles/Contact.scss';
 
 function Contact() {
@@ -31,8 +30,8 @@ function Contact() {
     return (
         <section className="font-GT_Flexa  mt-10 mb-10 flex flex-col md:flex-row md:flex-wrap justify-center  items-center h-screen relative" id="contact">
             <h2 className="font-Bebas_Neue sm:text-3xl md:text-3xl px-2 uppercase flex text-center justify-center items-center w-full">GET IN TOUCH</h2>
-            <div className='sm:hidden md:flex items-center justify-center w-1/2 h-auto'>
-                <img className="flex items-center justify-center" src={reine} alt="a picture of reine" />
+            <div className='sm:hidden md:flex items-center justify-center w-1/2 h-16'>
+                {/* <img className="w-fit h-16" src={reine} alt="a picture of reine" /> */}
             </div>
             <div className='flex flex-col items-center justify-center md:justify-around h-auto w-4/5 md:w-1/2'>
                 <div className="flex flex-col items-center justify-center sm:h-10 h-12 font-GT_Flexa p-6 text-sm max-w-prose text-left leading-8 text-gray-light lg:max-w-md">
@@ -54,35 +53,36 @@ function Contact() {
                     </button>
                 </div>
                 {/* contact form */}
-                <div className='sm:hidden md:flex max-w-md w-full h-fit bg-gray-200 mt-6'>
-                    <form className="font-GT_Flexa text-gray-light md:w-4/5  max-h-md flex flex-col bg-inherit rounded shadow mx-auto" onSubmit={handleSubmit}>
-                        <div className="styled-input">
-                            <input type="text" required value={name}
-                                onChange={e => setName(e.target.value)} />
-                            <label>Name</label>
-                            <span></span> </div>
-                        <div className="styled-input">
-                            <input required value={email}
-                                onChange={e => setEmail(e.target.value)} />
-                            <label>Email</label>
-                            <span></span> </div>
-                        {/* <div className="styled-input">
-                            <input type="email" required value={email}
-                                onChange={e => setEmail(e.target.value)} />
-                            <label>Email</label>
-                            <span></span></div> */}
-                        <div className="styled-input wide">
-                            <textarea required rows="3" cols="12" value={message} onChange={handleChange}
-                                onClick={resetTextArea}></textarea>
-                            <label>Message</label>
-                            <span></span> </div>
+                <div className='sm:hidden md:flex max-w-md w-full h-fit bg-gray-200 mt-6 relative'>
+                    <form className="font-GT_Flexa text-gray-light md:w-4/5 max-h-md flex flex-col justify-center  bg-inherit rounded shadow mx-auto" onSubmit={handleSubmit}>
+                        <div className='w-full pr-8'>
+                            <div className="styled-input">
+                                <input type="text" required value={name}
+                                    onChange={e => setName(e.target.value)} />
+                                <label>Name</label>
+                                <span></span> </div>
+                            <div className="styled-input">
+                                <input required value={email}
+                                    onChange={e => setEmail(e.target.value)} />
+                                <label>Email</label>
+                                <span></span> </div>
+                            <div className="styled-input wide">
+                                <textarea required rows="3" cols="12" value={message} onChange={handleChange}
+                                    onClick={resetTextArea}></textarea>
+                                <label>Message</label>
+                                <span></span> </div>
+                        </div>
+                        <div className='w-1/5 h-full absolute right-0  bottom-2 flex flex-row items-center justify-evenly'>
+                            <button
+                                type="submit"
+                                className=" text-2xl flex flex-row font-bold w-fit items-center justify-center h-fit transform -rotate-90"
+                            >
+                                Shoot!
+                                <img src={arrow} alt="arrow-icon"
+                                    className='h-4 transform rotate-90' />
+                            </button>
+                        </div>
 
-                        <button
-                            type="submit"
-                            className=""
-                        >
-                            Submit
-                        </button>
                     </form>
 
 
