@@ -45,6 +45,7 @@ module.exports = {
       'gray': '#8492a6',
       'gray-200': '#121212',
       'white': '#ffffff',
+      'footer': '#656564',
       'gray-light': '#d3dce6',
     },
     fontFamily: {

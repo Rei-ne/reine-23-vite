@@ -9,6 +9,7 @@
 import Homepage from "./pages/Homepage"
 import './App.css';
 import Navbar from './components/Navbar';
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={} />
         </Routes> */}
       <Homepage />
+      <Footer />
       {/* </BrowserRouter> */}
 
     </div>
