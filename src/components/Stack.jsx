@@ -55,7 +55,7 @@ const Stack = () => {
 
             {icons.map(icon => (
 
-                <div className='h-7 w-7 border border-mint flex flex-col justify-between items-center' key={icon.id}>
+                <div className='h-7 w-7 border border-mint flex flex-col justify-between items-center hover:bg-gray-dark' key={icon.id}>
                     <img className='p-2 h-4 mt-2' src={icon.image} />
                     <p className='font-GT_Flexa text-base p-2'>{icon.title}</p>
                 </div>

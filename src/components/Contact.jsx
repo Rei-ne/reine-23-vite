@@ -33,7 +33,7 @@ const Contact = () => {
             <div className='sm:hidden md:flex items-center justify-center w-1/2 h-full'>
                 <img className="" src={reine} alt="a picture of reine" />
             </div>
-            <div className='flex flex-col items-center justify-around md:border h-full border-mint md:w-1/2'>
+            <div className='flex flex-col items-center justify-around lg:justify-center h-full md:w-1/2'>
                 <div className="flex flex-col items-center justify-center h-14  font-GT_Flexa w-4/5 p-6 md:w-full  text-sm max-w-prose text-left leading-8 text-gray-light">
                     <div className='flex items-center h-fit md:w-fit md:h-auto justify-start text-left w-4/5'>
                         <p className='max-w-prose sm:leading-6 leading-8 text-gray-light sm:text-base md:text-base' >Contact me if you’ve got remote job opportunities, web development gigs, collaborations or you just want to say hello 👋</p>
