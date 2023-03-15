@@ -32,8 +32,8 @@ function Contact() {
             <h2 className="font-Bebas_Neue sm:text-3xl md:text-3xl px-2 uppercase flex text-center justify-center items-center w-full">GET IN TOUCH</h2>
 
             <div className='flex flex-col items-center justify-center md:justify-around h-auto w-4/5 '>
-                <div className="flex flex-col items-center justify-center sm:h-10 h-12 font-GT_Flexa p-6 text-sm w-4/5 max-w-prose text-left leading-8 text-gray-light ">
-                    <div className='inline items-center h-auto w-full justify-center text-center'>
+                <div className="flex flex-col items-center justify-center sm:h-10 h-12 font-GT_Flexa p-6 text-sm w-full max-w-prose text-left leading-8 text-gray-light ">
+                    <div className='inline items-center h-auto w-fulljustify-center text-center'>
                         <p className='max-w-prose sm:leading-6 leading-8 text-gray-light sm:text-sm lg:text-base sm:text-center md:text-center' >Contact me if you’ve got remote job opportunities, web development gigs, collaborations or you just want to say hello 👋</p>
                     </div>
                     <div className='sm:hidden md:inline items-center h-fit w-full md:h-auto justify-start text-center'>

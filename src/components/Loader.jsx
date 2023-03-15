@@ -4,7 +4,7 @@ import '../styles/Loader.scss'
 
 const Loader = () => {
     return (
-        <div className='loader border'>
+        <div className='loader border h-screen bg-black text-mint'>
 
             <div className="sm:w-full flex justify-center align-center sm:h-6 md:h-10 p-0 m-0 ">
                 <h2 className="sm:w-80 object-contain font-GT_Flexa text-center text-3xl">REINE IS COOKING...</h2>

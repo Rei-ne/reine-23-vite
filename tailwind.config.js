@@ -50,7 +50,7 @@ module.exports = {
     },
     fontFamily: {
       Kaldera: ['Kaldera', 'sans-serif'],
-      GT_Flexa: ['GT-Flexa', 'serif'],
+      GT_Flexa: ['GT-Flexa', 'sans-serif'],
       Bebas_Neue: ['Bebas Neue', 'cursive'],
     },
     fontSize: {
