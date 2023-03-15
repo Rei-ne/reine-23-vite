@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className="hidden bg-black flex items-center justify-center uppercase">
+        <div className="hidden bg-black items-center justify-center uppercase">
             <div>
                 <h3 className='font-GT_Flexa text-mint'>let's connect</h3>
                 <div className='flex items-center justify-center text-footer'>
