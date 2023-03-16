@@ -2,12 +2,26 @@ import React from 'react'
 import { useState } from 'react'
 import arrow from '../assets/icons/Nav-Arrow_1.png'
 import '../styles/Contact.scss';
+// import validator from 'validator'
 
 function Contact() {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
+    // const [emailError, setEmailError] = useState('')
+    // const validateEmail = (e) => {
+    //     setEmail(e.target.value)
+
+    //     if (validator.isEmail(email)) {
+    //         setEmailError('Valid Email :)')
+
+
+    //     } else {
+    //         setEmailError('Enter valid Email!')
+    //     }
+    // }
+
 
     const handleSubmit = (event) => {
         event.preventDefault();

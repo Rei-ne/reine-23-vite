@@ -2,7 +2,7 @@
   "name": "portfolio-23",
   "private": true,
   "version": "0.0.0",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,13 +10,16 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.13",
+    "dotenv": "^16.0.3",
     "gsap": "^3.11.4",
+    "node-fetch": "^3.3.1",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.2",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "validator": "^13.9.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
