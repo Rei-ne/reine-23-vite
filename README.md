@@ -1,4 +1,4 @@
-# reine-23-vite
+# (reine-dev) portfolio website for 2023 
 
 This website is made with vite.js and tailwind css
 
