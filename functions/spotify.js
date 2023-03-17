@@ -41,7 +41,7 @@ exports.handler = async (event, context) => {
             Authorization: `Bearer ${accessToken}`,
         },
     })
-        .then((res) => res.json())
+        .then((res) => (res.json()))
         .then(({ items }) => {
             // Let's do a little more destructuring assignment to take only what we need from the response
             const {
@@ -50,6 +50,7 @@ exports.handler = async (event, context) => {
                 external_urls: urls,
                 album,
             } = items[0].track;
+            console.log(items);
             // We want to keep the array of artists in case there's a track feature, etc.
             const simplifiedArtists = artistsArray.map((artist) => ({
                 name: artist.name,
