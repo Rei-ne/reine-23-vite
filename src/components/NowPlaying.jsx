@@ -21,18 +21,22 @@ const NowPlaying = (props) => {
     });
     return (
         <div className='flex p-2
-         w-fit text-gray uppercase'>
+         w-fit text-gray uppercase text-base'>
             <img className=' p-1 object-contain h-full' src={spotify} alt="" />
 
-            {loading ? <p className="font-GT_Flexa px-1 text-base text-left uppercase">Loading...</p>
+            {loading ? <div className='flex p-2
+         w-fit text-gray uppercase text-base'>
+                <p className="font-GT_Flexa px-1 text-base text-left uppercase">Loading...</p>
+            </div>
                 :
 
-                <div>{result.isPlaying ?
-                    <div className='spotify h-full flex justify-center items-center text-sm '>
-                        <a className="font-GT_Flexa px-1 text-base text-left uppercase" href={result.songUrl} target="_blank">{result.title}</a>
-                        <p className="font-GT_Flexa px-1 text-base text-left uppercase">{result.artist}</p>
+                <div className='flex p-2
+         w-fit text-gray uppercase text-base'>{result.isPlaying ?
+                        <div className='spotify h-full flex justify-center items-center text-sm '>
+                            <a className="font-GT_Flexa px-1 text-base text-left uppercase" href={result.songUrl} target="_blank">{result.title}</a>
+                            <p className="font-GT_Flexa px-1 text-base text-left uppercase">{result.artist}</p>
 
-                    </div> : "Currently offline"}
+                        </div> : "Currently offline"}
 
                 </div>
             }
