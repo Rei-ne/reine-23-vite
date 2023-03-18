@@ -8,6 +8,7 @@ import { useState } from 'react'
 import { useEffect } from "react";
 import { useRef } from "react";
 import Homepage from "./pages/Homepage"
+
 import './App.css';
 import Navbar from './components/Navbar';
 import Loader from './components/Loader';
