@@ -22,7 +22,7 @@ const TypeWriter = ({ text }) => {
   }, [currentText, text]);
 
 
-  return <p className='text-base lg:text-1xl blinking-cursor font-GT_Flexa'>{currentText}</p>
+  return <p className='text-base font-PPNeueMontreal tracking-wider lg:text-1xl blinking-cursor '>{currentText}</p>
 
 }
 

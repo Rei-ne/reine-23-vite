@@ -55,7 +55,7 @@ const Work = () => {
         <section id="work" className='h-fit w-full about-div mt-20 flex flex-col justify-center items-center'>
             <h2 className="sm:text-3xl md:text-3xl uppercase flex justify-center items-center font-Bebas_Neue">PROJECTS</h2>
             <div className="sm:w-4/5 md:w-4/5 ">
-                <p className='md:hidden text-gray-light font-GT_Flexa p-6  text-justify text-sm max-w-prose leading-8'>
+                <p className='hidden text-gray-light font-GT_Flexa p-6  text-justify text-sm max-w-prose leading-8'>
                     In order to put my skills to test, I build projects that expand and go beyond my current knowledge.
                     <br /> I love to investigate new technologies and try new things.
                 </p>
@@ -69,8 +69,8 @@ const Work = () => {
             </div>
 
             <div className="sm:w-4/5">
-                <p className='text-gray-light font-GT_Flexa p-6 md:w-fit  text-sm max-w-prose leading-8'>
-                    My resume and other projects are available on <a className='text-mint font-bold' href="https://github.com/Rei-ne" target='_blank' >github</a>. You can also follow my journey on  <a className='text-mint font-bold' href="https://www.linkedin.com/in/toyosi-odukale/" target='_blank'>linkedin</a> and <a className='text-mint font-bold' href="https://reine.hashnode.dev/" target='_blank' >hashnode.</a>
+                <p className='tracking-wider text-gray-light font-PPNeueMontreal p-6 md:w-fit  text-sm max-w-prose leading-8'>
+                    My resume and other projects are available on <a className='text-mint font-bold' href="https://github.com/Rei-ne" target='_blank' >github</a>. Connect with me on  <a className='text-mint font-bold' href="https://www.linkedin.com/in/toyosi-odukale/" target='_blank'>linkedin</a> and <a className='text-mint font-bold' href="https://reine.hashnode.dev/" target='_blank' >hashnode</a> where I write about my experiences.
                 </p>
             </div>
 

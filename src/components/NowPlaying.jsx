@@ -1,5 +1,5 @@
 import React from 'react'
-import spotify from '../assets/images/Vector.png'
+import spotify from '../assets/icons/spotifyLogo.svg'
 import { useEffect, useState } from 'react'
 import getNowPlayingItem from '../spotify/SpotifyAPI'
 
@@ -20,21 +20,24 @@ const NowPlaying = (props) => {
         });
     });
     return (
-        <div className='flex p-2
-         w-fit text-gray uppercase text-base'>
-            <img className=' p-1 object-contain h-full' src={spotify} alt="" />
+        <div className='flex
+         w-fit text-gray items-center justify-center uppercase text-base'>
+            <img className='w-fit p-1 object-contain h-2 md:h-fit' src={spotify} alt="" />
 
             {loading ? <div className='flex p-2
          w-fit text-gray uppercase text-base'>
-                <p className="font-GT_Flexa px-1 text-base text-left uppercase">Loading...</p>
+                <p className="font-PPNeueMontreal tracking-wider px-1 text-base text-left uppercase">Loading...</p>
             </div>
                 :
 
                 <div className='flex p-2
          w-fit text-gray uppercase text-base'>{result.isPlaying ?
-                        <div className='spotify h-full flex justify-center items-center text-sm '>
-                            <a className="font-GT_Flexa px-1 text-base text-left uppercase" href={result.songUrl} target="_blank">{result.title}</a>
-                            <p className="font-GT_Flexa px-1 text-base text-left uppercase">{result.artist}</p>
+                        <div className='spotify  w-fit  h-fit py-2 flex flex-col md:flex-row justify-start items-start md:justify-center md:items-center text-sm text-left '>
+                            <div className='flex items-center justify-center tracking-wider'>
+                                <a className="font-PPNeueMontreal px-1 text-xs md:text-base text-left uppercase" href={result.songUrl} target="_blank">{result.title}</a>
+                            </div>
+                            <div>                            <p className="font-PPNeueMontreal px-1 text-xs md:text-base text-left uppercase">{result.artist}</p></div>
+
 
                         </div> : "Currently offline"}
 

@@ -18,12 +18,12 @@ const Time = () => {
         <div className='flex items-center justify-center w-20 gap-1'> <span className='font-GT_Flexa text-base'>
             [
         </span>
-            <p className='font-GT_Flexa text-base'> {date.toLocaleTimeString('en-US', {
+            <p className='font-PPNeueMontreal tracking-wider text-base'> {date.toLocaleTimeString('en-US', {
 
                 timeStyle: 'short',
                 hour12: false,
             })}</p>
-            <span className='font-GT_Flexa text-base'>
+            <span className='font-PPNeueMontreal tracking-wider text-base'>
                 ]
             </span>
 

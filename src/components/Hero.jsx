@@ -22,7 +22,7 @@ function Hero() {
 
                 </div>
                 {/* REINE DEV headline */}
-                <div className="text-mint sm:h-18 sm:w-full relative flex  justify-center  items-center text-center md:h-16 md:py-10 lg:h-17 lg:mt-16 md:justify-between ">
+                <div className="text-mint sm:h-18 sm:w-full relative flex  justify-center  items-center text-center md:h-16 md:py-10 lg:h-17 lg:mt-16 md:justify-between m-auto">
                     <div className="sm:w-full  flex flex-col justify-center items-center pt-2  md:m-0 z-10 font-normal sm:mt-20 sm:h-14 lg:z-0 md:h-fit  md:justify-start md:mt-0 lg:gap-6 lg:h-16">
                         <div className="sm:w-full flex justify-center align-center sm:h-6  p-0 m-0 md:h-fit md:max-h-screen">
                             <h1 className="sm:w-80 max-w-lg object-contain font-Kaldera text-justify sm:text-3xl  md:text-3xl lg:text-4xl">REINE</h1>
@@ -32,9 +32,9 @@ function Hero() {
                         </div>
 
                     </div>
-                    <div className="absolute bottom-0 sm:h-fit md:hidden flex lg:flex lg:items-end items-center justify-center p-2 leading-4 sm:w-fit lg:w-full lg:h-5 lg:mt-16">
+                    <div className="absolute bottom-0 sm:h-fit md:hidden flex lg:flex lg:items-end items-center justify-center p-2 leading-4 sm:w-full lg:w-full lg:h-5 lg:mt-16">
                         <span className="inline">
-                            <TypeWriter className="w-fit flex items-center justify-center font-GT_Flexa text-gray-light text-sm lg:text-1xl" text={text} />
+                            <TypeWriter className="w-full flex items-center justify-center font-PPNeueMontreal text-gray-light text-sm lg:text-1xl" text={text} />
                         </span>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ function Hero() {
                 <NowPlaying />
                 <div className="flex flex-row gap-2">
                     <Time />
-                    <div className="font-GT_Flexa uppercase text-gray text-base">
+                    <div className="font-PPNeueMontreal tracking-wider uppercase text-gray text-base">
                         <p>Lagos, NG</p>
                     </div>
                 </div>

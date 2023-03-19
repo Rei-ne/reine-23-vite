@@ -1,7 +1,7 @@
 import React from 'react'
-import ethers from '../assets/icons/logos_ethers.png';
+import ethers from '../assets/icons/logos_ethers.svg';
 import reactImg from '../assets/icons/akar-icons_react-fill.png';
-import github from '../assets/icons/akar-icons_github-fill.png';
+import github from '../assets/icons/mdi_github.svg';
 import javascript from '../assets/icons/akar-icons_javascript-fill.png';
 import solidity from '../assets/icons/file-icons_solidity.png';
 import python from '../assets/icons/akar-icons_python-fill.png';
@@ -57,7 +57,7 @@ const Stack = () => {
 
                 <div className='h-7 w-7 border border-mint flex flex-col justify-between items-center hover:bg-gray-dark' key={icon.id}>
                     <img className='p-2 h-4 mt-2' src={icon.image} />
-                    <p className='font-GT_Flexa text-base p-2'>{icon.title}</p>
+                    <p className='tracking-wider font-PPNeueMontreal text-base p-2'>{icon.title}</p>
                 </div>
             ))}
 

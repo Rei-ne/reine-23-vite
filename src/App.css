@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 @tailwind base;
 
@@ -6,39 +6,55 @@
 
 @tailwind utilities;
 
-
-
 @font-face {
   font-family: "GT-Flexa-Bold";
-  src: url("./assets/fonts/GT-Flexa/GT-Flexa-Mono-Bold-Trial.otf") format("opentype");
+  src: url("./assets/fonts/GT-Flexa/GT-Flexa-Mono-Bold-Trial.otf")
+    format("opentype");
   font-weight: bold;
-  }
+}
 @font-face {
-      font-family: "GT-Flexa";
-      src: url("./assets/fonts/GT-Flexa/GT-Flexa-Mono-Light-Trial.otf") format("opentype");
-      font-weight: light;
-      }
+  font-family: "GT-Flexa";
+  src: url("./assets/fonts/GT-Flexa/GT-Flexa-Mono-Light-Trial.otf")
+    format("opentype");
+  font-weight: light;
+}
 @font-face {
-          font-family: "GT-Flexa-Itals";
-          src: url("./assets/fonts/GT-Flexa/GT-Flexa-Mono-Regular-Italic-Trial.otf") format("opentype");
-          font-weight: normal;
-          }
+  font-family: "GT-Flexa-Itals";
+  src: url("./assets/fonts/GT-Flexa/GT-Flexa-Mono-Regular-Italic-Trial.otf")
+    format("opentype");
+  font-weight: normal;
+}
 @font-face {
-              font-family: "Kaldera";
-              src: url("./assets/fonts/Kaldera/Kaldera.otf") format("opentype");
-              font-weight: bold;
-              }
+  font-family: "Kaldera";
+  src: url("./assets/fonts/Kaldera/Kaldera.otf") format("opentype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "PPNeueMontreal_bold";
+  src: url("./assets/fonts/PPNeueMontreal/PPNeueMontreal-Bold.otf")
+    format("opentype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("./assets/fonts/PPNeueMontreal/PPNeueMontreal-Regular.otf")
+    format("opentype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "PPNeueMontreal_light";
+  src: url("./assets/fonts/PPNeueMontreal/PPNeueMontreal-Light.otf")
+    format("opentype");
+  font-weight: light;
+}
 
-
-a{
+a {
   text-decoration: underline;
   color: #dbfff8;
 }
 
-div .grayscale{
-
+div .grayscale {
   filter: saturate(0);
-
 }
 /* Scroll bar */
 /* width */
@@ -62,10 +78,7 @@ div .grayscale{
 }
 
 body {
-
-background-color: black;
+  background-color: black;
   margin: 0;
   padding: 0;
-
 }
-

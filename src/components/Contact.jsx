@@ -42,11 +42,11 @@ function Contact() {
     };
 
     return (
-        <section className="font-GT_Flexa  mt-10 mb-10 flex flex-col md:flex-row md:flex-wrap justify-center  items-center h-screen relative w-full" id="contact">
+        <section className="font-PPNeueMontreal tracking-wider  mt-10 mb-10 flex flex-col md:flex-row md:flex-wrap justify-center  items-center h-screen relative w-full" id="contact">
             <h2 className="font-Bebas_Neue sm:text-3xl md:text-3xl px-2 uppercase flex text-center justify-center items-center w-full">GET IN TOUCH</h2>
 
             <div className='flex flex-col items-center justify-center md:justify-around h-auto w-4/5 '>
-                <div className="flex flex-col items-center justify-center sm:h-10 h-12 font-GT_Flexa p-6 text-sm w-full max-w-prose text-left leading-8 text-gray-light ">
+                <div className="flex flex-col items-center justify-center sm:h-10 h-12 font-PPNeueMontreal tracking-wider p-6 text-sm w-full max-w-prose text-left leading-8 text-gray-light ">
                     <div className='inline items-center h-auto w-fulljustify-center text-center'>
                         <p className='max-w-prose sm:leading-6 leading-8 text-gray-light sm:text-sm lg:text-base sm:text-center md:text-center' >Contact me if you’ve got remote job opportunities, web development gigs, collaborations or you just want to say hello 👋</p>
                     </div>
@@ -57,7 +57,7 @@ function Contact() {
                     </div>
                 </div>
                 <div className='md:hidden'>
-                    <button className='font-GT_Flexa uppercase border border-mint rounded-full w-10 h-5'>
+                    <button className='font-PPNeueMontreal tracking-wider uppercase border border-mint rounded-full w-10 h-5'>
                         <a className='no-underline' href="mailto:reinetoyosii@gmail.com">
                             send a mail
                         </a>
@@ -66,7 +66,7 @@ function Contact() {
                 </div>
                 {/* contact form */}
                 <div className='sm:hidden md:flex md:max-w-md  w-full h-fit bg-gray-200 mt-6 relative'>
-                    <form className="font-GT_Flexa text-gray-light md:w-4/5 max-h-md flex flex-col justify-center  bg-inherit rounded shadow mx-auto" onSubmit={handleSubmit}>
+                    <form className="font-PPNeueMontreal tracking-wider text-gray-light md:w-4/5 max-h-md flex flex-col justify-center  bg-inherit rounded shadow mx-auto" onSubmit={handleSubmit}>
                         <div className='w-full pr-8'>
                             <div className="styled-input">
                                 <input type="text" required value={name}
