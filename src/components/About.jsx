@@ -10,8 +10,8 @@ function About() {
         <section id="about" className="h-full sm:w-4/5 w-full mt-10 flex flex-col justify-center items-center">
             <h2 className="sm:text-3xl md:text-3xl uppercase flex justify-center items-center font-Bebas_Neue">About me</h2>
             <div className="w-full text-gray-light md:flex flex-wrap md:flex-col lg:flex-row md:justify-around md:items-center md:h-4/5 lg:h-full">
-                <div className="font-PPNeueMontreal p-6 md:w-fit lg:w-1/3 w-full text-sm max-w-prose leading-8 left-about h-full flex flex-col items-center justify-evenly tracking-wider">
-                    <div className="h-2/6">
+                <div className="font-PPNeueMontreal p-6 md:w-fit lg:w-1/3 w-full text-sm max-w-prose leading-8 left-about h-full flex flex-col items-center justify-evenly tracking-wider ">
+                    <div className="">
                         <p className="my-2">Hello there 👋, my name is Toyosi Odukale (REINE), and I am constantly evolving.</p>
                     </div>
                     <div>
@@ -20,12 +20,9 @@ function About() {
                     <div>
                         <p className="my-2">My first dive into web development was in August 2021, when I decided to transition from banking application support, to take time out and give this new found interest all my attention. </p>
                     </div>
-
-
-
                 </div>
                 <div className="hidden lg:flex font-PPNeueMontreal p-6  flex-col justify-center items-center h-full md:w-1/3">
-                    <img className="bg-black grayscale text-gray w-fit object-contain md:h-full" src={aboutImg} alt="about reine dev" />
+                    <img className="bg-black grayscale text-gray w-fit object-contain md:h-full w-full" src={aboutImg} alt="about reine dev" />
 
                 </div>
                 <div className="font-PPNeueMontreal p-6 md:w-fit lg:w-1/3 w-full text-sm max-w-prose leading-8 left-about h-full flex flex-col items-center justify-evenly tracking-wider">
