@@ -2,35 +2,27 @@ import React from 'react'
 import { useState } from 'react'
 import arrow from '../assets/icons/Nav-Arrow_1.png'
 import '../styles/Contact.scss';
-// import validator from 'validator'
+import validator from 'validator'
 
 function Contact() {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
-    // const [emailError, setEmailError] = useState('')
-    // const validateEmail = (e) => {
-    //     setEmail(e.target.value)
-
-    //     if (validator.isEmail(email)) {
-    //         setEmailError('Valid Email :)')
-
-
-    //     } else {
-    //         setEmailError('Enter valid Email!')
-    //     }
-    // }
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        setName("");
-        setEmail("");
-        setMessage("");
-        alert(`Thank you for your message ${name}, Reine will be in touch `)
+        if (validator.isEmail(email)) {
+            setName("");
+            setEmail("");
+            setMessage("");
+            alert(`Thank you for your message ${name}, Reine will be in touch `)
 
+        } else {
+            alert('Please enter a valid email!')
+        }
     }
 
     const handleChange = (event) => {
@@ -75,7 +67,7 @@ function Contact() {
                                 <span></span> </div>
                             <div className="styled-input">
                                 <input required value={email}
-                                    onChange={e => setEmail(e.target.value)} />
+                                    onChange={(e) => setEmail(e.target.value)} />
                                 <label>Email</label>
                                 <span></span> </div>
                             <div className="styled-input wide">

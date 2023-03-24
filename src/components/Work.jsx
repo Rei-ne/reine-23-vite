@@ -21,15 +21,15 @@ const projects = [
         liveLink: "https://spotify-songportal.rei-ne.repl.co/",
 
     },
-    // {
-    //     id: 3,
-    //     title: "The Folk",
-    //     description: "A website for a music distribution and talent management company built with React(vite) and tailwind",
-    //     category: "website",
-    //     githubLink: null,
-    //     liveLink: "https://varena.app/",
+    {
+        id: 3,
+        title: "The Folk",
+        description: "A website for a music distribution and talent management company built with React(vite) and tailwind",
+        category: "website",
+        githubLink: null,
+        liveLink: null,
 
-    // },
+    },
     {
         id: 4,
         title: "Reine DEV",

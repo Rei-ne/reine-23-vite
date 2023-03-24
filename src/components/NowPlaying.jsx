@@ -39,7 +39,7 @@ const NowPlaying = (props) => {
                             <div>                            <p className="font-PPNeueMontreal px-1 text-xs md:text-base text-left uppercase">{result.artist}</p></div>
 
 
-                        </div> : "Currently offline"}
+                        </div> : "Reine is offline"}
 
                 </div>
             }
