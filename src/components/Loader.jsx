@@ -7,7 +7,9 @@ const Loader = () => {
 
 
     const [loadInterval, setLoadInterval] = useState(null);
+
     const text = "REINE IS COOKING..."
+
     useEffect(() => {
 
         const num = document.querySelector("#number");
@@ -30,14 +32,14 @@ const Loader = () => {
     }, []);
 
     return (
-        <div id="loader" className='h-screen bg-black text-mint flex flex-col justify-around w-full p-6 items-center relative mx-auto '>
+        <div id="loader" className='h-screen bg-black text-mint flex flex-col justify-between w-full p-6 items-center relative mx-auto '>
             <div className='loading flex flex-col  justify-center h-full w-full items-center '>
-                <div className="w-full flex justify-center items-center sm:h-6 md:h-10 p-0 m-0 text-mint">
+                <div className="w-full flex  justify-center items-center sm:h-6 md:h-10 p-0 m-0 text-mint">
                     <TypeWriter className="sm:w-80 object-contain font-GT_Flexa text-center sm:text-2xl text-3xl" text={text} />
 
                 </div>
             </div>
-            <div className='loading__counter font-Kaldera h-fit w-fit flex items-end justify-end '>
+            <div className='loading__counter font-Kaldera h-fit w-fit flex items-start justify-start mb-8'>
                 <div id='number' className="h-fit w-full text-3xl loading__counter--number " data-interval={loadInterval}>0%</div>
             </div>
         </div>

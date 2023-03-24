@@ -27,7 +27,7 @@ const icons = [
     },
     {
         id: 4,
-        title: "ethers",
+        title: "ethers.js",
         image: ethers,
 
     },

@@ -15,20 +15,16 @@ const icons = [
         iconImg: `${shareIcon}`,
     },
 ]
-// const Icons = () => {
-//     return (
 
-//     )
-// }
 
 const Project = ({ title, description, category, liveLink, githubLink }) => {
     return (
-        <div className='px-6 py-4 font-Kaldera relative text-center md:h-14 h-full w-4/5 lg:w-full sm:border   my-1 lg:my-0 border-gray flex flex-col justify-between items-start'>
+        <div className='px-6 py-4 font-Kaldera relative text-center md:h-14 h-full w-4/5 lg:w-full sm:border my-1 lg:my-0 border-gray flex flex-col justify-between items-start'>
 
             <div className="md:pl-4 md:flex md:flex-col md:justify-around md:w-3/5 lg:w-3/5 lg:ml-32 border-mint md:h-full lg:flex-col">
                 {/* text */}
                 <div className='flex items-center justify-start text-left w-full'>
-                    <h2 className='text-xl sm:tracking-widest md:tracking-normal md:text-2xl lg:text-4.5 text-mint  font-bold'>{title}</h2>
+                    <h2 className='text-xl sm:tracking-widest md:tracking-normal md:text-2xl lg:text-4.5 text-mint font-bold'>{title}</h2>
                 </div>
                 {/* description */}
                 <div className='flex items-center h-fit w-2/3 md:w-fit md:h-auto justify-start text-left  '>
@@ -45,9 +41,9 @@ const Project = ({ title, description, category, liveLink, githubLink }) => {
                     {githubLink ?
                         <div className='flex flex-col items-center justify-center px-2 gap-1  h-4 '>
                             <div className='h-1 mt-1'>
-                                <a href={githubLink} target="_blank"> <img className='h-full cursor-pointer ' key={icons[0].id} src={icons[0].iconImg} alt="github-icon" /></a>
+                                <a href={githubLink} target="_blank"> <img className='h-full mb-1 cursor-pointer ' key={icons[0].id} src={icons[0].iconImg} alt="github-icon" /></a>
                             </div>
-                            <p className='font-PPNeueMontreal text-base'>code</p>
+                            <p className='font-PPNeueMontreal text-base mt-1'>code</p>
                         </div>
                         : null
 
@@ -59,7 +55,7 @@ const Project = ({ title, description, category, liveLink, githubLink }) => {
                                 <a href={liveLink} target="_blank">
                                     <img className='h-full cursor-pointer' key={icons[1].id} src={icons[1].iconImg} alt="live-icon" /></a>
                             </div>
-                            <p className='font-PPNeueMontreal text-base'>live</p>
+                            <p className='font-PPNeueMontreal text-base mt-1'>live</p>
 
                         </div>
                         : null
