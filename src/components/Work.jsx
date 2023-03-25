@@ -70,7 +70,7 @@ const Work = () => {
 
             <div className="sm:w-4/5">
                 <p className='tracking-wider text-gray-light font-PPNeueMontreal p-6 md:w-fit  text-sm max-w-prose leading-8'>
-                    My resume and other projects are available on <a className='text-mint font-bold' href="https://github.com/Rei-ne" target='_blank' >github</a>. Connect with me on  <a className='text-mint font-bold' href="https://www.linkedin.com/in/toyosi-odukale/" target='_blank'>linkedin</a> and <a className='text-mint font-bold' href="https://reine.hashnode.dev/" target='_blank' >hashnode</a> where I write about my experiences.
+                    My resume and other projects are available on <a className='text-mint font-bold' href="https://github.com/Rei-ne" target='_blank' >github</a>. Connect with me on  <a className='text-mint font-bold' href="https://medium.com/@reinetoyosii" target='_blank'>medium</a> and <a className='text-mint font-bold' href="https://reine.hashnode.dev/" target='_blank' >hashnode</a> where I write about my experiences.
                 </p>
             </div>
 
