@@ -22,7 +22,7 @@ function About() {
                     </div>
                 </div>
                 <div className="hidden lg:flex font-PPNeueMontreal p-6  flex-col justify-center items-center h-full md:w-1/3">
-                    <img className="bg-black grayscale text-gray w-fit object-contain md:h-fit w-full " src={aboutImg} alt="about reine dev" />
+                    <img className="bg-black grayscale text-gray w-fit object-contain md:h-fit w-full ml-8" src={aboutImg} alt="about reine dev" />
 
                 </div>
                 <div className="font-PPNeueMontreal p-6 md:w-fit lg:w-1/3 w-full text-sm max-w-prose leading-8 left-about h-full flex flex-col items-center justify-evenly tracking-wider text-left md:text-justify">
@@ -32,9 +32,8 @@ function About() {
                     <div className="w-full">
                         <p className="my-2 w-full">I am interested in smart contract development, technical writing, talent management & AnR.</p>
                     </div>
-                    <div>
-
-                        <p className="my-2">I love music, when I'm not coding, you can find me either listening to music on my <a href="https://open.spotify.com/user/31iptodfoldd453eq6tbmv4x6qlu?si=3c8bc7bf41b04de2" target="_blank">own</a> or with my friends 😀</p>
+                    <div className="w-full">
+                        <p className="my-2 w-full">I love music, when I'm not coding, you can find me either listening to music on my <a href="https://open.spotify.com/user/31iptodfoldd453eq6tbmv4x6qlu?si=3c8bc7bf41b04de2" target="_blank">own</a> or with my friends 😀</p>
                     </div>
 
 

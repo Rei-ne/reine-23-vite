@@ -1,8 +1,8 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import arrow from '../assets/icons/Nav-Arrow_1.png'
 import '../styles/Contact.scss';
 import validator from 'validator'
+import emailjs from '@emailjs/browser';
 
 function Contact() {
 
@@ -10,11 +10,24 @@ function Contact() {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
 
+    const form = useRef();
+
+    const service_id = import.meta.env.VITE_APP_EMAIL_SERVICE_ID
+    const template_id = import.meta.env.VITE_APP_EMAIL_TEMPLATE_ID
+    const public_key = import.meta.env.VITE_APP_EMAIL_PUBLIC_KEY
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
         if (validator.isEmail(email)) {
+
+            emailjs.sendForm(service_id, template_id, form.current, public_key)
+                .then((result) => {
+                    console.log(result.text);
+                }, (error) => {
+                    console.log(error.text);
+                });
+
             setName("");
             setEmail("");
             setMessage("");
@@ -58,7 +71,7 @@ function Contact() {
                 </div>
                 {/* contact form */}
                 <div className='sm:hidden md:flex md:max-w-md  w-full h-fit bg-gray-200 mt-6 relative'>
-                    <form className="font-PPNeueMontreal tracking-wider text-gray-light md:w-4/5 max-h-md flex flex-col justify-center  bg-inherit rounded shadow mx-auto" onSubmit={handleSubmit}>
+                    <form className="font-PPNeueMontreal tracking-wider text-gray-light md:w-4/5 max-h-md flex flex-col justify-center  bg-inherit rounded shadow mx-auto" ref={form} onSubmit={handleSubmit}>
                         <div className='w-full pr-8'>
                             <div className="styled-input">
                                 <input type="text" required value={name}
