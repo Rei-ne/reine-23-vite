@@ -71,20 +71,22 @@ function Contact() {
                 </div>
                 {/* contact form */}
                 <div className='sm:hidden md:flex md:max-w-md  w-full h-fit bg-gray-200 mt-6 relative'>
-                    <form className="font-PPNeueMontreal tracking-wider text-gray-light md:w-4/5 max-h-md flex flex-col justify-center  bg-inherit rounded shadow mx-auto" ref={form} onSubmit={handleSubmit}>
+                    <form className="font-PPNeueMontreal tracking-wider text-gray-light md:w-4/5 max-h-md flex flex-col justify-center  bg-inherit rounded shadow mx-auto lg:h-17" ref={form} onSubmit={handleSubmit}>
                         <div className='w-full pr-8'>
                             <div className="styled-input">
                                 <input type="text" required value={name}
+                                    name="from_name"
                                     onChange={e => setName(e.target.value)} />
                                 <label>Name</label>
                                 <span></span> </div>
                             <div className="styled-input">
                                 <input required value={email}
+                                    name="from_email"
                                     onChange={(e) => setEmail(e.target.value)} />
                                 <label>Email</label>
                                 <span></span> </div>
                             <div className="styled-input wide">
-                                <textarea required rows="3" cols="12" value={message} onChange={handleChange}
+                                <textarea required rows="3" cols="12" value={message} name="message" onChange={handleChange}
                                     onClick={resetTextArea}></textarea>
                                 <label>Message</label>
                                 <span></span> </div>
