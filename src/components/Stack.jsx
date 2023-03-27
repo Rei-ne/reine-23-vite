@@ -6,6 +6,7 @@ import javascript from '../assets/icons/akar-icons_javascript-fill.png';
 import solidity from '../assets/icons/file-icons_solidity.png';
 import python from '../assets/icons/akar-icons_python-fill.png';
 import hardhat from '../assets/icons/file-type-hardhat.png';
+import gsap from "gsap";
 
 const icons = [
     {
@@ -48,6 +49,14 @@ const icons = [
     }
 ]
 
+const onEnter = ({ currentTarget }) => {
+    gsap.to(currentTarget, { backgroundColor: "#273444", scale: 1.2 });
+};
+
+const onLeave = ({ currentTarget }) => {
+    gsap.to(currentTarget, { backgroundColor: "black", scale: 1 });
+};
+
 
 const Stack = () => {
     return (
@@ -55,7 +64,7 @@ const Stack = () => {
 
             {icons.map(icon => (
 
-                <div className='h-7 w-7 border border-mint flex flex-col justify-between items-center hover:bg-gray-dark' key={icon.id}>
+                <div className='h-7 w-7 border border-mint flex flex-col justify-between items-center' onMouseEnter={onEnter} onMouseLeave={onLeave} key={icon.id}>
                     <img className='p-2 h-4 mt-2' src={icon.image} />
                     <p className='tracking-wider font-PPNeueMontreal text-base p-2'>{icon.title}</p>
                 </div>

@@ -5,8 +5,7 @@ import { useState } from 'react'
 //   Routes,
 //   Route,
 // } from "react-router-dom";
-import { useEffect } from "react";
-import { useRef } from "react";
+
 import Homepage from "./pages/Homepage"
 
 import './App.css';
