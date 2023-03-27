@@ -47,7 +47,7 @@ function Contact() {
     };
 
     return (
-        <section className="font-PPNeueMontreal tracking-wider  mt-10 mb-10 flex flex-col md:flex-row md:flex-wrap justify-center  items-center h-screen relative w-full" id="contact">
+        <section className="h-fit font-PPNeueMontreal tracking-wider  mt-10 mb-10 flex flex-col md:flex-row md:flex-wrap justify-center  items-center md:h-screen relative w-full" id="contact">
             <h2 className="font-Bebas_Neue sm:text-3xl md:text-3xl px-2 uppercase flex text-center justify-center items-center w-full">GET IN TOUCH</h2>
 
             <div className='flex flex-col items-center justify-center md:justify-around h-auto w-4/5 '>
