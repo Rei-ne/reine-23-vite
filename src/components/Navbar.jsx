@@ -1,8 +1,21 @@
+import React from 'react'
+import { useEffect, useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 
 const Navbar = () => {
+    const [hideNav, setHideNav] = useState(false)
 
+    useEffect(() => {
+        const handleScrollNavVisibility = () => {
+            window.innerHeight + window.scrollY >= document.body.offsetHeight ? setHideNav(false) : setHideNav(true);
+        };
+        window.addEventListener('scroll', handleScrollNavVisibility);
+
+        return () => {
+            window.removeEventListener('scroll', handleScrollNavVisibility);
+        };
+    }, []);
 
     return (
 
@@ -18,12 +31,15 @@ const Navbar = () => {
 
             </nav>
             {/* moble nav --- small screens */}
-            <nav className="flex w-full fixed bottom-0 left-2 h-5 text-sm justify-around items-center border-t-2 border-b-2 border-mint md:hidden lg:hidden text-mint bg-black">
-                <AnchorLink href="#hero" className='tracking-wide'>HOME</AnchorLink>
-                <AnchorLink href="#about" className='tracking-wide'>ABOUT</AnchorLink>
-                <AnchorLink href="#work" className='tracking-wide'>WORKS</AnchorLink>
-                <AnchorLink href="#contact" className='tracking-wide'>CONTACT</AnchorLink>
-            </nav>
+            {hideNav && (
+                <nav className="flex w-full fixed bottom-0 left-2 h-5 text-sm justify-around items-center border-t-2 border-b-2 border-mint md:hidden lg:hidden text-mint bg-black">
+                    <AnchorLink href="#hero" className='tracking-wide'>HOME</AnchorLink>
+                    <AnchorLink href="#about" className='tracking-wide'>ABOUT</AnchorLink>
+                    <AnchorLink href="#work" className='tracking-wide'>WORKS</AnchorLink>
+                    <AnchorLink href="#contact" className='tracking-wide'>CONTACT</AnchorLink>
+                </nav>
+            )}
+
         </header>
     )
 
