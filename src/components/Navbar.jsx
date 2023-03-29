@@ -4,7 +4,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 
 const Navbar = () => {
-    const [hideNav, setHideNav] = useState(false)
+    const [hideNav, setHideNav] = useState(true)
 
     useEffect(() => {
         const handleScrollNavVisibility = () => {
