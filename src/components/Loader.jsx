@@ -20,6 +20,10 @@ const Loader = () => {
             c++;
             if (c === 101) {
                 clearInterval(interval);
+                gsap.to(".loader", {
+                    duration: 1,
+                    opacity: 0,
+                })
                 gsap.to(".loading", {
                     duration: 1,
                     display: "none",
@@ -27,12 +31,12 @@ const Loader = () => {
                 setLoadInterval(null);
 
             }
-        }, 40);
+        }, 30);
         setLoadInterval(interval);
     }, []);
 
     return (
-        <div id="loader" className='h-screen bg-black text-mint flex flex-col justify-between w-full p-6 items-center relative mx-auto '>
+        <div id="loader" className='loader h-screen bg-black text-mint flex flex-col justify-between w-full p-6 items-center relative mx-auto '>
             <div className='loading flex flex-col  justify-center h-full w-full items-center '>
                 <div className="w-full flex  justify-center items-center sm:h-6 md:h-10 p-0 m-0 text-mint">
                     <TypeWriter className="sm:w-80 object-contain font-GT_Flexa text-center sm:text-2xl text-3xl" text={text} />
