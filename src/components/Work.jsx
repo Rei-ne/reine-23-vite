@@ -12,15 +12,15 @@ const projects = [
         githubLink: null,
         liveLink: "https://varena.app/",
     },
-    // {
-    //     id: 2,
-    //     title: "Spotify SongPortal",
-    //     description: "A web3 app built with react.js and solidity that lets users interact with my smart contract on goerli testnet",
-    //     category: "web3",
-    //     githubLink: "https://github.com/Rei-ne/spotify-goerli",
-    //     liveLink: "https://spotify-songportal.rei-ne.repl.co/",
+    {
+        id: 2,
+        title: "Spotify API",
+        description: "A tutorial that shows how to connect your React(Vite) app to spotify's API",
+        category: "blog",
+        githubLink: "https://github.com/Rei-ne/spotify-api-test",
+        liveLink: "https://reine.hashnode.dev/how-to-connect-your-react-vitejs-app-to-spotifys-api",
 
-    // },
+    },
     // {
     //     id: 3,
     //     title: "The Folk",
@@ -70,7 +70,7 @@ const Work = () => {
 
             <div className="sm:w-4/5">
                 <p className='tracking-wider text-gray-light font-PPNeueMontreal p-6 md:w-fit  text-sm max-w-prose leading-8 lg:text-center'>
-                    More of my projects are available on <a className='text-mint font-bold' href="https://github.com/Rei-ne" target='_blank' >github</a>.
+                    My resume and other projects are available on <a className='text-mint font-bold' href="https://github.com/Rei-ne" target='_blank' >github</a>.
                     Follow me on  <a className='text-mint font-bold' href="https://medium.com/@reinetoyosii" target='_blank'>medium</a> and <a className='text-mint font-bold' href="https://reine.hashnode.dev/" target='_blank' >hashnode</a> where I write about my experiences.
                 </p>
             </div>

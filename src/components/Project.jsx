@@ -40,8 +40,8 @@ const Project = ({ title, description, category, liveLink, githubLink }) => {
 
                     {githubLink ?
                         <div className='flex flex-col items-center justify-center px-2 gap-1  h-4 '>
-                            <div className='h-1 mt-1'>
-                                <a href={githubLink} target="_blank"> <img className='h-full mb-1 cursor-pointer ' key={icons[0].id} src={icons[0].iconImg} alt="github-icon" /></a>
+                            <div className='h-1 '>
+                                <a href={githubLink} target="_blank"> <img className='h-full cursor-pointer ' key={icons[0].id} src={icons[0].iconImg} alt="github-icon" /></a>
                             </div>
                             <p className='font-PPNeueMontreal text-base mt-1'>code</p>
                         </div>
@@ -51,7 +51,7 @@ const Project = ({ title, description, category, liveLink, githubLink }) => {
 
                     {liveLink ?
                         <div className='flex flex-col items-center justify-center text-justify px-2 gap-1  h-4 '>
-                            <div className='h-1 mt-1 mb-1'>
+                            <div className='h-1 '>
                                 <a href={liveLink} target="_blank">
                                     <img className='h-full cursor-pointer' key={icons[1].id} src={icons[1].iconImg} alt="live-icon" /></a>
                             </div>
