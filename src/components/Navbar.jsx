@@ -4,11 +4,11 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 
 const Navbar = () => {
-    const [hideNav, setHideNav] = useState(true)
+    const [showNav, setShowNav] = useState(true)
 
     useEffect(() => {
         const handleScrollNavVisibility = () => {
-            window.innerHeight + window.scrollY >= document.body.offsetHeight ? setHideNav(false) : setHideNav(true);
+            window.innerHeight + window.scrollY >= document.body.offsetHeight ? setShowNav(false) : setShowNav(true);
         };
         window.addEventListener('scroll', handleScrollNavVisibility);
 
@@ -31,7 +31,7 @@ const Navbar = () => {
 
             </nav>
             {/* moble nav --- small screens */}
-            {hideNav && (
+            {showNav && (
                 <nav className="flex w-full fixed bottom-0 left-2 h-5 text-sm justify-around items-center border-t-2 border-b-2 border-mint md:hidden lg:hidden text-mint bg-black">
                     <AnchorLink href="#hero" className='tracking-wide'>HOME</AnchorLink>
                     <AnchorLink href="#about" className='tracking-wide'>ABOUT</AnchorLink>
