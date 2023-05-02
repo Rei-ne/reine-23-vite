@@ -18,8 +18,7 @@ const projects = [
         description: "A tutorial that shows how to connect your React(Vite) app to spotify's API",
         category: "blog",
         githubLink: "https://github.com/Rei-ne/spotify-api-test",
-        liveLink: "https://reine.hashnode.dev/how-to-connect-your-react-vitejs-app-to-spotifys-api",
-
+        liveLink: "https://medium.com/@reinetoyosii/how-to-connect-your-react-vitejs-app-to-spotifys-api-4098ba06b400",
     },
     // {
     //     id: 3,
