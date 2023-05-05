@@ -15,7 +15,7 @@ function About() {
                         <p className="my-2 w-full">Hello there 👋, my name is Toyosi Odukale (REINE), and I am constantly evolving.</p>
                     </div>
                     <div>
-                        <p className="my-2">I am a frontend web developer with a passion for exploring the full potential of blockchain technology. My long-term goal is to become a skilled and knowledgeable blockchain engineer.</p>
+                        <p className="my-2">I am a frontend web developer  with a passion for exploring the full potential of technology. With a Bachelor of Science degree in Information Technology, I aspire to become a competent and knowledgeable software engineer.</p>
                     </div>
                     <div className="w-full">
                         <p className="my-2 w-full">My first dive into web development was in August 2021, when I decided to transition from banking application support, to take time out and give this new found interest all my attention. </p>
@@ -30,7 +30,7 @@ function About() {
                         <p className="my-2 w-full">Through my journey as a web developer, I have gained knowledge in programming languages such as JavaScript and Solidity. These skills have been instrumental in enhancing my artistic creations and I continue to apply them daily.</p>
                     </div>
                     <div className="w-full">
-                        <p className="my-2 w-full">I am interested in smart contract development, technical writing, talent management & AnR.</p>
+                        <p className="my-2 w-full">I am interested in smart contract (blockchain) development, technical writing, talent management & AnR.</p>
                     </div>
                     <div className="w-full">
                         <p className="my-2 w-full">I love music, when I'm not coding, you can find me either listening to music on my <a href="https://open.spotify.com/user/31iptodfoldd453eq6tbmv4x6qlu?si=3c8bc7bf41b04de2" target="_blank">own</a> or with my friends 😀</p>

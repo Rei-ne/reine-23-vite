@@ -20,17 +20,8 @@ const projects = [
         githubLink: "https://github.com/Rei-ne/spotify-api-test",
         liveLink: "https://medium.com/@reinetoyosii/how-to-connect-your-react-vitejs-app-to-spotifys-api-4098ba06b400",
     },
-    // {
-    //     id: 3,
-    //     title: "The Folk",
-    //     description: "A website for a music distribution and talent management company built with React(vite) and tailwind",
-    //     category: "website",
-    //     githubLink: null,
-    //     liveLink: null,
-
-    // },
     {
-        id: 4,
+        id: 3,
         title: "Reine DEV",
         description: "A portfolio website for a software developer built with React(vite) and tailwind css",
         category: "javascript",
@@ -39,14 +30,23 @@ const projects = [
 
     },
     {
-        id: 5,
+        id: 4,
         title: "Metabnb",
         description: "A landing page built with react and styled components (css-in-js)",
         category: "javascript",
         githubLink: "https://github.com/Rei-ne/metabnb",
         liveLink: "https://reine-metabnb.netlify.app/",
 
-    }
+    },
+    {
+        id: 5,
+        title: "The Folk",
+        description: "A website for a music and talent management agency built with React(vite) and tailwind",
+        category: "javascript",
+        githubLink: null,
+        liveLink: "https://thefolk.netlify.app/",
+
+    },
 ]
 
 const Work = () => {
