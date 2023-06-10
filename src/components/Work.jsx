@@ -38,15 +38,15 @@ const projects = [
         liveLink: "https://reine-metabnb.netlify.app/",
 
     },
-    // {
-    //     id: 5,
-    //     title: "The Folk",
-    //     description: "A website for a music and talent management agency built with React(vite) and tailwind",
-    //     category: "javascript",
-    //     githubLink: null,
-    //     liveLink: "https://thefolk.netlify.app/",
+    {
+        id: 5,
+        title: "The Folk",
+        description: "A website for a music and talent management agency built with React(vite) and tailwind",
+        category: "javascript",
+        githubLink: null,
+        liveLink: "https://thefolk.netlify.app/",
 
-    // },
+    },
 ]
 
 const Work = () => {
