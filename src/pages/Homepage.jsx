@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import arrow from '../assets/icons/Nav-Arrow_1.png'
 import Footer from '../components/Footer';
 
+import ReactGA from 'react-ga';
 
 const Home = () => {
     // scroll to top state for the arrow button
@@ -30,6 +31,10 @@ const Home = () => {
     const handleScrollToTop = () => {
         window.scrollTo({ top: 0, behaviour: 'smooth' });
     }
+
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname)
+    }, [])
 
     return (
         <>

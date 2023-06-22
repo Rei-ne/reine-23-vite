@@ -12,8 +12,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Loader from './components/Loader';
 
-
-
+import ReactGA from 'react-ga'
+ReactGA.initialize('$(import.meta.env.VITE_APP_GOOGLE_ANALYTICS)')
 
 function App() {
 
