@@ -12,6 +12,9 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Loader from './components/Loader';
 
+
+
+
 function App() {
 
   const [loading, setLoading] = useState(true);

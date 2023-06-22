@@ -18,7 +18,7 @@ const Home = () => {
     // useEffect that brings up the arrow button that shows on scroll after hero section
     useEffect(() => {
         const handleScrollButtonVisibility = () => {
-            window.pageYOffset > 100 ? setShowButton(true) : setShowButton(false);
+            window.scrollY > 100 ? setShowButton(true) : setShowButton(false);
         };
         window.addEventListener('scroll', handleScrollButtonVisibility);
 
@@ -30,7 +30,6 @@ const Home = () => {
     const handleScrollToTop = () => {
         window.scrollTo({ top: 0, behaviour: 'smooth' });
     }
-
 
     return (
         <>
