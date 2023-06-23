@@ -4,7 +4,6 @@ import App from './App'
 import ReactGA from 'react-ga4'
 
 const token = import.meta.env.VITE_APP_GOOGLE_ANALYTICS
-
 ReactGA.initialize(token)
 
 
