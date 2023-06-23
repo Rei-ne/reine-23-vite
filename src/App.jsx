@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 // import { ScrollToTop } from './Components/ScrollToTop';
 // import {
 //   BrowserRouter,
@@ -12,12 +12,6 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Loader from './components/Loader';
 
-import ReactGA from 'react-ga';
-
-const token = import.meta.env.VITE_APP_GOOGLE_ANALYTICS
-ReactGA.initialize(token)
-
-
 function App() {
 
   const [loading, setLoading] = useState(true);
@@ -27,10 +21,6 @@ function App() {
       setLoading(false)
     }, 3500)
   }
-
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }, [])
 
   return (
     <>

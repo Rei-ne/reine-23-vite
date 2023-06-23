@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 
 import arrow from '../assets/icons/Nav-Arrow_1.png'
 import Footer from '../components/Footer';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 
 const Home = () => {
