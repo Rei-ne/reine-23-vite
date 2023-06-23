@@ -13,7 +13,9 @@ import Navbar from './components/Navbar';
 import Loader from './components/Loader';
 
 import ReactGA from 'react-ga';
-ReactGA.initialize(`${import.meta.env.VITE_APP_GOOGLE_ANALYTICS}`)
+const token = import.meta.env.VITE_APP_GOOGLE_ANALYTICS
+ReactGA.initialize(token)
+
 
 function App() {
 
@@ -24,6 +26,7 @@ function App() {
       setLoading(false)
     }, 3500)
   }
+
   return (
     <>
       {loading ? (
