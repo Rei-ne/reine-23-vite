@@ -14,8 +14,10 @@ import Loader from './components/Loader';
 import ReactGA from 'react-ga4'
 
 const token = import.meta.env.VITE_APP_GOOGLE_ANALYTICS
-const GA_MEASUREMENT_ID = import.meta.env.VITE_APP_GOOGLE_ANALYTICS
-ReactGA.initialize(GA_MEASUREMENT_ID)
+ReactGA.initialize(`${token}`)
+
+console.log(token);
+
 
 function App() {
 
