@@ -31,22 +31,32 @@ const projects = [
     },
     {
         id: 4,
+        title: "Album Cover Bank",
+        description: "An archive of Nigerian Album cover art from 1950 till date",
+        category: "javascript",
+        githubLink: null,
+        liveLink: "https://www.albumcoverbank.com/",
+
+    },
+    {
+        id: 5,
         title: "The Folk",
-        description: "A website for a music and talent management agency built with React(vite) and tailwind css",
+        description: "A website for a music and talent management agency built with React(vite)",
         category: "javascript",
         githubLink: null,
         liveLink: "https://thefolk.netlify.app/",
 
     },
-    {
-        id: 5,
-        title: "Metabnb",
-        description: "A landing page built with react and styled components (css-in-js)",
-        category: "javascript",
-        githubLink: "https://github.com/Rei-ne/metabnb",
-        liveLink: "https://reine-metabnb.netlify.app/",
 
-    },
+    // {
+    //     id: 6,
+    //     title: "Metabnb",
+    //     description: "A landing page built with react and styled components (css-in-js)",
+    //     category: "javascript",
+    //     githubLink: "https://github.com/Rei-ne/metabnb",
+    //     liveLink: "https://reine-metabnb.netlify.app/",
+
+    // },
 ]
 
 const Work = () => {
