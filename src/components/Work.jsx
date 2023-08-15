@@ -4,33 +4,9 @@ import React from 'react';
 import Project from './Project';
 
 const projects = [
+
     {
         id: 1,
-        title: "Varena",
-        description: "A play to earn nft battle game built with matter.js and react.js",
-        category: "javascript",
-        githubLink: null,
-        liveLink: "https://varena.app/",
-    },
-    {
-        id: 2,
-        title: "Spotify API",
-        description: "A tutorial that shows how to connect your React(Vite) app to spotify's API",
-        category: "blog",
-        githubLink: "https://github.com/Rei-ne/spotify-api-test",
-        liveLink: "https://medium.com/@reinetoyosii/how-to-connect-your-react-vitejs-app-to-spotifys-api-4098ba06b400",
-    },
-    {
-        id: 3,
-        title: "Reine DEV",
-        description: "A portfolio website for a software developer built with React(vite) and tailwind css",
-        category: "javascript",
-        githubLink: "https://github.com/Rei-ne/reine-23-vite",
-        liveLink: "https://reine.dev/",
-
-    },
-    {
-        id: 4,
         title: "Album Cover Bank",
         description: "An archive of Nigerian Album cover art from 1950 till date",
         category: "javascript",
@@ -39,7 +15,24 @@ const projects = [
 
     },
     {
-        id: 5,
+        id: 2,
+        title: "Reine DEV",
+        description: "A portfolio website for a software developer built with React(vite) and tailwind css",
+        category: "javascript",
+        githubLink: "https://github.com/Rei-ne/reine-23-vite",
+        liveLink: "https://reine.dev/",
+
+    },
+    {
+        id: 3,
+        title: "Spotify API",
+        description: "A tutorial that shows how to connect your React(Vite) app to spotify's API",
+        category: "blog",
+        githubLink: "https://github.com/Rei-ne/spotify-api-test",
+        liveLink: "https://medium.com/@reinetoyosii/how-to-connect-your-react-vitejs-app-to-spotifys-api-4098ba06b400",
+    },
+    {
+        id: 4,
         title: "The Folk",
         description: "A website for a music and talent management agency built with React(vite)",
         category: "javascript",
@@ -47,7 +40,14 @@ const projects = [
         liveLink: "https://thefolk.netlify.app/",
 
     },
-
+    // {
+    //     id: 5,
+    //     title: "Varena",
+    //     description: "A play to earn nft battle game built with matter.js and react.js",
+    //     category: "javascript",
+    //     githubLink: null,
+    //     liveLink: "https://varena.app/",
+    // },
     // {
     //     id: 6,
     //     title: "Metabnb",
