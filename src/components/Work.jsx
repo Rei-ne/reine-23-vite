@@ -40,14 +40,14 @@ const projects = [
         liveLink: "https://thefolk.netlify.app/",
 
     },
-    // {
-    //     id: 5,
-    //     title: "Varena",
-    //     description: "A play to earn nft battle game built with matter.js and react.js",
-    //     category: "javascript",
-    //     githubLink: null,
-    //     liveLink: "https://varena.app/",
-    // },
+    {
+        id: 5,
+        title: "Varena",
+        description: "A play to earn nft battle game built with matter.js and react.js",
+        category: "javascript",
+        githubLink: null,
+        liveLink: "https://varena.online/",
+    },
     // {
     //     id: 6,
     //     title: "Metabnb",
@@ -79,7 +79,7 @@ const Work = () => {
 
             <div className="sm:w-4/5">
                 <p className='tracking-wider text-gray-light font-PPNeueMontreal p-6 md:w-fit  text-sm max-w-prose leading-8 lg:text-center'>
-                    My <a className='text-mint font-bold' href="https://drive.google.com/file/d/1_Vbz9lITpu4Xl1_-rQlAtIVt5ZiYXVlk/view?usp=sharing" target='_blank' >resume</a> and other projects are available on <a className='text-mint font-bold' href="https://github.com/Rei-ne" target='_blank' >github</a>.
+                    My <a className='text-mint font-bold' href="https://docs.google.com/document/d/1xbVU9uvKDhXHd8XufCLbODeiXycCKRjI/edit?usp=sharing&ouid=116893098797010002643&rtpof=true&sd=true" target='_blank' >resume</a> and other projects are available on <a className='text-mint font-bold' href="https://github.com/Rei-ne" target='_blank' >github</a>.
                     Follow me on  <a className='text-mint font-bold' href="https://medium.com/@reinetoyosii" target='_blank'>medium</a> and <a className='text-mint font-bold' href="https://reine.hashnode.dev/" target='_blank' >hashnode</a> where I write about my experiences.
                 </p>
             </div>

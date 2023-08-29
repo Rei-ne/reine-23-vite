@@ -8,7 +8,7 @@ const Loader = () => {
 
     const [loadInterval, setLoadInterval] = useState(null);
 
-    const text = "REINE IS COOKING..."
+    const text = "WELCOME TO MY WEBSITE..."
 
     useEffect(() => {
 

@@ -32,7 +32,7 @@ const Project = ({ title, description, category, liveLink, githubLink }) => {
 
             <div className="md:pl-4 md:flex md:flex-col md:justify-around md:w-3/5 lg:w-3/5 lg:ml-32 border-mint md:h-full lg:flex-col">
                 {/* text */}
-                <div className='flex items-center justify-start text-left w-full'>
+                <div className='flex items-center justify-start text-left w-4/5 md:w-full'>
                     <h2 className='text-xl sm:tracking-widest md:tracking-normal md:text-2xl lg:text-4.5 text-mint font-bold'>{title}</h2>
                 </div>
                 {/* description */}
