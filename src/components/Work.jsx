@@ -46,7 +46,7 @@ const projects = [
         description: "A play to earn nft battle game built with matter.js and react.js",
         category: "javascript",
         githubLink: null,
-        liveLink: "https://varena.online/",
+        liveLink: "https://varena.netlify.app/",
     },
     // {
     //     id: 6,
