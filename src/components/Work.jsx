@@ -37,7 +37,7 @@ const projects = [
         description: "A website for a music and talent management agency built with React(vite)",
         category: "javascript",
         githubLink: null,
-        liveLink: "https://thefolk.netlify.app/",
+        liveLink: "https://thefolk.ng/",
 
     },
     {
