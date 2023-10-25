@@ -8,7 +8,7 @@ function About() {
     const text = "MY STACK";
     return (
         <section id="about" className="h-full sm:w-4/5 w-full mt-10 flex flex-col justify-center items-center">
-            <h2 className="sm:text-3xl md:text-3xl uppercase flex justify-center items-center font-Bebas_Neue">About me</h2>
+            <h2 className="sm:text-3xl md:text-3xl uppercase flex justify-center items-center font-Bebas_Neue text-center">About me</h2>
             <div className="w-full text-gray-light md:flex flex-wrap md:flex-col lg:flex-row md:justify-around md:items-center md:h-4/5 lg:h-full">
                 <div className="font-PPNeueMontreal p-6 md:w-fit lg:w-1/3 w-full text-sm max-w-prose leading-8 left-about h-full flex flex-col items-center justify-evenly tracking-wider text-left md:text-justify">
                     <div className="w-full">

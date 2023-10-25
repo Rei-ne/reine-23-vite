@@ -64,7 +64,6 @@ const articles = [
         id: 1,
         title: "What is Auto-GPT?",
         description: "Explore Auto-GPT, uncover the link between ChatGPT, GPT-4, and open soure AI",
-        category: "Artificial Intelligence",
         liveLink: "https://knowtechie.com/what-is-auto-gpt/",
         image: "https://knowtechie.com/wp-content/uploads/2023/04/Auto-GPT-400x240.jpg.webp",
 
@@ -73,7 +72,6 @@ const articles = [
         id: 2,
         title: "How to use Spotify API",
         description: "A tutorial that shows how to connect your React(Vite) app to spotify's API",
-        category: "blog",
         liveLink: "https://medium.com/@reinetoyosii/how-to-connect-your-react-vitejs-app-to-spotifys-api-4098ba06b400",
         image: "https://cdn.hashnode.com/res/hashnode/image/upload/v1680543383094/ab162d4c-ade7-4cf5-bc02-bb11e405dc85.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
     },
@@ -81,7 +79,6 @@ const articles = [
         id: 3,
         title: "Intro to Web Dev",
         description: "Learn about the internet, and how to create a simple webpage using HTML and CSS",
-        category: "blog",
         liveLink: "https://medium.com/@reinetoyosii/an-introduction-to-web-development-the-internet-html-and-css-8537f3280b8b/",
         image: "https://miro.medium.com/v2/resize:fit:640/0*yxR9XZ09b9PIn4Me",
 
@@ -90,7 +87,6 @@ const articles = [
         id: 4,
         title: "What is web3?",
         description: "An absolute beginner's guide to web3",
-        category: "blog",
         liveLink: "https://reine.hashnode.dev/what-is-web3-an-introduction-to-the-decentralized-web/",
         image: "https://cdn.hashnode.com/res/hashnode/image/unsplash/JNxTZzpHmsI/upload/v1666045076281/YuL2Wq3PyN.jpeg?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
 
@@ -119,7 +115,7 @@ const Work = () => {
             <div className='flex items-center justify-center flex-col md:w-full'>
                 {articles.map((article) => (
                     <Article key={article.id} title={article.title} description={article.description}
-                        category={article.category} liveLink={article.liveLink} image={article.image} />
+                        liveLink={article.liveLink} image={article.image} />
 
                 ))}
             </div>

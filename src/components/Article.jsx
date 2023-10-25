@@ -20,43 +20,28 @@ const onLeave = ({ currentTarget }) => {
 };
 
 
-const Article = ({ title, description, category, liveLink, image }) => {
+const Article = ({ title, description, liveLink, image }) => {
     return (
-        <div className='px-6 py-4 font-Kaldera relative text-center md:h-14 h-full w-4/5 lg:w-full sm:border my-1 lg:my-0 border-gray flex flex-col justify-between items-start md:flex-row' onMouseEnter={onEnter} onMouseLeave={onLeave} >
-            <div className='h-10 w-full rounded-sm md:w-1/2 '>
-                <img className='object-cover object-center w-full h-full rounded-sm' src={image} alt="project-image" />
+        <div className='px-6 py-4 font-Kaldera relative text-center md:h-14 h-full w-4/5 lg:w-full sm:border-b-2 my-1 lg:my-0 border-gray flex flex-col justify-between items-start md:flex-row lg:justify-center' onMouseEnter={onEnter} onMouseLeave={onLeave} >
+            <div className='h-10 w-full rounded-sm md:w-1/2 lg:w-1/2 mr-4 lg:h-full flex items-center justify-end'>
+                <img className='object-cover object-center lg:w-1/2 h-full rounded-sm' src={image} alt="project-image" />
             </div>
-            <div className="md:w-1/2 p-2">
+            <div className="md:w-1/2 md:p-2 md:flex md:flex-col md:h-full justify-center w-full ">
                 {/* text */}
-                <div className='flex items-center justify-start text-left w-full'>
-                    <h2 className='text-xl sm:tracking-widest md:tracking-normal md:text-2xl lg:text-4.5 text-mint font-bold'>{title}</h2>
+                <div className='flex items-center justify-start w-full text-left md:text-center p-2'>
+                    <a href={liveLink} target="_blank" className='no-underline hover:underline'>
+                        <h2 className='text-xl tracking-normal md:text-1xl lg:text-2xl text-mint font-bold'>{title}</h2>
+                    </a>
                 </div>
-                {/* description */}
-                <div className='flex items-center h-fit w-4/5 md:w-full md:h-auto justify-start text-left md:text-xs '>
-                    <p className='font-PPNeueMontreal max-w-prose sm:leading-6 leading-8 text-gray-light sm:text-base md:text-base tracking-wider w-full'>{description}</p>
-                </div>
+                <div className=' flex items-center p-2'>
+                    {/* description */}
+                    <div className='flex items-center h-fit w-full lg:w-1/2 md:h-auto justify-start text-left md:text-xs '>
+                        <p className='font-PPNeueMontreal max-w-prose sm:leading-6 leading-8 text-gray-light sm:text-base md:text-base tracking-wider w-full'>{description}</p>
+                    </div>
 
-                {/* category */}
-                <div className='sm:hidden md:flex '>
-                    <p className='font-PPNeueMontreal uppercase  max-w-prose text-gray-light md:text-1xl lg:text-1xl'>{category}</p>
-                </div>
-
-                <div className='flex flex-row justify-evenly items-center sm:w-1/3  w-1/3 absolute right-0 bottom-0 mb-2 p-2'>
-
-                    {liveLink ?
-                        <div className='flex flex-col items-end justify-end text-justify p-2 gap-1  h-8 '>
-                            <div className='h-1  '>
-                                <a href={liveLink} target="_blank">
-                                    <img className='h-full cursor-pointer' key={icons[0].id} src={icons[0].iconImg} alt="live-icon" /></a>
-                            </div>
-                            <p className='font-PPNeueMontreal text-base mt-1'>live</p>
-
-                        </div>
-                        : null
-
-                    }
 
                 </div>
+
             </div>
 
 
