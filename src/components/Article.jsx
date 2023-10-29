@@ -24,7 +24,7 @@ const Article = ({ title, description, liveLink, image }) => {
     return (
         <div className='px-6 py-4 font-Kaldera relative text-center md:h-14 h-full w-4/5 lg:w-full sm:border-b-2 my-1 lg:my-0 border-gray flex flex-col justify-between items-start md:flex-row lg:justify-center' onMouseEnter={onEnter} onMouseLeave={onLeave} >
             <div className='h-10 w-full rounded-sm md:w-1/2 lg:w-1/2 mr-4 lg:h-full flex items-center justify-end'>
-                <img className='object-cover object-center lg:w-1/2 h-full rounded-sm' src={image} alt="project-image" />
+                <img className='w-full object-cover object-center lg:w-1/2 h-full rounded-sm' src={image} alt="project-image" />
             </div>
             <div className="md:w-1/2 md:p-2 md:flex md:flex-col md:h-full justify-center w-full ">
                 {/* text */}
