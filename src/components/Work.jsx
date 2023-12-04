@@ -43,21 +43,22 @@ const projects = [
     },
     {
         id: 5,
+        title: "Planty'x",
+        description: "A landing page for a plant shop built with react and tailwind CSS",
+        category: "javascript",
+        githubLink: "https://github.com/Rei-ne/planty-x",
+        liveLink: "https://plantyx.reine.dev/",
+
+    },
+    {
+        id: 6,
         title: "Varena",
         description: "A play to earn nft battle game built with matter.js and react.js",
         category: "javascript",
         githubLink: null,
         liveLink: "https://varena.online/",
     },
-    // {
-    //     id: 6,
-    //     title: "Metabnb",
-    //     description: "A landing page built with react and styled components (css-in-js)",
-    //     category: "javascript",
-    //     githubLink: "https://github.com/Rei-ne/metabnb",
-    //     liveLink: "https://reine-metabnb.netlify.app/",
 
-    // },
 ]
 const articles = [
     {
