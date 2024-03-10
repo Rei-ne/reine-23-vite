@@ -47,7 +47,7 @@ const projects = [
         description: "A landing page for a payroll system built with react and tailwind CSS",
         category: "javascript",
         githubLink: null,
-        liveLink: "https://trymethod.co/",
+        liveLink: "https://method-landing.netlify.app/",
 
     },
     {
@@ -58,16 +58,7 @@ const projects = [
         githubLink: "https://github.com/Rei-ne/planty-x",
         liveLink: "https://plantyx.reine.dev/",
 
-    },
-    {
-        id: 6,
-        title: "Varena",
-        description: "A play to earn nft battle game built with matter.js and react.js",
-        category: "javascript",
-        githubLink: null,
-        liveLink: "https://varena.online/",
-    },
-
+    }
 ]
 const articles = [
     {
