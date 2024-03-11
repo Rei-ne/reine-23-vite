@@ -48,16 +48,22 @@ const projects = [
         category: "javascript",
         githubLink: null,
         liveLink: "https://method-landing.netlify.app/",
-
     },
     {
-        id: 5,
+        id: 6,
+        title: "Mich Lagos",
+        description: "An online store made for a Nigerian Fashion Company",
+        category: "ecommerce",
+        githubLink: null,
+        liveLink: "https://mlng.store/",
+    },
+    {
+        id: 7,
         title: "Planty'x",
         description: "A landing page for a plant shop built with react and tailwind CSS",
         category: "javascript",
         githubLink: "https://github.com/Rei-ne/planty-x",
         liveLink: "https://plantyx.reine.dev/",
-
     }
 ]
 const articles = [
