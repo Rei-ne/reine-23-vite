@@ -21,7 +21,7 @@ const projects = [
         description: "A portfolio website for a software developer built with React(vite) and tailwind css",
         category: "javascript",
         githubLink: "https://github.com/Rei-ne/reine-23-vite",
-        liveLink: "https://reine.dev/",
+        liveLink: "https://whoisreine.netlify.app/",
 
     },
     {
@@ -63,7 +63,7 @@ const projects = [
         description: "A landing page for a plant shop built with react and tailwind CSS",
         category: "javascript",
         githubLink: "https://github.com/Rei-ne/planty-x",
-        liveLink: "https://plantyx.reine.dev/",
+        liveLink: "https://reine-plantyx.netlify.app/",
     }
 ]
 const articles = [
