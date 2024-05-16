@@ -53,9 +53,9 @@ a {
   color: #dbfff8;
 }
 
-div .grayscale {
+/* div .grayscale {
   filter: saturate(0);
-}
+} */
 /* Scroll bar */
 /* width */
 ::-webkit-scrollbar {
