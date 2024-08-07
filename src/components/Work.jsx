@@ -15,6 +15,15 @@ const projects = [
   },
   {
     id: 2,
+    title: "TeddyWestside",
+    description:
+      "A landing page for a music producer linked to beatstars for beat purchases",
+    category: "javascript",
+    githubLink: null,
+    liveLink: "https://teddywestside.reine.dev/",
+  },
+  {
+    id: 3,
     title: "Reine DEV",
     description:
       "A portfolio website for a software developer built with React(vite) and tailwind css",
@@ -23,25 +32,16 @@ const projects = [
     liveLink: "https://reine.dev/",
   },
   {
-    id: 3,
-    title: "Spotify API",
-    description:
-      "A tutorial that shows how to connect your React(Vite) app to spotify's API",
-    category: "blog",
-    githubLink: "https://github.com/Rei-ne/spotify-api-test",
-    liveLink: "https://reine-spotify-np.netlify.app/",
-  },
-  {
-    id: 4,
+    id: 5,
     title: "The Folk",
     description:
       "A website for a music and talent management agency built with React(vite)",
     category: "javascript",
     githubLink: null,
-    liveLink: "https://thefolk.ng/",
+    liveLink: "https://thefolk.netlify.app/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Method",
     description:
       "A landing page for a payroll system built with react and tailwind CSS",
@@ -50,7 +50,7 @@ const projects = [
     liveLink: "https://method-landing.netlify.app/",
   },
   {
-    id: 6,
+    id: 7,
     title: "Mich Lagos",
     description: "An online store made for a Nigerian Fashion Company",
     category: "ecommerce",
@@ -58,25 +58,16 @@ const projects = [
     liveLink: "https://mlng.store/",
   },
   {
-    id: 7,
-    title: "Planty'x",
+    id: 4,
+    title: "Spotify API",
     description:
-      "A landing page for a plant shop built with react and tailwind CSS",
-    category: "javascript",
-    githubLink: "https://github.com/Rei-ne/planty-x",
-    liveLink: "https://plantyx.reine.dev/",
+      "A tutorial that shows how to connect your React(Vite) app to spotify's API",
+    category: "blog",
+    githubLink: "https://github.com/Rei-ne/spotify-api-test",
+    liveLink: "https://reine-spotify-np.netlify.app/",
   },
 ];
 const articles = [
-  {
-    id: 0,
-    title: "My notes on Healing",
-    description: "A not-so typical year in review",
-    liveLink:
-      "https://medium.com/@reinetoyosii/my-notes-on-healing-a102bc1312b8",
-    image:
-      "https://miro.medium.com/v2/resize:fit:828/format:webp/1*Xuy0z15a864b0DmvXQTVyw@2x.jpeg",
-  },
   {
     id: 1,
     title: "What is Auto-GPT?",
@@ -87,7 +78,7 @@ const articles = [
       "https://knowtechie.com/wp-content/uploads/2023/04/Auto-GPT-400x240.jpg.webp",
   },
   {
-    id: 2,
+    id: 0,
     title: "How to use Spotify API",
     description:
       "A tutorial that shows how to connect your React(Vite) app to spotify's API",
