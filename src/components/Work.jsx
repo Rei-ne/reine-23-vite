@@ -20,19 +20,11 @@ const projects = [
       "A landing page for a music producer linked to beatstars for beat purchases",
     category: "javascript",
     githubLink: null,
-    liveLink: "https://teddywestside.reine.dev/",
+    liveLink: "https://teddywestside.vibesfactory.co/",
   },
+
   {
     id: 3,
-    title: "Reine DEV",
-    description:
-      "A portfolio website for a software developer built with React(vite) and tailwind css",
-    category: "javascript",
-    githubLink: "https://github.com/Rei-ne/reine-23-vite",
-    liveLink: "https://reine.dev/",
-  },
-  {
-    id: 5,
     title: "The Folk",
     description:
       "A website for a music and talent management agency built with React(vite)",
@@ -41,7 +33,7 @@ const projects = [
     liveLink: "https://thefolk.netlify.app/",
   },
   {
-    id: 6,
+    id: 5,
     title: "Method",
     description:
       "A landing page for a payroll system built with react and tailwind CSS",
@@ -50,7 +42,7 @@ const projects = [
     liveLink: "https://method-landing.netlify.app/",
   },
   {
-    id: 7,
+    id: 6,
     title: "Mich Lagos",
     description: "An online store made for a Nigerian Fashion Company",
     category: "ecommerce",
@@ -58,13 +50,22 @@ const projects = [
     liveLink: "https://mlng.store/",
   },
   {
-    id: 4,
+    id: 7,
     title: "Spotify API",
     description:
       "A tutorial that shows how to connect your React(Vite) app to spotify's API",
     category: "blog",
     githubLink: "https://github.com/Rei-ne/spotify-api-test",
     liveLink: "https://reine-spotify-np.netlify.app/",
+  },
+  {
+    id: 8,
+    title: "Reine DEV",
+    description:
+      "A portfolio website for a software developer built with React(vite) and tailwind css",
+    category: "javascript",
+    githubLink: "https://github.com/Rei-ne/reine-23-vite",
+    liveLink: "https://reine.dev/",
   },
 ];
 const articles = [

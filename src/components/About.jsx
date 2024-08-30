@@ -56,9 +56,8 @@ function About() {
           </div>
           <div className="w-full">
             <p className="my-2 w-full">
-              I am interested in smart contract (blockchain) development,
-              technical writing, music talent management & digital creative
-              consultation.
+              I am interested in software development, technical writing, music
+              talent management & digital creative consultation.
             </p>
           </div>
           <div className="w-full">
