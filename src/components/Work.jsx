@@ -152,15 +152,7 @@ const Work = () => {
       </div>
       <div className="sm:w-4/5">
         <p className="tracking-wider text-gray-light font-PPNeueMontreal p-6 md:w-fit  text-sm max-w-prose leading-8 lg:text-center">
-          My{" "}
-          <a
-            className="text-mint font-bold"
-            href="https://drive.google.com/file/d/1ILB6oqooWTy4HROcMPL8rdp9QzLVpOEx/view?usp=drivesdk"
-            target="_blank"
-          >
-            resume
-          </a>{" "}
-          and other projects are available on{" "}
+          My resume and other projects are available on{" "}
           <a
             className="text-mint font-bold"
             href="https://github.com/Rei-ne"
