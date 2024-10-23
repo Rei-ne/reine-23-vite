@@ -21,7 +21,7 @@ const onLeave = ({ currentTarget }) => {
 const Article = ({ title, description, liveLink, image }) => {
   return (
     <div
-      className="px-6 py-4 font-Kaldera relative text-center md:h-14 h-full w-4/5 lg:w-full sm:border-b-2 my-1 lg:my-0 border-gray flex flex-col justify-between items-start md:flex-row lg:justify-center"
+      className="w-full px-6 py-4 font-Kaldera relative text-center md:h-14 h-full  lg:w-full sm:border-b-2 my-1 lg:my-0 border-mint flex flex-col justify-between items-start md:flex-row lg:justify-center"
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
     >
@@ -40,7 +40,7 @@ const Article = ({ title, description, liveLink, image }) => {
             target="_blank"
             className="no-underline hover:underline"
           >
-            <h2 className="text-xl tracking-normal md:text-1xl lg:text-2xl text-mint font-bold">
+            <h2 className="text-xl tracking-normal md:text-1xl lg:text-2xl text-mint  font-PPNeueMontreal ">
               {title}
             </h2>
           </a>

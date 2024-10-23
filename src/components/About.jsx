@@ -1,99 +1,166 @@
-import React from "react";
-import aboutImg from "../assets/images/RD..svg";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
 import Stack from "./Stack";
 
-import TypeWriter from "./TypeWriter";
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 function About() {
-  const text = "MY STACK";
+  const sectionRef = useRef(null);
+  const textRefs = useRef([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Kill any existing ScrollTriggers for this section
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+
+      // Set initial state
+      textRefs.current.forEach((ref) => {
+        gsap.set(ref, { opacity: 0, y: 30 });
+      });
+
+      textRefs.current.forEach((ref, index) => {
+        ScrollTrigger.create({
+          trigger: ref,
+          start: "top 85%",
+          end: "top 80%",
+          markers: false,
+          onEnter: () => {
+            gsap.to(ref, {
+              opacity: 1,
+              y: 0,
+              duration: 1, // Slower animation
+              ease: "power2.out",
+              clearProps: "transform",
+              scrollTrigger: {
+                trigger: ref,
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+              },
+            });
+          },
+          onLeaveBack: () => {
+            gsap.to(ref, {
+              opacity: 0,
+              y: 30,
+              duration: 0.5,
+              ease: "power2.in",
+            });
+          },
+          once: false,
+          preventOverlaps: true,
+          fastScrollEnd: true,
+        });
+      });
+
+      // Add a main section trigger for better control
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top 90%",
+        end: "bottom 10%",
+        markers: false,
+        onLeave: () => {
+          textRefs.current.forEach((ref) => {
+            gsap.set(ref, { opacity: 0, y: 30 });
+          });
+        },
+        onEnterBack: () => {
+          textRefs.current.forEach((ref, index) => {
+            gsap.to(ref, {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              delay: index * 0.2,
+              ease: "power2.out",
+            });
+          });
+        },
+      });
+    }, sectionRef);
+
+    return () => {
+      ctx.revert();
+    };
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       id="about"
-      className="h-full sm:w-4/5 w-full mt-10 flex flex-col justify-center items-center"
+      className="min-h-screen w-full max-w-6xl mx-auto px-4 py-12"
     >
-      <h2 className="sm:text-3xl md:text-3xl uppercase flex justify-center items-center font-Bebas_Neue text-center">
+      <h2
+        className="text-3xl md:text-5xl mb-12 text-center font-Bebas_Neue opacity-0"
+        ref={(el) => (textRefs.current[0] = el)}
+      >
         About me
       </h2>
-      <div className="w-full text-gray-light md:flex flex-wrap md:flex-col lg:flex-row md:justify-around md:items-center md:h-4/5 lg:h-full">
-        <div className="font-PPNeueMontreal p-6 md:w-fit lg:w-1/3 w-full text-sm max-w-prose leading-8 left-about h-full flex flex-col items-center justify-evenly tracking-wider text-left md:text-justify">
-          <div className="w-full">
-            <p className="my-2 w-full">
-              Hello there 👋, my name is Toyosi Odukale (REINE), and I am
-              constantly evolving.
-            </p>
-          </div>
-          <div>
-            <p className="my-2">
-              I am a frontend web developer with a passion for exploring the
-              full potential of the internet. With a Bachelor of Science degree
-              in Information Technology, I aspire to become a competent and
-              knowledgeable software engineer.
-            </p>
-          </div>
-          <div className="w-full">
-            <p className="my-2 w-full">
-              My first dive into web development was in August 2021, when I
-              decided to transition from banking application support, to take
-              time out and give this new found interest all my attention.{" "}
-            </p>
-          </div>
+      <div className="grid md:grid-cols-2 justify-center lg:grid-cols-3 gap-8">
+        {/* Introduction Card */}
+        <div
+          ref={(el) => (textRefs.current[1] = el)}
+          className=" border-gray-light backdrop-blur-sm p-6 rounded-lg"
+        >
+          <h3 className="text-xl mb-4 font-PPNeueMontreal text-mint">
+            Hello there 👋
+          </h3>
+          <p className="text-gray text-base md:text-lg leading-relaxed">
+            I'm Toyosi Odukale (REINE), an innovative frontend engineer with a
+            BSc in Information Technology, passionate about building immersive
+            digital experiences.
+          </p>
         </div>
-        <div className="hidden lg:flex font-PPNeueMontreal p-6  flex-col justify-center items-center h-full md:w-1/3">
-          <img
-            className="bg-black grayscale text-gray w-fit object-contain md:h-fit w-full ml-8"
-            src={aboutImg}
-            alt="about reine dev"
-          />
-        </div>
-        <div className="font-PPNeueMontreal p-6 md:w-fit lg:w-1/3 w-full text-sm max-w-prose leading-8 left-about h-full flex flex-col items-center justify-evenly tracking-wider text-left md:text-justify">
-          <div className="w-full">
-            <p className="my-2 w-full">
-              Through my journey as a web developer, I have gained knowledge in
-              programming languages such as JavaScript and Solidity. These
-              skills have been instrumental in enhancing my artistic creations
-              and I continue to apply them daily.
-            </p>
-          </div>
-          <div className="w-full">
-            <p className="my-2 w-full">
-              I am interested in software development, technical writing, music
-              talent management & digital creative consultation.
-            </p>
-          </div>
-          <div className="w-full">
-            <p className="my-2 w-full">
-              I love music, when I'm not coding, you can find me either
-              listening to music on my{" "}
-              <a
-                href="https://open.spotify.com/user/31iptodfoldd453eq6tbmv4x6qlu?si=3c8bc7bf41b04de2"
-                target="_blank"
-              >
-                own
-              </a>{" "}
-              or with my friends 😀
-            </p>
-          </div>
-        </div>
-        <div className="flex flex-col gap-5 justify-center items-center ">
-          <TypeWriter
-            className="w-fit flex items-center justify-center font-PPNeueMontreal text-mint text-2xl"
-            text={text}
-          />
 
-          <Stack />
+        {/* Journey Card */}
+        <div
+          ref={(el) => (textRefs.current[2] = el)}
+          className="bg-black/20 backdrop-blur-sm p-6 rounded-lg"
+        >
+          <h3 className="text-xl mb-4 font-PPNeueMontreal text-mint">
+            My Journey
+          </h3>
+          <p className="text-gray text-base md:text-lg leading-relaxed">
+            Since August 2021, I've transitioned from banking support to
+            frontend development, constantly evolving and pushing the boundaries
+            of web technology.
+          </p>
         </div>
-        <div className="right-about p-6 md:w-fit lg:w-fit text-sm leading-8 font-PPNeueMontreal h-full flex flex-col justify-center tracking-wider">
-          <p className="my-2 font-PPNeueMontreal text-sm leading-8">
-            I am excited to further develop my skills and create innovative
-            solutions that make a difference.
+
+        {/* Skills Card */}
+        <div
+          ref={(el) => (textRefs.current[3] = el)}
+          className="bg-black/20 backdrop-blur-sm p-6 rounded-lg"
+        >
+          <h3 className="text-xl mb-4 font-PPNeueMontreal  text-mint">
+            Beyond Code
+          </h3>
+          <p className="text-gray text-sm md:text-lg leading-relaxed">
+            I bridge technical expertise with creative pursuits, from writing
+            code to music talent management and digital creative consultation.
           </p>
         </div>
       </div>
 
-      <div className="mt-8 w-fit lg:w-4/5 sm:text-center text-center flex items-end font-PPNeueMontreal h-4 text-gray-light text-base border-t md:justify-center border-gray-light tracking-wider">
-        <p className="px-8">ENOUGH TALK 🤫, TIME TO SEE WHAT I’VE BUILT.</p>
+      {/* Stack Section */}
+      <div className="mt-12" ref={(el) => (textRefs.current[4] = el)}>
+        <h3 className="text-xl text-mint text-center mb-8 font-PPNeueMontreal ">
+          MY STACK
+        </h3>
+        <Stack />
+      </div>
+
+      {/* Call to Action */}
+      <div
+        className="mt-12 text-center border-t border-gray-light pt-8"
+        ref={(el) => (textRefs.current[5] = el)}
+      >
+        <p className="text-base font-PPNeueMontreal">
+          ENOUGH TALK 🤫, TIME TO SEE WHAT I'VE BUILT.
+        </p>
       </div>
     </section>
   );
 }
+
 export default About;

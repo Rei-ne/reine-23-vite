@@ -7,11 +7,12 @@ import Article from "./Article";
 const projects = [
   {
     id: 1,
-    title: "Album Cover Bank",
-    description: "An archive of Nigerian Album cover art from 1950 till date",
+    title: "Foodpulse",
+    description:
+      "Foodpulse is a cutting-edge food-tech startup, focusing on global culinary discovery and social impact. It was built using Next.js, Three.js, and Tailwind",
     category: "javascript",
     githubLink: null,
-    liveLink: "https://www.albumcoverbank.com/",
+    liveLink: "https://foodpulse.xyz/",
   },
   {
     id: 2,
@@ -22,9 +23,18 @@ const projects = [
     githubLink: null,
     liveLink: "https://teddywestside.vibesfactory.co/",
   },
-
   {
     id: 3,
+    title: "Lexlance",
+    description:
+      "Lexlance is a legal marketplace connecting clients with lawyers built with React(vite), Node, SCSS and CSS modules.",
+    category: "javascript",
+    githubLink: null,
+    liveLink: "https://lexlance.com/",
+  },
+
+  {
+    id: 4,
     title: "The Folk",
     description:
       "A website for a music and talent management agency built with React(vite)",
@@ -32,22 +42,23 @@ const projects = [
     githubLink: null,
     liveLink: "https://thefolk.netlify.app/",
   },
+
   {
     id: 5,
-    title: "Method",
-    description:
-      "A landing page for a payroll system built with react and tailwind CSS",
-    category: "javascript",
-    githubLink: null,
-    liveLink: "https://method-landing.netlify.app/",
-  },
-  {
-    id: 6,
     title: "Mich Lagos",
     description: "An online store made for a Nigerian Fashion Company",
     category: "ecommerce",
     githubLink: null,
     liveLink: "https://mlng.store/",
+  },
+  {
+    id: 6,
+    title: "Album Cover Bank",
+    description:
+      "Album Cover Bank is an archive of Nigerian album cover art from 1950 to date. It was built using React, SCSS and Airtable.",
+    category: "javascript",
+    githubLink: null,
+    liveLink: "https://www.albumcoverbank.com/",
   },
   {
     id: 7,
@@ -58,15 +69,16 @@ const projects = [
     githubLink: "https://github.com/Rei-ne/spotify-api-test",
     liveLink: "https://reine-spotify-np.netlify.app/",
   },
-  {
-    id: 8,
-    title: "Reine DEV",
-    description:
-      "A portfolio website for a software developer built with React(vite) and tailwind css",
-    category: "javascript",
-    githubLink: "https://github.com/Rei-ne/reine-23-vite",
-    liveLink: "https://reine.dev/",
-  },
+
+  // {
+  //   id: 8,
+  //   title: "Reine DEV",
+  //   description:
+  //     "A portfolio website for a software developer built with React(vite) and tailwind css",
+  //   category: "javascript",
+  //   githubLink: "https://github.com/Rei-ne/reine-23-vite",
+  //   liveLink: "https://reine.dev/",
+  // },
 ];
 const articles = [
   {
@@ -109,75 +121,39 @@ const articles = [
 ];
 const Work = () => {
   return (
-    <section
-      id="work"
-      className="h-fit w-full about-div mt-20 flex flex-col justify-center items-center"
-    >
-      <h2 className="sm:text-3xl md:text-3xl uppercase flex justify-center items-center font-Bebas_Neue">
-        PROJECTS
-      </h2>
-      <div className="sm:w-4/5 md:w-4/5 ">
-        <p className="hidden text-gray-light font-GT_Flexa p-6  text-justify text-sm max-w-prose leading-8">
-          In order to put my skills to test, I build projects that expand and go
-          beyond my current knowledge.
-          <br /> I love to investigate new technologies and try new things.
-        </p>
-      </div>
-      <div className="flex items-center justify-center flex-col md:w-full mb-4">
-        {projects.map((project) => (
-          <Project
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            category={project.category}
-            githubLink={project.githubLink}
-            liveLink={project.liveLink}
-          />
-        ))}
-      </div>
+    <section id="work" className="min-h-screen w-full py-12 md:px-8">
+      {/* Projects Section */}
+      <div className=" w-full  ">
+        <h2 className="text-3xl md:text-5xl mb-12 text-center font-Bebas_Neue">
+          PROJECTS
+        </h2>
 
-      <h2 className="sm:text-3xl md:text-3xl uppercase flex justify-center items-center font-Bebas_Neue">
-        ARTICLES
-      </h2>
-      <div className="flex items-center justify-center flex-col md:w-full">
-        {articles.map((article) => (
-          <Article
-            key={article.id}
-            title={article.title}
-            description={article.description}
-            liveLink={article.liveLink}
-            image={article.image}
-          />
-        ))}
-      </div>
-      <div className="sm:w-4/5">
-        <p className="tracking-wider text-gray-light font-PPNeueMontreal p-6 md:w-fit  text-sm max-w-prose leading-8 lg:text-center">
-          My resume and other projects are available on{" "}
-          <a
-            className="text-mint font-bold"
-            href="https://github.com/Rei-ne"
-            target="_blank"
-          >
-            github
-          </a>
-          . Follow me on{" "}
-          <a
-            className="text-mint font-bold"
-            href="https://medium.com/@reinetoyosii"
-            target="_blank"
-          >
-            medium
-          </a>{" "}
-          and{" "}
-          <a
-            className="text-mint font-bold"
-            href="https://reine.hashnode.dev/"
-            target="_blank"
-          >
-            hashnode
-          </a>{" "}
-          where I write about my experiences.
-        </p>
+        {/* Grid Container */}
+        <div className="max-w-7xl mx-auto">
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project) => (
+              <Project key={project.id} {...project} />
+            ))}
+          </div>
+
+          {/* Mobile List */}
+          <div className="md:hidden grid gap-4">
+            {projects.map((project) => (
+              <Project key={project.id} {...project} />
+            ))}
+          </div>
+        </div>
+
+        {/* Articles Section */}
+        <h2 className="text-3xl md:text-5xl my-8 text-center font-Bebas_Neue">
+          ARTICLES
+        </h2>
+
+        <div className="grid gap-6 mb-16 w-full">
+          {articles.map((article) => (
+            <Article key={article.id} {...article} />
+          ))}
+        </div>
       </div>
     </section>
   );

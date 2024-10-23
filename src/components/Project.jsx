@@ -1,83 +1,162 @@
-import React from 'react'
-import githubIcon from '../assets/icons/mdi_github.svg'
-import shareIcon from '../assets/icons/Arrow_1.svg'
+import React, { useState, useRef, useEffect } from "react";
+import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
 import gsap from "gsap";
 
+import githubIcon from "../assets/icons/mdi_github.svg";
 
-const icons = [
-    {
-        id: 1,
-        title: "github-icon",
-        iconImg: `${githubIcon}`,
-    },
-    {
-        id: 2,
-        title: "share-icon",
-        iconImg: `${shareIcon}`,
-    },
-]
+const Project = ({ title, description, category, githubLink, liveLink }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const projectRef = useRef(null);
 
-const onEnter = ({ currentTarget }) => {
-    gsap.to(currentTarget, { backgroundColor: "#273444" });
-};
+  useEffect(() => {
+    const element = projectRef.current;
 
-const onLeave = ({ currentTarget }) => {
-    gsap.to(currentTarget, { backgroundColor: "black" });
-};
+    const randomDelay = Math.random() * 2;
 
+    // Create the floating animation
+    gsap.to(element, {
+      y: "8px",
+      duration: 2,
+      ease: "power1.inOut",
+      repeat: -1, // Infinite repeat
+      yoyo: true, // Animate back and forth
+      delay: randomDelay,
+    });
 
-const Project = ({ title, description, category, liveLink, githubLink }) => {
-    return (
-        <div className='px-6 py-4 font-Kaldera relative text-center md:h-14 h-full w-4/5 lg:w-full sm:border my-1 lg:my-0 border-gray flex flex-col justify-between items-start' onMouseEnter={onEnter} onMouseLeave={onLeave} >
+    return () => {
+      // Cleanup animation
+      gsap.killTweensOf(element);
+    };
+  }, []);
 
-            <div className="md:pl-4 md:flex md:flex-col md:justify-around md:w-3/5 lg:w-3/5 lg:ml-32 border-mint md:h-full lg:flex-col">
-                {/* text */}
-                <div className='flex items-center justify-start text-left w-4/5 md:w-full'>
-                    <h2 className='text-xl sm:tracking-widest md:tracking-normal md:text-2xl lg:text-4.5 text-mint font-bold'>{title}</h2>
-                </div>
-                {/* description */}
-                <div className='flex items-center h-fit w-2/3 md:w-fit md:h-auto justify-start text-left  '>
-                    <p className='font-PPNeueMontreal max-w-prose sm:leading-6 leading-8 text-gray-light sm:text-base md:text-base tracking-wider'>{description}</p>
-                </div>
-
-                {/* category */}
-                <div className='sm:hidden md:flex items-center   md:w-10 md:mr-10 justify-center text-center h-auto p-2 mt-10 absolute right-0 top-0 lg:w-10 lg:mr-48'>
-                    <p className='font-PPNeueMontreal uppercase  max-w-prose text-gray-light md:text-1xl lg:text-1xl'>{category}</p>
-                </div>
-
-                <div className='flex flex-row justify-evenly items-center sm:w-1/3 sm:mb-6 md:justify-evenly w-1/3  lg:w-10 lg:mr-48 absolute right-0 bottom-0 mb-8 p-2'>
-
-                    {githubLink ?
-                        <div className='flex flex-col items-center justify-center px-2 gap-1  h-4 '>
-                            <div className='h-1 '>
-                                <a href={githubLink} target="_blank"> <img className='h-full cursor-pointer ' key={icons[0].id} src={icons[0].iconImg} alt="github-icon" /></a>
-                            </div>
-                            <p className='font-PPNeueMontreal text-base mt-1'>code</p>
-                        </div>
-                        : null
-
-                    }
-
-                    {liveLink ?
-                        <div className='flex flex-col items-center justify-center text-justify px-2 gap-1  h-4 '>
-                            <div className='h-1 '>
-                                <a href={liveLink} target="_blank">
-                                    <img className='h-full cursor-pointer' key={icons[1].id} src={icons[1].iconImg} alt="live-icon" /></a>
-                            </div>
-                            <p className='font-PPNeueMontreal text-base mt-1'>live</p>
-
-                        </div>
-                        : null
-
-                    }
-
-                </div>
+  return (
+    <div className="w-full max-w-4xl  mb-4">
+      {/* Mobile Design */}
+      <div className="md:hidden px-4">
+        <div
+          className={`
+            bg-[#111111] border border-mint/20  rounded-lg
+            transition-all duration-300 ease-in-out
+            ${isExpanded ? "p-6" : "p-4"}
+          `}
+        >
+          <div className="flex justify-between items-start ">
+            <div className="flex-1">
+              <h3 className="text-xl font-PPNeueMontreal text-mint mb-1">
+                {title}
+              </h3>
+              <span className="text-xs text-gray-light uppercase tracking-wider">
+                {category}
+              </span>
             </div>
 
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="p-2"
+              aria-label={isExpanded ? "Show less" : "Show more"}
+            >
+              {isExpanded ? (
+                <ChevronUp className="w-5 h-5 text-mint" />
+              ) : (
+                <ChevronDown className="w-5 h-5 text-mint" />
+              )}
+            </button>
+          </div>
 
+          <div className={`mt-2 ${isExpanded ? "block" : "hidden"}`}>
+            <p className="text-sm leading-relaxed mb-4">{description}</p>
+
+            <div className="flex gap-4 mt-4 ">
+              {liveLink && (
+                <a
+                  href={liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-mint hover:text-mint/80 text-sm"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span>Live Site</span>
+                </a>
+              )}
+              {githubLink && (
+                <a
+                  href={githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-mint hover:text-mint/80 text-sm"
+                >
+                  <img src={githubIcon} alt="GitHub" className="w-4 h-4" />
+                  <span>Source</span>
+                </a>
+              )}
+            </div>
+          </div>
         </div>
-    )
-}
+      </div>
 
+      {/* Desktop/Tablet Design */}
+      <div ref={projectRef} className="hidden md:block relative">
+        <div
+          className="
+            w-[70%] group hover:w-full
+            border border-mint/20 hover:border-mint
+            transition-all duration-500 ease-in-out p-8
+            hover:bg-gray-dark
+          "
+        >
+          {/* Content container */}
+          <div className="flex-1 relative z-10">
+            {/* Category tag */}
+            <span className="text-xs text-gray-light uppercase tracking-wider mb-2 inline-block">
+              {category}
+            </span>
 
-export default Project
+            <h3 className="text-xl font-PPNeueMontreal text-mint mb-2 group-hover:transform group-hover:translate-y-[-2px] transition-transform duration-300">
+              {title}
+            </h3>
+
+            <p className="text-sm leading-relaxed text-gray-light mb-4 max-w-prose transition-opacity duration-300">
+              {description}
+            </p>
+
+            <div className="flex gap-4">
+              {liveLink && (
+                <a
+                  href={liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    flex items-center gap-2 text-mint
+                    hover:text-mint/80 text-sm
+                    transition-all duration-300
+                    hover:translate-x-1
+                  "
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span>Live Site</span>
+                </a>
+              )}
+              {githubLink && (
+                <a
+                  href={githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    flex items-center gap-2 text-mint
+                    hover:text-mint/80 text-sm
+                    transition-all duration-300
+                    hover:translate-x-1
+                  "
+                >
+                  <img src={githubIcon} alt="GitHub" className="w-4 h-4" />
+                  <span>Source</span>
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default Project;
