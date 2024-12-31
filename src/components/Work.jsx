@@ -81,17 +81,17 @@ const projects = [
   // },
 ];
 const articles = [
+  // {
+  //   id: 1,
+  //   title: "What is Auto-GPT?",
+  //   description:
+  //     "Explore Auto-GPT, uncover the link between ChatGPT, GPT-4, and open soure AI",
+  //   liveLink: "https://knowtechie.com/what-is-auto-gpt/",
+  //   image:
+  //     "https://knowtechie.com/wp-content/uploads/2023/04/Auto-GPT-400x240.jpg.webp",
+  // },
   {
     id: 1,
-    title: "What is Auto-GPT?",
-    description:
-      "Explore Auto-GPT, uncover the link between ChatGPT, GPT-4, and open soure AI",
-    liveLink: "https://knowtechie.com/what-is-auto-gpt/",
-    image:
-      "https://knowtechie.com/wp-content/uploads/2023/04/Auto-GPT-400x240.jpg.webp",
-  },
-  {
-    id: 0,
     title: "How to use Spotify API",
     description:
       "A tutorial that shows how to connect your React(Vite) app to spotify's API",
@@ -101,7 +101,7 @@ const articles = [
       "https://cdn.hashnode.com/res/hashnode/image/upload/v1680543383094/ab162d4c-ade7-4cf5-bc02-bb11e405dc85.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
   },
   {
-    id: 3,
+    id: 2,
     title: "Intro to Web Dev",
     description:
       "Learn about the internet, and how to create a simple webpage using HTML and CSS",
@@ -110,7 +110,7 @@ const articles = [
     image: "https://miro.medium.com/v2/resize:fit:640/0*yxR9XZ09b9PIn4Me",
   },
   {
-    id: 4,
+    id: 3,
     title: "What is web3?",
     description: "An absolute beginner's guide to web3",
     liveLink:
