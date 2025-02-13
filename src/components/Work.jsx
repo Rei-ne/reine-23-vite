@@ -7,6 +7,24 @@ import Article from "./Article";
 const projects = [
   {
     id: 1,
+    title: "Peeps Africa",
+    description:
+      "Peeps is an influencer and performance marketing agency that supercharges your online presence. ",
+    category: "javascript",
+    githubLink: null,
+    liveLink: "https://peepsafrica.com/",
+  },
+  {
+    id: 2,
+    title: "Shuttergirl",
+    description:
+      "A booking website for Celebrity Photographer & Editor, Shuttergirl",
+    category: "wordpress",
+    githubLink: null,
+    liveLink: "https://bookshuttergirl.com/",
+  },
+  {
+    id: 3,
     title: "Foodpulse",
     description:
       "Foodpulse is a cutting-edge food-tech startup, focusing on global culinary discovery and social impact. It was built using Next.js, Three.js, and Tailwind",
@@ -14,8 +32,9 @@ const projects = [
     githubLink: null,
     liveLink: "https://foodpulse.xyz/",
   },
+
   {
-    id: 2,
+    id: 4,
     title: "TeddyWestside",
     description:
       "A landing page for a music producer linked to beatstars for beat purchases",
@@ -24,7 +43,7 @@ const projects = [
     liveLink: "https://teddywestside.vibesfactory.co/",
   },
   {
-    id: 3,
+    id: 5,
     title: "Lexlance",
     description:
       "Lexlance is a legal marketplace connecting clients with lawyers built with React(vite), Node, SCSS and CSS modules.",
@@ -34,7 +53,7 @@ const projects = [
   },
 
   {
-    id: 4,
+    id: 6,
     title: "The Folk",
     description:
       "A website for a music and talent management agency built with React(vite)",
@@ -44,7 +63,7 @@ const projects = [
   },
 
   {
-    id: 5,
+    id: 7,
     title: "Mich Lagos",
     description: "An online store made for a Nigerian Fashion Company",
     category: "ecommerce",
@@ -52,7 +71,7 @@ const projects = [
     liveLink: "https://mlng.store/",
   },
   {
-    id: 6,
+    id: 8,
     title: "Album Cover Bank",
     description:
       "Album Cover Bank is an archive of Nigerian album cover art from 1950 to date. It was built using React, SCSS and Airtable.",
@@ -61,7 +80,7 @@ const projects = [
     liveLink: "https://www.albumcoverbank.com/",
   },
   {
-    id: 7,
+    id: 9,
     title: "Spotify API",
     description:
       "A tutorial that shows how to connect your React(Vite) app to spotify's API",
