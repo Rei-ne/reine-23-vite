@@ -106,9 +106,9 @@ function About() {
             Hello there 👋
           </h3>
           <p className="text-gray text-base md:text-lg leading-relaxed">
-            I'm Toyosi Odukale (REINE), an innovative frontend engineer with a
-            BSc in Information Technology, passionate about building immersive
-            digital experiences.
+            My name is Toyosi Odukale (REINE DEV), and at my core I would say
+            I’m a creative with a passion for building innovative and immersive
+            web experiences
           </p>
         </div>
 
@@ -143,12 +143,12 @@ function About() {
       </div>
 
       {/* Stack Section */}
-      <div className="mt-12" ref={(el) => (textRefs.current[4] = el)}>
+      {/* <div className="mt-12" ref={(el) => (textRefs.current[4] = el)}>
         <h3 className="text-xl text-mint text-center mb-8 font-PPNeueMontreal ">
-          MY STACK
+          MY INTERESTS
         </h3>
         <Stack />
-      </div>
+      </div> */}
 
       {/* Call to Action */}
       <div

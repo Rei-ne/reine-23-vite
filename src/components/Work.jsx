@@ -144,7 +144,7 @@ const Work = () => {
       {/* Projects Section */}
       <div className=" w-full  ">
         <h2 className="text-3xl md:text-5xl mb-12 text-center font-Bebas_Neue">
-          PROJECTS
+          TECH
         </h2>
 
         {/* Grid Container */}
@@ -163,9 +163,21 @@ const Work = () => {
           </div>
         </div>
 
-        {/* Articles Section */}
+        <div className=" gap-6 my-16 w-full">
+          {/* Articles Section */}
+          <h2 className="text-3xl md:text-5xl my-8 text-center font-Bebas_Neue">
+            MUSIC
+          </h2>
+
+          <div className=" gap-6 mb-16 w-full">
+            <div className=" text-center pt-2">
+              <p className="text-base font-PPNeueMontreal">COMING SOON</p>
+            </div>
+          </div>
+        </div>
+
         <h2 className="text-3xl md:text-5xl my-8 text-center font-Bebas_Neue">
-          ARTICLES
+          WRITING
         </h2>
 
         <div className="grid gap-6 mb-16 w-full">
