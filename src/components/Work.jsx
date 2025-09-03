@@ -23,15 +23,15 @@ const projects = [
     githubLink: null,
     liveLink: "https://bookshuttergirl.com/",
   },
-  {
-    id: 3,
-    title: "Foodpulse",
-    description:
-      "Foodpulse is a cutting-edge food-tech startup, focusing on global culinary discovery and social impact. It was built using Next.js, Three.js, and Tailwind",
-    category: "javascript",
-    githubLink: null,
-    liveLink: "https://foodpulse.xyz/",
-  },
+  // {
+  //   id: 3,
+  //   title: "Foodpulse",
+  //   description:
+  //     "Foodpulse is a cutting-edge food-tech startup, focusing on global culinary discovery and social impact. It was built using Next.js, Three.js, and Tailwind",
+  //   category: "javascript",
+  //   githubLink: null,
+  //   liveLink: "https://foodpulse.xyz/",
+  // },
 
   {
     id: 4,
