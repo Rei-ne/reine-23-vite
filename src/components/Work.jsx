@@ -23,6 +23,23 @@ const projects = [
     githubLink: null,
     liveLink: "https://bookshuttergirl.com/",
   },
+  {
+    id: 3,
+    title: "Scent Elixir",
+    description: "A custom made E-Commerce store for Scent Elixir Perfumery",
+    category: "wordpress",
+    githubLink: null,
+    liveLink: "https://scentelixir.ng/",
+  },
+  {
+    id: 4,
+    title: "The Stoic Circles",
+    description:
+      "A website for a real estate and construction management company",
+    category: "wordpress",
+    githubLink: null,
+    liveLink: "https://stoiccircles.com/",
+  },
   // {
   //   id: 3,
   //   title: "Foodpulse",
@@ -34,7 +51,7 @@ const projects = [
   // },
 
   {
-    id: 4,
+    id: 5,
     title: "TeddyWestside",
     description:
       "A landing page for a music producer linked to beatstars for beat purchases",
@@ -43,7 +60,7 @@ const projects = [
     liveLink: "https://teddywestside.vibesfactory.co/",
   },
   {
-    id: 5,
+    id: 6,
     title: "Lexlance",
     description:
       "Lexlance is a legal marketplace connecting clients with lawyers built with React(vite), Node, SCSS and CSS modules.",
@@ -53,7 +70,7 @@ const projects = [
   },
 
   {
-    id: 6,
+    id: 7,
     title: "The Folk",
     description:
       "A website for a music and talent management agency built with React(vite)",
@@ -62,14 +79,6 @@ const projects = [
     liveLink: "https://thefolk.netlify.app/",
   },
 
-  {
-    id: 7,
-    title: "Mich Lagos",
-    description: "An online store made for a Nigerian Fashion Company",
-    category: "ecommerce",
-    githubLink: null,
-    liveLink: "https://mlng.store/",
-  },
   {
     id: 8,
     title: "Album Cover Bank",
