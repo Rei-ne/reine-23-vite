@@ -6,7 +6,7 @@ Vite (French word for "quick", pronounced /vit/, like "veet") is a build tool th
 
 You can read more about vite [here](https://vitejs.dev/guide/why.html)
 
-[reine.dev](https://reine.dev)
+[reine.vibesfactory.co](https://reine.vibesfactory.co)
 
 ## Starting the app locally
 

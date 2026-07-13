@@ -26,9 +26,9 @@ const Footer = () => {
           <a
             className="text-footer no-underline hover:text-mint hover:underline"
             target="_blank"
-            href="https://medium.com/@reinetoyosii"
+            href="https://wa.com/+2347037155176"
           >
-            Medium{" "}
+            Whatsapp{" "}
           </a>
         </div>
       </div>
