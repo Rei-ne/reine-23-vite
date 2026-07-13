@@ -26,7 +26,7 @@ const Footer = () => {
           <a
             className="text-footer no-underline hover:text-mint hover:underline"
             target="_blank"
-            href="https://wa.com/+2347037155176"
+            href="https://wa.me/+2347037155176"
           >
             Whatsapp{" "}
           </a>
