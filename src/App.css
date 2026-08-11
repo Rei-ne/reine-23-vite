@@ -97,8 +97,6 @@ body::after {
 .hero--online { position: relative; min-height: 760px; isolation: isolate; perspective: 900px; border-bottom: 1px solid var(--line); }
 .hero--online::before { content: ""; position: absolute; z-index: -1; top: 12%; right: 0; width: 55vw; height: 55vw; border-radius: 50%; background: radial-gradient(circle, rgba(130,255,135,.09), transparent 64%); filter: blur(18px); pointer-events: none; }
 .hero__artifact { position: absolute; z-index: 0; pointer-events: none; color: var(--online); opacity: .1; }
-.hero__artifact--dino { right: 34%; bottom: 18%; width: clamp(72px, 7.5vw, 112px); fill: currentColor; opacity: .14; filter: drop-shadow(0 0 16px rgba(130,255,135,.22)); transform: rotate(2deg); }
-.hero__dino-cutout { fill: #050607; }
 .hero__artifact--crown { top: 41%; left: 4%; width: clamp(76px, 10vw, 150px); fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: square; stroke-linejoin: bevel; transform: rotate(-14deg); }
 .hero__word-wrap { position: absolute; top: 7%; left: 8%; }
 .hero__word { margin: 0; font-family: "Kaldera", Georgia, serif; font-size: clamp(132px, 23vw, 340px); font-weight: 400; line-height: .8; letter-spacing: -.055em; color: #ecf7eb; text-shadow: 0 0 38px rgba(130,255,135,.12); }
@@ -281,7 +279,6 @@ body::after {
   .tape--cream { display: none; }
   .terminal { left: 6%; bottom: 7%; width: 78%; }
   .hero__index { top: 34%; right: auto; bottom: auto; left: 11%; display: flex; text-align: left; font-size: clamp(14px, 4vw, 18px); line-height: .95; }
-  .hero__artifact--dino { top: 18%; right: 6%; bottom: auto; width: 68px; opacity: .13; }
   .hero__artifact--crown { top: 47%; left: 2%; width: 72px; opacity: .08; }
   .project-row { grid-template-columns: 38px 1fr 22px; gap: 10px; }
   .project-row__meta { grid-column: 2; }

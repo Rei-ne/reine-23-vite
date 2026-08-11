@@ -134,7 +134,7 @@ function CursorTrail() {
     let lastX = -100;
     let lastY = -100;
     let symbolIndex = 0;
-    const symbols = ["</>", "♡", "♕"];
+    const symbols = ["</>", "♡", "♕", "✦", "♫", "{ }", "☺"];
 
     const leaveMark = (event) => {
       const distance = Math.hypot(event.clientX - lastX, event.clientY - lastY);
@@ -471,10 +471,6 @@ function App() {
         {world === "online" ? (
           <div className="world world--online">
             <section className="hero hero--online" aria-labelledby="online-title">
-              <svg className="hero__artifact hero__artifact--dino" viewBox="0 0 72 72" aria-hidden="true" shapeRendering="crispEdges">
-                <path d="M31 3h29v4h6v24H43v5h14v5H39v8h-5v16h-9V52h-7v13H8v-6h5V47H9v-5H5v-5H1v-9h5v5h7v4h7V25h6V11h5V3Z" />
-                <path className="hero__dino-cutout" d="M54 9h6v6h-6V9Zm-5 15h17v4H49v-4ZM34 36h-9v5h9v-5Z" />
-              </svg>
               <CrownMark className="hero__artifact hero__artifact--crown" />
               <div className="hero__word-wrap">
                 <h1 id="online-title" className="hero__word">reine</h1>
