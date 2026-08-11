@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && mkdir -p dist/server && cp worker/index.js dist/server/index.js",
     "preview": "vite preview",
     "preinstall": "npx npm-force-resolutions"
   },
