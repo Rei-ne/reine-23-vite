@@ -4,31 +4,70 @@ import "./App.css";
 const onlineProjects = [
   {
     number: "01",
-    name: "REINE DEV ENTERPRISES",
-    type: "TECHNICAL CREATIVE STUDIO",
-    note: "WEBSITES / WEB APPS / DIGITAL EXPERIMENTS",
-    href: "mailto:reinetoyosii@gmail.com?subject=Build%20with%20Reine%20Dev",
+    name: "TIKTALK MEDIA",
+    type: "MEDIA PLATFORM",
+    note: "WEB DESIGN / DEVELOPMENT / DIGITAL EXPERIENCE",
+    href: "https://tiktalkmedia.com/",
   },
   {
     number: "02",
+    name: "ANKORIO LMS",
+    type: "LEARNING PLATFORM",
+    note: "FULL-STACK MVP / PRODUCT ENGINEERING",
+    href: "https://ankorio-lms-mvp.netlify.app/",
+  },
+  {
+    number: "03",
+    name: "PEEPS AFRICA",
+    type: "AGENCY WEBSITE",
+    note: "CREATIVE DIRECTION / WEB DEVELOPMENT",
+    href: "https://peepsafrica.com/",
+  },
+  {
+    number: "04",
     name: "FACTORY RESET",
     type: "WEB + TICKETING",
     note: "EXPERIENCE DESIGN / EVENT INFRASTRUCTURE",
     href: "https://factoryreset.vibesfactory.co/",
   },
+];
+
+const fullWorkProjects = [
+  ...onlineProjects.slice(0, 3),
   {
-    number: "03",
+    number: "04",
     name: "ALBUM COVER BANK",
     type: "CULTURAL ARCHIVE",
     note: "REACT / AIRTABLE / NIGERIAN MUSIC HISTORY",
     href: "https://www.albumcoverbank.com/",
   },
   {
-    number: "04",
+    number: "05",
     name: "LEXLANCE",
     type: "LEGAL MARKETPLACE",
     note: "REACT / NODE / PRODUCT ENGINEERING",
     href: "https://lexlance.com/",
+  },
+  {
+    number: "06",
+    name: "SHUTTERGIRL",
+    type: "BOOKING EXPERIENCE",
+    note: "WEB DESIGN / DEVELOPMENT",
+    href: "https://bookshuttergirl.com/",
+  },
+  {
+    number: "07",
+    name: "SCENT ELIXIR",
+    type: "E-COMMERCE",
+    note: "STOREFRONT / WEB DEVELOPMENT",
+    href: "https://scentelixir.ng/",
+  },
+  {
+    number: "08",
+    name: "FACTORY RESET",
+    type: "WEB + TICKETING",
+    note: "EXPERIENCE DESIGN / EVENT INFRASTRUCTURE",
+    href: "https://factoryreset.vibesfactory.co/",
   },
 ];
 
@@ -58,6 +97,51 @@ const outsideProjects = [
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
+}
+
+function WorkPage() {
+  return (
+    <div className="site site--online work-page">
+      <header className="topbar">
+        <a className="topbar__id" href="/" aria-label="Back to Reine home">
+          REINE <span>/ SELECTED WORK</span>
+        </a>
+        <a className="work-page__back" href="/">← BACK HOME</a>
+        <div className="topbar__signal"><span className="signal-dot" /> AVAILABLE FOR SELECTED BUILDS</div>
+      </header>
+
+      <main>
+        <section className="work-page__hero">
+          <div className="section-kicker">
+            <span>REINE DEV ENTERPRISES</span>
+            <span>SOLO / STUDIO / COLLABORATIVE BUILDS</span>
+          </div>
+          <h1>work.</h1>
+          <p>WEBSITES / WEB APPS / PRODUCTS WITH PERSONALITY</p>
+        </section>
+
+        <section className="work-page__list" aria-label="Selected technical work">
+          {fullWorkProjects.map((project) => (
+            <a key={project.name} href={project.href} target="_blank" rel="noreferrer" className="work-entry">
+              <span>{project.number}</span>
+              <div>
+                <h2>{project.name}</h2>
+                <p>{project.type}</p>
+              </div>
+              <small>{project.note}</small>
+              <Arrow />
+            </a>
+          ))}
+        </section>
+
+        <section className="work-page__contact">
+          <span>REINE DEV ENTERPRISES / LAGOS</span>
+          <h2>HAVE A GOOD IDEA?</h2>
+          <a href="mailto:reinetoyosii@gmail.com?subject=Build%20with%20Reine%20Dev">LET’S TALK <Arrow /></a>
+        </section>
+      </main>
+    </div>
+  );
 }
 
 function App() {
@@ -174,6 +258,7 @@ function App() {
                   </a>
                 ))}
               </div>
+              <a className="all-work-link" href="/work">VIEW ALL TECHNICAL WORK <Arrow /></a>
             </section>
 
             <section className="studio-strip" aria-label="Reine Dev Enterprises">
@@ -276,4 +361,8 @@ function App() {
   );
 }
 
-export default App;
+function SiteRouter() {
+  return window.location.pathname === "/work" ? <WorkPage /> : <App />;
+}
+
+export default SiteRouter;
