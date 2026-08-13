@@ -160,6 +160,40 @@ function CursorTrail() {
   return <div ref={trailRef} className="cursor-trail" aria-hidden="true" />;
 }
 
+function ScrollReveals() {
+  useEffect(() => {
+    let animationFrame;
+    const update = () => {
+      animationFrame = undefined;
+      document.querySelectorAll("[data-reveal]").forEach((element) => {
+        const bounds = element.getBoundingClientRect();
+        const visible = bounds.top < window.innerHeight * 0.93 && bounds.bottom > window.innerHeight * 0.07;
+        element.classList.toggle("is-revealed", visible);
+      });
+    };
+
+    const scheduleUpdate = () => {
+      if (animationFrame) return;
+      animationFrame = window.requestAnimationFrame(update);
+    };
+
+    scheduleUpdate();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    const mutations = new MutationObserver(scheduleUpdate);
+    mutations.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      if (animationFrame) window.cancelAnimationFrame(animationFrame);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      mutations.disconnect();
+    };
+  }, []);
+
+  return null;
+}
+
 function ContactSection({ variant = "studio" }) {
   const panelRef = useRef(null);
   const link = "https://wa.me/message/76OBSZ4WWLQ3L1";
@@ -194,7 +228,7 @@ function ContactSection({ variant = "studio" }) {
   }
 
   return (
-    <section ref={panelRef} className="studio-strip tactile-panel" aria-label="Reine Dev Enterprises" onPointerMove={tiltPanel} onPointerLeave={resetPanel}>
+    <section ref={panelRef} className="studio-strip tactile-panel" data-reveal="panel" aria-label="Reine Dev Enterprises" onPointerMove={tiltPanel} onPointerLeave={resetPanel}>
       <p>HAVE A GOOD IDEA?</p>
       <a href={link} target="_blank" rel="noreferrer">LET’S BUILD COOL SHIT <Arrow /></a>
       <p>REINE DEV ENTERPRISES / LAGOS</p>
@@ -225,7 +259,7 @@ function RaveSignal() {
   };
 
   return (
-    <section ref={panelRef} className="next-signal tactile-panel tactile-panel--outside" onPointerMove={tiltPanel} onPointerLeave={resetPanel}>
+    <section ref={panelRef} className="next-signal tactile-panel tactile-panel--outside" data-reveal="panel" onPointerMove={tiltPanel} onPointerLeave={resetPanel}>
       <span>COMING SOON</span>
       <strong>REINE’S RAVE</strong>
       <span>LATE 2026 / BEACH GETAWAY</span>
@@ -337,6 +371,7 @@ function WorkPage() {
   return (
     <div className="site site--online work-page">
       <CursorTrail />
+      <ScrollReveals />
       <header className="topbar">
         <a className="topbar__id" href="/" aria-label="Back to Reine home">
           REINE <span>/ SELECTED WORK</span>
@@ -346,7 +381,7 @@ function WorkPage() {
       </header>
 
       <main>
-        <section className="work-page__hero">
+        <section className="work-page__hero" data-reveal="section">
           <div className="section-kicker">
             <span>WEBSITES / WEB APPS / PRODUCTS WITH PERSONALITY</span>
             <span>STUDIO BUILDS</span>
@@ -354,8 +389,8 @@ function WorkPage() {
         </section>
 
         <section className="work-page__list" aria-label="Selected technical work">
-          {fullWorkProjects.map((project) => (
-            <a key={project.name} href={project.href} target="_blank" rel="noreferrer" className="work-entry">
+          {fullWorkProjects.map((project, index) => (
+            <a key={project.name} href={project.href} target="_blank" rel="noreferrer" className="work-entry" data-reveal="row" style={{ "--reveal-delay": `${index * 70}ms` }}>
               <span>{project.number}</span>
               <div>
                 <h2>{project.name}</h2>
@@ -370,13 +405,13 @@ function WorkPage() {
           </div>
         </section>
 
-        <section className="writing" aria-label="Technical articles and other writing">
+        <section className="writing" data-reveal="section" aria-label="Technical articles and other writing">
           <div className="section-kicker">
             <span>TECHNICAL ARTICLES + OTHER WRITING</span>
           </div>
           <div className="writing__list">
-            {writing.map((article) => (
-              <a key={article.title} href={article.href} target="_blank" rel="noreferrer" className="writing-entry">
+            {writing.map((article, index) => (
+              <a key={article.title} href={article.href} target="_blank" rel="noreferrer" className="writing-entry" data-reveal="row" style={{ "--reveal-delay": `${index * 65}ms` }}>
                 <span>{article.number}</span>
                 <h3>{article.title}</h3>
                 <small>{article.type} / {article.date}</small>
@@ -432,6 +467,7 @@ function App() {
   return (
     <div className={`site site--${world}`}>
       <CursorTrail />
+      <ScrollReveals />
       <header className="topbar">
         <a className="topbar__id" href="#top" aria-label="Reine, home">
           TOYOSI ODUKALE <span>/ LAGOS</span>
@@ -505,15 +541,15 @@ function App() {
             </section>
 
             <section className="online-work" id="work" aria-labelledby="online-work-title">
-              <div className="section-kicker">
+              <div className="section-kicker" data-reveal="line">
                 <span>SELECTED WORK</span>
                 <span>2022–DATE</span>
               </div>
               <RevealHeading id="online-work-title">Web apps I have built.</RevealHeading>
 
               <div className="project-list">
-                {onlineProjects.map((project) => (
-                  <a key={project.name} href={project.href} target="_blank" rel="noreferrer" className="project-row">
+                {onlineProjects.map((project, index) => (
+                  <a key={project.name} href={project.href} target="_blank" rel="noreferrer" className="project-row" data-reveal="row" style={{ "--reveal-delay": `${index * 85}ms` }}>
                     <span className="project-row__number">{project.number}</span>
                     <span className="project-row__name">{project.name}</span>
                     <span className="project-row__meta">
@@ -524,7 +560,7 @@ function App() {
                   </a>
                 ))}
               </div>
-              <a className="all-work-link" href="/work">VIEW ALL TECHNICAL WORK <Arrow /></a>
+              <a className="all-work-link" data-reveal="line" href="/work">VIEW ALL TECHNICAL WORK <Arrow /></a>
             </section>
 
             <ContactSection />
@@ -552,7 +588,7 @@ function App() {
           </div>
         )}
 
-        <section className="identity" aria-labelledby="identity-title">
+        <section className="identity" data-reveal="bio" aria-labelledby="identity-title">
           <div className="identity__label">BIO</div>
           <div className="identity__body">
             <h2 id="identity-title">TOYOSI “REINE” ODUKALE</h2>
@@ -564,7 +600,7 @@ function App() {
         </section>
       </main>
 
-      <footer className="footer">
+      <footer className="footer" data-reveal="footer">
         <div>
           <span>LIKE MY WORK?</span>
           <a className="footer__coffee" href="https://paystack.shop/pay/reinedev" target="_blank" rel="noreferrer">
