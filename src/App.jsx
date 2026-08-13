@@ -483,7 +483,7 @@ function App() {
               </figure>
 
               <DraggableTag className="tape--green">FULL-STACK DEV / MUSIC EXEC</DraggableTag>
-              <DraggableTag className="tape--cream">FOUNDER / CREATIVE STRATEGIST</DraggableTag>
+              <DraggableTag className="tape--cream">TECH FOUNDER / CREATIVE STRATEGIST</DraggableTag>
 
               <div className="terminal" aria-label="About Reine">
                 <div className="terminal__bar">
@@ -509,7 +509,7 @@ function App() {
                 <span>SELECTED WORK</span>
                 <span>2022–DATE</span>
               </div>
-              <RevealHeading id="online-work-title">Things I have built.</RevealHeading>
+              <RevealHeading id="online-work-title">Web apps I have built.</RevealHeading>
 
               <div className="project-list">
                 {onlineProjects.map((project) => (
@@ -534,16 +534,16 @@ function App() {
             <section className="outside-hero" aria-label="Outside projects">
               <a className="night-tile night-tile--main" href="https://www.instagram.com/factoryreset.xyz/" target="_blank" rel="noreferrer" aria-label="Visit Factory Reset on Instagram">
                 <img src="/assets/factory-reset/crowd.jpg" alt="Guests at Factory Reset" />
-                <span className="night-tile__caption">FACTORY RESET / AFTER DARK</span>
+                <span className="night-tile__caption">FACTORY RESET</span>
               </a>
-              <a className="night-tile night-tile--logo night-tile--photo" href="https://www.instagram.com/factoryreset.xyz/" target="_blank" rel="noreferrer" aria-label="Visit Factory Reset on Instagram">
-                <img src="/assets/factory-reset/cozy6275.jpg" alt="A night at Factory Reset" />
+              <a className="night-tile night-tile--logo night-tile--photo" href="https://www.instagram.com/reine_dev/" target="_blank" rel="noreferrer" aria-label="Visit Reine on Instagram">
+                <img src="/assets/factory-reset/cozy6275.jpg" alt="Reine at Factory Reset" />
               </a>
               <a className="night-tile night-tile--flyer" href="https://www.instagram.com/reines.rave/" target="_blank" rel="noreferrer" aria-label="Visit Reine’s Rave on Instagram">
                 <img src="/assets/reines-rave/main-logo.svg" alt="Reine’s Rave" />
                 <span className="night-tile__caption">REINE’S RAVE</span>
               </a>
-              <a className="night-tile night-tile--rave" href="https://www.instagram.com/vibesfactoryng/" target="_blank" rel="noreferrer" aria-label="Visit Vibesfactory on Instagram">
+              <a className="night-tile night-tile--rave" href="https://www.tiktok.com/@reine_dev" target="_blank" rel="noreferrer" aria-label="Visit Reine on TikTok">
                 <img src="/assets/reine/outside.jpg" alt="Reine outdoors at dusk" />
               </a>
             </section>
@@ -567,7 +567,9 @@ function App() {
       <footer className="footer">
         <div>
           <span>LIKE MY WORK?</span>
-          <span className="footer__coffee">BUY ME A COFFEE <Arrow /></span>
+          <a className="footer__coffee" href="https://paystack.shop/pay/reinedev" target="_blank" rel="noreferrer">
+            BUY ME A COFFEE <Arrow />
+          </a>
         </div>
         <nav aria-label="Social links">
           <a href="https://github.com/Rei-ne" target="_blank" rel="noreferrer">GITHUB <Arrow /></a>
