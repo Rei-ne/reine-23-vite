@@ -109,15 +109,6 @@ const projects = [
   // },
 ];
 const articles = [
-  // {
-  //   id: 1,
-  //   title: "What is Auto-GPT?",
-  //   description:
-  //     "Explore Auto-GPT, uncover the link between ChatGPT, GPT-4, and open soure AI",
-  //   liveLink: "https://knowtechie.com/what-is-auto-gpt/",
-  //   image:
-  //     "https://knowtechie.com/wp-content/uploads/2023/04/Auto-GPT-400x240.jpg.webp",
-  // },
   {
     id: 1,
     title: "How to use Spotify API",
