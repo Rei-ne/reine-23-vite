@@ -21,7 +21,7 @@ const onlineProjects = [
     name: "ANKORIO LMS",
     type: "LOGISTICS MANAGEMENT SYSTEM",
     note: "FULL-STACK MVP / PRODUCT ENGINEERING",
-    href: "https://ankorio-lms-mvp.netlify.app/",
+    href: "https://ankorio.com/",
   },
   {
     number: "04",
