@@ -229,7 +229,7 @@ function ContactSection({ variant = "studio" }) {
     return (
       <section ref={panelRef} className="work-page__contact tactile-panel" onPointerMove={tiltPanel} onPointerLeave={resetPanel}>
         <h2>HAVE A GOOD IDEA?</h2>
-        <a href={link} target="_blank" rel="noreferrer">LET’S BUILD COOL SHIT</a>
+        <a href={link} target="_blank" rel="noreferrer">LET’S BUILD COOL STUFF</a>
       </section>
     );
   }
@@ -237,7 +237,7 @@ function ContactSection({ variant = "studio" }) {
   return (
     <section ref={panelRef} className="studio-strip tactile-panel" data-reveal="panel" aria-label="Reine Dev Enterprises" onPointerMove={tiltPanel} onPointerLeave={resetPanel}>
       <p>HAVE A GOOD IDEA?</p>
-      <a href={link} target="_blank" rel="noreferrer">LET’S BUILD COOL SHIT <Arrow /></a>
+      <a href={link} target="_blank" rel="noreferrer">LET’S BUILD COOL STUFF</a>
       <p>REINE DEV ENTERPRISES / LAGOS</p>
     </section>
   );
