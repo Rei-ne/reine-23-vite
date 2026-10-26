@@ -6,42 +6,21 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && mkdir -p dist/server && cp worker/index.js dist/server/index.js",
-    "preview": "vite preview",
-    "preinstall": "npx npm-force-resolutions"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@bachs/sdk": "1.0.0",
-    "@emailjs/browser": "^3.10.0",
-    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
-    "@netlify/blobs": "^11.1.4",
+    "@netlify/blobs": "^11.1.6",
     "@sparticuz/chromium-min": "153.0.0",
-    "autoprefixer": "^10.4.13",
-    "buffer": "^6.0.3",
-    "gsap": "^3.11.4",
+    "gsap": "^3.15.0",
     "jszip": "^3.10.2",
-    "node-fetch": "^3.3.1",
-    "postcss": "^8.4.21",
-    "puppeteer-core": "25.14.0",
-    "query-string": "^8.1.0",
-    "react": "^18.2.0",
-    "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-dom": "^18.2.0",
-    "react-ga": "^3.3.1",
-    "react-ga4": "^2.1.0",
-    "react-router-dom": "^6.8.2",
-    "react-scripts": "^5.0.1",
-    "styled-components": "^5.3.6",
-    "validator": "^13.9.0"
+    "puppeteer-core": "25.16.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-ga4": "^2.1.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.26",
-    "@types/react-dom": "^18.0.9",
-    "@vitejs/plugin-react": "^3.0.0",
-    "dotenv": "^16.0.3",
-    "lucide-react": "^0.453.0",
-    "react-error-overlay": "^6.0.9",
-    "sass": "^1.59.3",
-    "tailwindcss": "^1.9.6",
-    "vite": "^4.0.0"
+    "@vitejs/plugin-react": "^5.1.1",
+    "vite": "^7.2.2"
   }
 }
