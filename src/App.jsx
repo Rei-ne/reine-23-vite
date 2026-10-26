@@ -1,20 +1,21 @@
 import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
 import "./App.css";
 
 const onlineProjects = [
   {
     number: "01",
+    name: "GORAVE",
+    type: "EXPERIENCE GAME APP",
+    note: "INTERACTIVE EXPERIENCE / APP DEVELOPMENT",
+    href: "https://gorave.xyz/",
+  },
+  {
+    number: "02",
     name: "FACTORY RESET",
     type: "WEB + TICKETING",
     note: "EXPERIENCE DESIGN / EVENT INFRASTRUCTURE",
     href: "https://factoryreset.vibesfactory.co/",
-  },
-  {
-    number: "02",
-    name: "TIKTALK MEDIA",
-    type: "MEDIA PLATFORM",
-    note: "WEB DESIGN / DEVELOPMENT / DIGITAL EXPERIENCE",
-    href: "https://tiktalkmedia.com/",
   },
   {
     number: "03",
@@ -30,19 +31,26 @@ const onlineProjects = [
     note: "CREATIVE DIRECTION / WEB DEVELOPMENT",
     href: "https://peepsafrica.com/",
   },
+  {
+    number: "05",
+    name: "TIKTALK MEDIA",
+    type: "MEDIA PLATFORM",
+    note: "WEB DESIGN / DEVELOPMENT / DIGITAL EXPERIENCE",
+    href: "https://tiktalkmedia.com/",
+  },
 ];
 
 const fullWorkProjects = [
   ...onlineProjects,
   {
-    number: "05",
+    number: "06",
     name: "ALBUM COVER BANK",
     type: "CULTURAL ARCHIVE",
     note: "REACT / AIRTABLE / NIGERIAN MUSIC HISTORY",
     href: "https://www.albumcoverbank.com/",
   },
   {
-    number: "06",
+    number: "07",
     name: "SCENT ELIXIR",
     type: "E-COMMERCE",
     note: "STOREFRONT / WEB DEVELOPMENT",
@@ -178,14 +186,14 @@ function ScrollReveals() {
     };
 
     scheduleUpdate();
-    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    document.addEventListener("scroll", scheduleUpdate, { passive: true, capture: true });
     window.addEventListener("resize", scheduleUpdate);
     const mutations = new MutationObserver(scheduleUpdate);
     mutations.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       if (animationFrame) window.cancelAnimationFrame(animationFrame);
-      window.removeEventListener("scroll", scheduleUpdate);
+      document.removeEventListener("scroll", scheduleUpdate, { capture: true });
       window.removeEventListener("resize", scheduleUpdate);
       mutations.disconnect();
     };
@@ -220,9 +228,8 @@ function ContactSection({ variant = "studio" }) {
   if (variant === "work") {
     return (
       <section ref={panelRef} className="work-page__contact tactile-panel" onPointerMove={tiltPanel} onPointerLeave={resetPanel}>
-        <span>REINE DEV ENTERPRISES / LAGOS</span>
         <h2>HAVE A GOOD IDEA?</h2>
-        <a href={link} target="_blank" rel="noreferrer">LET’S BUILD COOL SHIT <Arrow /></a>
+        <a href={link} target="_blank" rel="noreferrer">LET’S BUILD COOL SHIT</a>
       </section>
     );
   }
@@ -339,55 +346,18 @@ function DraggableTag({ children, className }) {
   );
 }
 
-function RevealHeading({ id, children }) {
-  const triggerRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const trigger = triggerRef.current;
-    if (!trigger) return undefined;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
-    );
-
-    observer.observe(trigger);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div ref={triggerRef} className="reveal-heading__trigger">
-      <h2 id={id} className={`reveal-heading${isVisible ? " is-visible" : ""}`}>
-        {children}
-      </h2>
-    </div>
-  );
-}
-
 function WorkPage() {
   return (
-    <div className="site site--online work-page">
+    <div className="site site--online work-page work-page--scrapbook">
       <CursorTrail />
       <ScrollReveals />
       <header className="topbar">
-        <a className="topbar__id" href="/" aria-label="Back to Reine home">
-          REINE <span>/ SELECTED WORK</span>
-        </a>
+        <a className="topbar__id" href="/" aria-label="Back to Reine home">REINE</a>
         <a className="work-page__back" href="/">← BACK HOME</a>
         <div className="topbar__signal"><span className="signal-dot" /> AVAILABLE FOR SELECTED COMMISSIONS</div>
       </header>
 
-      <main>
-        <section className="work-page__hero" data-reveal="section">
-          <div className="section-kicker">
-            <span>WEBSITES / WEB APPS / PRODUCTS WITH PERSONALITY</span>
-            <span>STUDIO BUILDS</span>
-          </div>
-        </section>
-
+      <main className="work-page__paper">
         <section className="work-page__list" aria-label="Selected technical work">
           {fullWorkProjects.map((project, index) => (
             <a key={project.name} href={project.href} target="_blank" rel="noreferrer" className="work-entry" data-reveal="row" style={{ "--reveal-delay": `${index * 70}ms` }}>
@@ -397,11 +367,10 @@ function WorkPage() {
                 <p>{project.type}</p>
               </div>
               <small>{project.note}</small>
-              <Arrow />
             </a>
           ))}
           <div className="work-page__archives">
-            <a href="https://github.com/Rei-ne" target="_blank" rel="noreferrer">GITHUB <Arrow /></a>
+            <a href="https://github.com/Rei-ne" target="_blank" rel="noreferrer">GITHUB</a>
           </div>
         </section>
 
@@ -415,19 +384,92 @@ function WorkPage() {
                 <span>{article.number}</span>
                 <h3>{article.title}</h3>
                 <small>{article.type} / {article.date}</small>
-                <Arrow />
               </a>
             ))}
           </div>
           <div className="writing__archives">
-            <a href="https://reine.hashnode.dev/" target="_blank" rel="noreferrer">HASHNODE <Arrow /></a>
-            <a href="https://medium.com/@reinetoyosii" target="_blank" rel="noreferrer">MEDIUM <Arrow /></a>
+            <a href="https://reine.hashnode.dev/" target="_blank" rel="noreferrer">HASHNODE</a>
+            <a href="https://medium.com/@reinetoyosii" target="_blank" rel="noreferrer">MEDIUM</a>
           </div>
         </section>
 
         <ContactSection variant="work" />
+        <SiteFooter />
       </main>
-      <ScrollToTop />
+    </div>
+  );
+}
+
+function IdentitySection() {
+  return (
+    <section className="identity" data-reveal="bio" aria-labelledby="identity-title">
+      <div className="identity__label">BIO</div>
+      <div className="identity__body">
+        <h2 id="identity-title">TOYOSI “REINE” ODUKALE</h2>
+        <p className="identity__item" data-detail="VIBESFACTORY / REINE’S RAVE / FACTORY RESET">CO-FOUNDER</p>
+        <p className="identity__item" data-detail="I BUILD B2B AND E-COMMERCE WEB APPS">FULL-STACK DEVELOPER</p>
+        <p className="identity__item" data-detail="MUSIC RELEASE STRATEGY AND PLANNING">CREATIVE STRATEGIST</p>
+        <p className="identity__item" data-detail="I LOVE TO PARTAYYY">SERIOUS ABOUT A GOOD NIGHT OUT</p>
+      </div>
+    </section>
+  );
+}
+
+function SiteFooter() {
+  return (
+    <footer className="footer" data-reveal="footer">
+      <div>
+        <span>LIKE MY WORK?</span>
+        <a className="footer__coffee" href="https://paystack.shop/pay/reinedev" target="_blank" rel="noreferrer">
+          BUY ME A COFFEE
+        </a>
+      </div>
+      <nav aria-label="Social links">
+        <a href="https://github.com/Rei-ne" target="_blank" rel="noreferrer">GITHUB</a>
+        <a href="https://www.linkedin.com/in/toyosi-odukale/" target="_blank" rel="noreferrer">LINKEDIN</a>
+        <a href="https://x.com/reine_dev" target="_blank" rel="noreferrer">X</a>
+        <a href="https://www.instagram.com/reine_dev/" target="_blank" rel="noreferrer">INSTAGRAM</a>
+      </nav>
+      <span>© 2026 TOYOSI ODUKALE</span>
+    </footer>
+  );
+}
+
+function ScrapbookArchive({ paperRef, onClose }) {
+  return (
+    <div className="scrapbook-overlay" role="dialog" aria-modal="true" aria-label="Selected work">
+      <button className="scrapbook-overlay__backdrop" type="button" onClick={onClose} aria-label="Close selected work" />
+      <article ref={paperRef} className="scrapbook-paper">
+        <span className="scrapbook-tape scrapbook-tape--left" aria-hidden="true" />
+        <span className="scrapbook-tape scrapbook-tape--right" aria-hidden="true" />
+        <div className="scrapbook-paper__bar">
+          <button type="button" onClick={onClose}>CLOSE ×</button>
+        </div>
+        <div className="scrapbook-paper__content">
+          <section className="online-work" id="work" aria-labelledby="online-work-title">
+            <h2 id="online-work-title">My web apps.</h2>
+
+            <div className="project-list">
+              {onlineProjects.map((project, index) => (
+                <a key={project.name} href={project.href} target="_blank" rel="noreferrer" className="project-row" data-reveal="row" style={{ "--reveal-delay": `${index * 85}ms` }}>
+                  <span className="project-row__number">{project.number}</span>
+                  <span className="project-row__name">{project.name}</span>
+                  <span className="project-row__meta">
+                    <strong>{project.type}</strong>
+                    <small>{project.note}</small>
+                  </span>
+                  <Arrow />
+                </a>
+              ))}
+            </div>
+            <a className="all-work-link" href="/work">VIEW ALL TECHNICAL WORK <Arrow /></a>
+            <a className="all-work-link" href="/pitcher/">OPEN PITCHER <Arrow /></a>
+          </section>
+          <ContactSection />
+          <IdentitySection />
+          <SiteFooter />
+        </div>
+      </article>
     </div>
   );
 }
@@ -436,6 +478,10 @@ function App() {
   const [world, setWorld] = useState("online");
   const [time, setTime] = useState("");
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [archiveOpen, setArchiveOpen] = useState(false);
+  const portraitRef = useRef(null);
+  const paperRef = useRef(null);
+  const portraitBounds = useRef(null);
 
   useEffect(() => {
     const updateTime = () => {
@@ -463,6 +509,72 @@ function App() {
     }, 560);
     window.setTimeout(() => setIsTransitioning(false), 1300);
   };
+
+  const openArchive = () => {
+    if (!portraitRef.current || archiveOpen) return;
+    portraitBounds.current = portraitRef.current.getBoundingClientRect();
+    setArchiveOpen(true);
+  };
+
+  const closeArchive = () => {
+    const paper = paperRef.current;
+    const target = portraitRef.current?.getBoundingClientRect();
+    if (!paper || !target) {
+      setArchiveOpen(false);
+      return;
+    }
+    const paperBounds = paper.getBoundingClientRect();
+    gsap.timeline({ onComplete: () => setArchiveOpen(false) })
+      .to(".scrapbook-paper__content, .scrapbook-paper__bar", { opacity: 0, y: 22, duration: 0.22, ease: "power2.in" })
+      .to(paper, {
+        x: target.left + target.width / 2 - (paperBounds.left + paperBounds.width / 2),
+        y: target.top + target.height / 2 - (paperBounds.top + paperBounds.height / 2),
+        scaleX: target.width / paperBounds.width,
+        scaleY: target.height / paperBounds.height,
+        rotation: 2.5,
+        duration: 0.7,
+        ease: "power3.inOut",
+      }, 0.08)
+      .to(".scrapbook-overlay__backdrop", { opacity: 0, duration: 0.45 }, 0.2);
+  };
+
+  useEffect(() => {
+    if (!archiveOpen || !paperRef.current || !portraitBounds.current) return undefined;
+    const paper = paperRef.current;
+    const paperBounds = paper.getBoundingClientRect();
+    const source = portraitBounds.current;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.body.classList.add("archive-is-open");
+
+    if (reducedMotion) {
+      gsap.set([paper, ".scrapbook-paper__content", ".scrapbook-paper__bar", ".scrapbook-overlay__backdrop"], { clearProps: "all" });
+    } else {
+      gsap.set(paper, {
+        x: source.left + source.width / 2 - (paperBounds.left + paperBounds.width / 2),
+        y: source.top + source.height / 2 - (paperBounds.top + paperBounds.height / 2),
+        scaleX: source.width / paperBounds.width,
+        scaleY: source.height / paperBounds.height,
+        rotation: 2.5,
+        transformOrigin: "center center",
+      });
+      gsap.set(".scrapbook-paper__content, .scrapbook-paper__bar", { opacity: 0, y: 32 });
+      gsap.set(".scrapbook-overlay__backdrop", { opacity: 0 });
+      gsap.timeline()
+        .to(".scrapbook-overlay__backdrop", { opacity: 1, duration: 0.45, ease: "power2.out" })
+        .to(paper, { x: 0, y: 0, scaleX: 1, scaleY: 1, rotation: 0, duration: 1.05, ease: "power4.inOut" }, 0)
+        .to(".scrapbook-paper__bar", { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 0.68)
+        .to(".scrapbook-paper__content", { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }, 0.76)
+        .fromTo(".scrapbook-tape", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.42, stagger: 0.1, ease: "back.out(1.8)" }, 0.72);
+    }
+
+    const closeOnEscape = (event) => event.key === "Escape" && closeArchive();
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.classList.remove("archive-is-open");
+      window.removeEventListener("keydown", closeOnEscape);
+      gsap.killTweensOf([paper, ".scrapbook-paper__content", ".scrapbook-paper__bar", ".scrapbook-overlay__backdrop", ".scrapbook-tape"]);
+    };
+  }, [archiveOpen]);
 
   return (
     <div className={`site site--${world}`}>
@@ -513,13 +625,13 @@ function App() {
                 <CrownMark className="hero__crown" />
               </div>
 
-              <figure className="portrait-card">
+              <button ref={portraitRef} type="button" className="portrait-card" onClick={openArchive} aria-label="Open Reine’s selected work">
                 <img src="/assets/reine/portrait.jpg" alt="Toyosi Reine Odukale" />
-                <figcaption>REINE / 2026</figcaption>
-              </figure>
+                <span>CLICK TO VIEW MY WORK</span>
+              </button>
 
               <DraggableTag className="tape--green">FULL-STACK DEV / MUSIC EXEC</DraggableTag>
-              <DraggableTag className="tape--cream">TECH FOUNDER / CREATIVE STRATEGIST</DraggableTag>
+              <DraggableTag className="tape--cream">TECH AND CREATIVE UNICORN</DraggableTag>
 
               <div className="terminal" aria-label="About Reine">
                 <div className="terminal__bar">
@@ -528,7 +640,7 @@ function App() {
                 <ol>
                   <li><span>01</span> MUSIC IS LIFE</li>
                   <li><span>02</span> I CREATE WEBSITES THAT AREN’T BORING</li>
-                  <li><span>03</span> AND MINDBLOWING EXPERIENCES</li>
+                  <li><span>03</span> AND MINDBLOWING EXPERIENCES ON THE INTERNET</li>
                   <li><span>04</span> FROM: LAGOS, NIGERIA</li>
                 </ol>
               </div>
@@ -540,30 +652,6 @@ function App() {
               </div>
             </section>
 
-            <section className="online-work" id="work" aria-labelledby="online-work-title">
-              <div className="section-kicker" data-reveal="line">
-                <span>SELECTED WORK</span>
-                <span>2022–DATE</span>
-              </div>
-              <RevealHeading id="online-work-title">Web apps I have built.</RevealHeading>
-
-              <div className="project-list">
-                {onlineProjects.map((project, index) => (
-                  <a key={project.name} href={project.href} target="_blank" rel="noreferrer" className="project-row" data-reveal="row" style={{ "--reveal-delay": `${index * 85}ms` }}>
-                    <span className="project-row__number">{project.number}</span>
-                    <span className="project-row__name">{project.name}</span>
-                    <span className="project-row__meta">
-                      <strong>{project.type}</strong>
-                      <small>{project.note}</small>
-                    </span>
-                    <Arrow />
-                  </a>
-                ))}
-              </div>
-              <a className="all-work-link" data-reveal="line" href="/work">VIEW ALL TECHNICAL WORK <Arrow /></a>
-            </section>
-
-            <ContactSection />
           </div>
         ) : (
           <div className="world world--outside">
@@ -574,6 +662,7 @@ function App() {
               </a>
               <a className="night-tile night-tile--logo night-tile--photo" href="https://www.instagram.com/reine_dev/" target="_blank" rel="noreferrer" aria-label="Visit Reine on Instagram">
                 <img src="/assets/factory-reset/cozy6275.jpg" alt="Reine at Factory Reset" />
+                <span className="night-tile__caption">INSTAGRAM</span>
               </a>
               <a className="night-tile night-tile--flyer" href="https://www.instagram.com/reines.rave/" target="_blank" rel="noreferrer" aria-label="Visit Reine’s Rave on Instagram">
                 <img src="/assets/reines-rave/main-logo.svg" alt="Reine’s Rave" />
@@ -581,41 +670,15 @@ function App() {
               </a>
               <a className="night-tile night-tile--rave" href="https://www.tiktok.com/@reine_dev" target="_blank" rel="noreferrer" aria-label="Visit Reine on TikTok">
                 <img src="/assets/reine/outside.jpg" alt="Reine outdoors at dusk" />
+                <span className="night-tile__caption">TIKTOK</span>
               </a>
             </section>
 
-            <RaveSignal />
           </div>
         )}
-
-        <section className="identity" data-reveal="bio" aria-labelledby="identity-title">
-          <div className="identity__label">BIO</div>
-          <div className="identity__body">
-            <h2 id="identity-title">TOYOSI “REINE” ODUKALE</h2>
-            <p className="identity__item" data-detail="VIBESFACTORY / REINE’S RAVE / FACTORY RESET">CO-FOUNDER</p>
-            <p className="identity__item" data-detail="I BUILD B2B AND E-COMMERCE WEB APPS">FULL-STACK DEVELOPER</p>
-            <p className="identity__item" data-detail="MUSIC RELEASE STRATEGY AND PLANNING">CREATIVE STRATEGIST</p>
-            <p className="identity__item" data-detail="I LOVE TO PARTAYYY">SERIOUS ABOUT A GOOD NIGHT OUT</p>
-          </div>
-        </section>
       </main>
 
-      <footer className="footer" data-reveal="footer">
-        <div>
-          <span>LIKE MY WORK?</span>
-          <a className="footer__coffee" href="https://paystack.shop/pay/reinedev" target="_blank" rel="noreferrer">
-            BUY ME A COFFEE <Arrow />
-          </a>
-        </div>
-        <nav aria-label="Social links">
-          <a href="https://github.com/Rei-ne" target="_blank" rel="noreferrer">GITHUB <Arrow /></a>
-          <a href="https://www.linkedin.com/in/toyosi-odukale/" target="_blank" rel="noreferrer">LINKEDIN <Arrow /></a>
-          <a href="https://x.com/reine_dev" target="_blank" rel="noreferrer">X <Arrow /></a>
-          <a href="https://www.instagram.com/reine_dev/" target="_blank" rel="noreferrer">INSTAGRAM <Arrow /></a>
-        </nav>
-        <span>© 2026 TOYOSI ODUKALE / MADE IN LAGOS</span>
-      </footer>
-      <ScrollToTop />
+      {archiveOpen && <ScrapbookArchive paperRef={paperRef} onClose={closeArchive} />}
     </div>
   );
 }

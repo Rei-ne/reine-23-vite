@@ -10,13 +10,18 @@
     "preinstall": "npx npm-force-resolutions"
   },
   "dependencies": {
+    "@bachs/sdk": "1.0.0",
     "@emailjs/browser": "^3.10.0",
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@netlify/blobs": "^11.1.4",
+    "@sparticuz/chromium-min": "153.0.0",
     "autoprefixer": "^10.4.13",
     "buffer": "^6.0.3",
     "gsap": "^3.11.4",
+    "jszip": "^3.10.2",
     "node-fetch": "^3.3.1",
     "postcss": "^8.4.21",
+    "puppeteer-core": "25.14.0",
     "query-string": "^8.1.0",
     "react": "^18.2.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",

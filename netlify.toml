@@ -2,6 +2,22 @@
   command = "npm run build"
   publish = "dist/client"
 
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  external_node_modules = ["@sparticuz/chromium-min", "puppeteer-core"]
+  included_files = ["netlify/pitch-assets/**"]
+
+[[redirects]]
+  from = "/pitch-generator"
+  to = "/pitcher/"
+  status = 302
+
+[[redirects]]
+  from = "/pitch-generator/*"
+  to = "/pitcher/:splat"
+  status = 302
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

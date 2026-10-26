@@ -1,0 +1,25 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {createHandler} from './functions/pitcher.mjs';
+import {accountId} from './pitch-auth.mjs';
+test('verified email links establish isolated sessions and owner access',async()=>{
+ const map=new Map();let requests=[];let tokenValid=true,userEmail='guest@example.com',confirmed=true;
+ const store={get:async key=>map.get(key)?.data||null,getWithMetadata:async key=>map.get(key)||null,list:async({prefix})=>({blobs:[...map.keys()].filter(k=>k.startsWith(prefix)).map(key=>({key}))}),setJSON:async(key,data,opts)=>{if(opts.onlyIfNew&&map.has(key))return{modified:false};map.set(key,{data,etag:'v1'});return{modified:true}}};
+ const env={PITCH_OWNER_EMAIL:'owner@example.com',PITCH_SESSION_SECRET:'production-test-secret-over-32-characters',SUPABASE_URL:'https://example.supabase.co',SUPABASE_PUBLISHABLE_KEY:'test-only-key',PITCH_PUBLIC_URL:'https://reine.vibesfactory.co'};
+ const fetcher=async(url,options)=>{requests.push({url,body:JSON.parse(options.body)});if(url.includes('/otp?'))return Response.json({});if(url.endsWith('/verify'))return tokenValid?Response.json({access_token:'verified-by-provider',user:{id:'verified-user-id',email:userEmail,email_confirmed_at:confirmed?'2026-10-12':null}}):Response.json({error:'Expired token'},{status:401});throw Error('Unexpected provider request')};
+ const handler=createHandler({env,storeFactory:()=>store,fetcher,assetReader:async()=>Buffer.from('owner private reference')});
+ const call=(path,method='GET',body,cookie='')=>handler(new Request('https://reine.vibesfactory.co/pitcher'+path,{method,headers:{Cookie:cookie,...(method==='POST'?{Origin:'https://reine.vibesfactory.co'}:{})},body}));
+ let r=await call('/login');let text=await r.text();assert.ok(!text.includes('type="password"'));assert.match(text,/Email me a sign-in link/);
+ r=await call('/signup','POST',new URLSearchParams({email:'guest@example.com'}));assert.equal(r.status,200);assert.match(await r.text(),/Check your inbox/);assert.ok(!r.headers.get('Set-Cookie'));
+ assert.equal(map.size,0);assert.ok(requests[0].url.includes(encodeURIComponent('https://reine.vibesfactory.co/pitcher/callback')));assert.equal(requests[0].body.create_user,true);
+ const token='a'.repeat(64);requests=[];r=await call('/callback?token_hash='+token);assert.equal(r.status,200);assert.equal(requests.length,0);
+ r=await call('/callback','POST',new URLSearchParams({token_hash:token}));assert.equal(r.status,303);const cookie=r.headers.get('Set-Cookie').split(';')[0];assert.match(r.headers.get('Set-Cookie'),/HttpOnly; Secure; SameSite=Strict/);
+ assert.equal(map.get('account/'+accountId(userEmail)).data.emailVerified,true);
+ assert.equal((await call('/four10/seed.json','GET',undefined,cookie)).status,404);
+ assert.deepEqual((await (await call('/api/workspaces','GET',undefined,cookie)).json()).workspaces,[]);
+ userEmail=env.PITCH_OWNER_EMAIL;r=await call('/callback','POST',new URLSearchParams({token_hash:token}));const ownerCookie=r.headers.get('Set-Cookie').split(';')[0];assert.equal((await call('/four10/seed.json','GET',undefined,ownerCookie)).status,200);
+ confirmed=false;r=await call('/callback','POST',new URLSearchParams({token_hash:token}));assert.equal(r.status,401);assert.equal(r.headers.get('Set-Cookie'),null);
+ tokenValid=false;r=await call('/callback','POST',new URLSearchParams({token_hash:token}));assert.equal(r.status,401);assert.equal(r.headers.get('Set-Cookie'),null);
+ r=await call('/callback?token_hash=%3Cscript%3E');assert.equal(r.status,400);
+ const missing=createHandler({env:{PITCH_OWNER_EMAIL:env.PITCH_OWNER_EMAIL,PITCH_SESSION_SECRET:env.PITCH_SESSION_SECRET},storeFactory:()=>store});r=await missing(new Request('https://reine.vibesfactory.co/pitcher/login'));assert.equal(r.status,503);assert.ok(!(await r.text()).includes('type="password"'));
+});

@@ -27,3 +27,5 @@ dist-ssr
 .netlify
 
 .env
+# Private owner-only Four10 references: do not publish to GitHub.
+/netlify/pitch-assets/four10/

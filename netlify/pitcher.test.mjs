@@ -1,0 +1,81 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { createHandler } from './functions/pitcher.mjs';
+import { accountId } from './pitch-auth.mjs';
+import JSZip from 'jszip';
+
+test('public signup, owner-only Four10, isolated accounts and atomic drafts/templates',async()=>{
+ const records=new Map();let version=0;
+ const store={
+  list:async({prefix})=>({blobs:[...records.keys()].filter(key=>key.startsWith(prefix)).map(key=>({key}))}),
+  get:async key=>records.get(key)?.data||null,
+  getWithMetadata:async key=>records.get(key)||null,
+  setJSON:async(key,data,opts)=>{const old=records.get(key);if(opts.onlyIfNew&&old||opts.onlyIfMatch&&opts.onlyIfMatch!==old?.etag)return {modified:false};records.set(key,{data:structuredClone(data),etag:String(++version)});return {modified:true}}
+ };
+ const env={PITCH_LOCAL_PREVIEW:'true',PITCH_OWNER_EMAIL:'owner@example.com',PITCH_PASSWORD:'a-long-test-password',PITCH_SESSION_SECRET:'a-long-test-secret-with-32-characters'};
+ const handler=createHandler({env,storeFactory:()=>store,assetReader:async path=>Buffer.from(path==='four10/seed.json'?'PRIVATE FOUR10 DECK':path==='engine.js'?'async function four10(data){const privateName="JEDSOUL";}\nconst months=[];window.ReineEngine={four10,extract,generic,fillCustom,findDates};':path)});
+ const call=(path,session='',method='GET',body,origin='https://example.com')=>handler(new Request('https://example.com/pitcher'+path,{method,headers:{Cookie:session,...(['POST','DELETE'].includes(method)?{Origin:origin}:{})},body}));
+ const form=(email,password)=>new URLSearchParams({email,password});
+ const cookie=r=>r.headers.get('Set-Cookie')?.split(';')[0];
+ let r=await call('/');assert.equal(r.status,200);assert.match(await r.text(),/Create your account/);
+ assert.equal((await call('/four10/seed.json')).status,401);
+ assert.equal((await call('/four10/template.docx')).status,401);
+ assert.equal((await call('/studio.html')).status,303);
+ assert.equal((await call('/api/workspaces')).status,401);
+ assert.equal((await call('/signup','','POST',form('OWNER@example.com','new-valid-password'))).status,403);
+ assert.equal((await call('/signup','','POST',form('a@example.com','new-valid-password'),'https://evil.com')).status,403);
+ assert.equal((await call('/login','','POST',form(env.PITCH_OWNER_EMAIL,'wrong'))).status,401);
+ r=await call('/login','','POST',form(env.PITCH_OWNER_EMAIL,env.PITCH_PASSWORD));const owner=cookie(r);assert.ok(owner);assert.match(r.headers.get('Set-Cookie'),/HttpOnly; SameSite=Strict/);
+ assert.equal((await call('/api/account',owner)).status,200);assert.equal((await (await call('/api/account',owner)).json()).owner,true);
+ assert.match(await (await call('/four10/seed.json',owner)).text(),/PRIVATE FOUR10/);
+ r=await call('/signup','','POST',form('a@example.com','new-valid-password'));const a=cookie(r);assert.equal(r.status,303);
+ r=await call('/signup','','POST',form('b@example.com','different-good-password'));const b=cookie(r);assert.equal(r.status,303);
+ assert.equal((await call('/signup','','POST',form('a@example.com','other-valid-password'))).status,409);
+ assert.equal((await (await call('/api/account',a)).json()).owner,false);
+ assert.equal((await call('/four10/seed.json',a)).status,404);
+ assert.equal((await call('/four10/template.docx',b)).status,404);
+ const customerEngine=await (await call('/engine.js',a)).text();assert.ok(!customerEngine.includes('JEDSOUL'));assert.ok(!customerEngine.includes('four10'));
+ assert.ok((await (await call('/engine.js',owner)).text()).includes('JEDSOUL'));
+ const w={id:'four10',name:'Four10',kind:'Management',accent:'#c8f04a',data:{artists:{Secret:{blurb:'CONFIDENTIAL'}}},revision:null};
+ assert.equal((await call('/api/workspaces',a,'POST',JSON.stringify(w))).status,404);
+ r=await call('/api/workspaces',owner,'POST',JSON.stringify(w));assert.equal(r.status,200);w.revision=(await r.json()).revision;
+ assert.deepEqual((await (await call('/api/workspaces',a)).json()).workspaces,[]);
+ assert.deepEqual((await (await call('/api/workspaces',b)).json()).workspaces,[]);
+ assert.equal((await call('/api/template?workspace=four10',a)).status,404);
+ assert.equal((await call('/api/workspaces',owner,'POST',JSON.stringify({...w,revision:'stale'}))).status,409);
+ const simultaneous=await Promise.all([call('/api/workspaces',owner,'POST',JSON.stringify(w)),call('/api/workspaces',owner,'POST',JSON.stringify(w))]);assert.deepEqual(simultaneous.map(r=>r.status).sort(),[200,409]);
+ w.revision=records.get('user/'+accountId(env.PITCH_OWNER_EMAIL)+'/workspace/four10').data.revision;
+ const zip=new JSZip();zip.file('word/document.xml','<w:document>{{artist_sections}}</w:document>');const bytes=await zip.generateAsync({type:'uint8array'});
+ const upload=new FormData();upload.set('workspace','four10');upload.set('revision',w.revision);upload.set('file',new Blob([bytes]),'template.docx');
+ r=await call('/api/template',owner,'POST',upload);assert.equal(r.status,200);
+ assert.deepEqual(Buffer.from(await (await call('/api/template?workspace=four10',owner)).arrayBuffer()),Buffer.from(bytes));
+ assert.equal((await call('/api/template',owner,'POST',upload)).status,409);
+ assert.equal('templateBytes' in (await (await call('/api/workspaces',owner)).json()).workspaces[0],false);
+ const personal={...w,id:'same-id',name:'A label',revision:null};
+ r=await call('/api/workspaces',a,'POST',JSON.stringify(personal));assert.equal(r.status,200);
+ assert.deepEqual((await (await call('/api/workspaces',b)).json()).workspaces,[]);
+ assert.equal((await call('/api/template?workspace=same-id',b)).status,404);
+ r=await call('/api/workspaces',b,'POST',JSON.stringify({...personal,name:'B label'}));assert.equal(r.status,200);
+ assert.equal((await (await call('/api/workspaces',a)).json()).workspaces[0].name,'A label');
+ assert.equal((await (await call('/api/workspaces',b)).json()).workspaces[0].name,'B label');
+ const savedA=(await (await call('/api/workspaces',a)).json()).workspaces[0];
+ assert.equal((await call('/api/workspaces',a,'DELETE',JSON.stringify({...savedA,revision:'stale'}))).status,409);
+ assert.equal((await call('/api/workspaces',a,'DELETE',JSON.stringify(savedA),'https://evil.com')).status,403);
+ assert.equal((await call('/api/workspaces',a,'DELETE',JSON.stringify(savedA))).status,200);
+ assert.deepEqual((await (await call('/api/workspaces',a)).json()).workspaces,[]);
+ assert.equal((await (await call('/api/workspaces',b)).json()).workspaces[0].name,'B label');
+ assert.equal((await call('/api/workspaces',a,'POST',JSON.stringify(savedA))).status,409);
+ assert.equal((await call('/api/workspaces',a,'POST',JSON.stringify({...savedA,revision:null}))).status,409);
+ assert.equal((await call('/api/template?workspace=same-id',a)).status,404);
+ const ownerSaved=(await (await call('/api/workspaces',owner)).json()).workspaces[0];
+ assert.equal((await call('/api/workspaces',owner,'DELETE',JSON.stringify(ownerSaved))).status,200);
+ assert.deepEqual((await (await call('/api/workspaces',owner)).json()).deletedIds,['four10']);
+ assert.equal((await call('/api/template?workspace=four10',owner)).status,404);
+ const deleted=records.get('user/'+accountId(env.PITCH_OWNER_EMAIL)+'/workspace/four10').data;
+ assert.equal('data' in deleted,false);assert.equal('templateBytes' in deleted,false);
+ const account=records.get('account/'+accountId('a@example.com')).data;assert.notEqual(account.passwordHash,'new-valid-password');assert.ok(!('password' in account));
+ assert.equal((await call('/login','','POST',form('A@example.com','new-valid-password'))).status,303);
+ assert.equal((await call('/api/workspaces',owner.slice(0,-1)+'x')).status,401);
+ assert.match((await call('/logout',owner)).headers.get('Set-Cookie'),/Max-Age=0/);
+ const missing=createHandler({env:{}});assert.equal((await missing(new Request('https://example.com/pitcher/'))).status,200);assert.equal((await missing(new Request('https://example.com/pitcher/api/workspaces'))).status,503);
+});
