@@ -152,10 +152,9 @@ body::after {
 .scrapbook-paper .identity__body { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
 .scrapbook-paper .identity__body h2 { grid-column: 1 / -1; }
 .scrapbook-paper .identity__item { position: relative; display: flex; min-height: 145px; padding: 24px; border: 0; background: #e9e3d5; color: #172019; cursor: default; align-items: flex-start; transform: rotate(-.5deg); }
-.scrapbook-paper .identity__item { font-family: "Kaldera", Georgia, serif; font-size: clamp(27px, 3.2vw, 48px); font-weight: 400; line-height: .85; letter-spacing: -.025em; text-transform: lowercase; }
-.scrapbook-paper .identity__item::first-letter { text-transform: uppercase; }
+.scrapbook-paper .identity__body .identity__item { font-family: "Kaldera", Georgia, serif !important; font-size: clamp(36px, 4.2vw, 62px); font-weight: 400; font-style: italic; line-height: .75; letter-spacing: -.035em; text-transform: lowercase; }
 .scrapbook-paper .identity__item:nth-of-type(even) { background: #b8efb9; transform: rotate(.65deg); }
-.scrapbook-paper .identity__item::after { position: absolute; right: 24px; bottom: 22px; left: 24px; max-width: none; color: #3d4a40; text-align: left; opacity: .72; transform: none; font-family: "GT Flexa", monospace; font-size: 9px; line-height: 1.45; letter-spacing: .1em; text-transform: uppercase; }
+.scrapbook-paper .identity__body .identity__item::after { position: absolute; right: 24px; bottom: 22px; left: 24px; max-width: none; color: #3d4a40; text-align: left; opacity: .8; transform: none; font-family: "GT Flexa", monospace; font-size: clamp(11px, 1vw, 14px); font-weight: 400; font-style: italic; line-height: 1.45; letter-spacing: .07em; text-transform: none; }
 .scrapbook-paper .identity__item:hover { transform: rotate(0) translateY(-3px); transition: transform 240ms cubic-bezier(.16,1,.3,1); }
 .scrapbook-paper .identity__item:hover::after { opacity: 1; transform: none; }
 .scrapbook-paper .footer { position: relative; grid-template-columns: 1.2fr 1fr; gap: 45px; align-items: center; margin: 0 4vw 38px; padding: 55px clamp(24px, 4vw, 60px); border: 0; background: #121815; }
