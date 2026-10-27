@@ -9,6 +9,7 @@ const onlineProjects = [
     type: "EXPERIENCE GAME APP",
     note: "INTERACTIVE EXPERIENCE / APP DEVELOPMENT",
     href: "https://gorave.xyz/",
+    image: "/assets/work-previews/gorave.jpg",
   },
   {
     number: "02",
@@ -16,6 +17,7 @@ const onlineProjects = [
     type: "WEB + TICKETING",
     note: "EXPERIENCE DESIGN / EVENT INFRASTRUCTURE",
     href: "https://factoryreset.vibesfactory.co/",
+    image: "/assets/work-previews/factory-reset.jpg",
   },
   {
     number: "03",
@@ -23,6 +25,7 @@ const onlineProjects = [
     type: "LOGISTICS MANAGEMENT SYSTEM",
     note: "FULL-STACK MVP / PRODUCT ENGINEERING",
     href: "https://ankorio.com/",
+    image: "/assets/work-previews/ankorio.png",
   },
   {
     number: "04",
@@ -30,6 +33,7 @@ const onlineProjects = [
     type: "AGENCY WEBSITE",
     note: "CREATIVE DIRECTION / WEB DEVELOPMENT",
     href: "https://peepsafrica.com/",
+    image: "/assets/work-previews/peeps.png",
   },
   {
     number: "05",
@@ -37,6 +41,7 @@ const onlineProjects = [
     type: "MEDIA PLATFORM",
     note: "WEB DESIGN / DEVELOPMENT / DIGITAL EXPERIENCE",
     href: "https://tiktalkmedia.com/",
+    image: "/assets/work-previews/tiktalk.jpg",
   },
 ];
 
@@ -48,6 +53,7 @@ const fullWorkProjects = [
     type: "CULTURAL ARCHIVE",
     note: "REACT / AIRTABLE / NIGERIAN MUSIC HISTORY",
     href: "https://www.albumcoverbank.com/",
+    image: "/assets/work-previews/album-cover-bank.png",
   },
   {
     number: "07",
@@ -55,6 +61,7 @@ const fullWorkProjects = [
     type: "E-COMMERCE",
     note: "STOREFRONT / WEB DEVELOPMENT",
     href: "https://scentelixir.ng/",
+    image: "/assets/work-previews/scent-elixir.png",
   },
 ];
 
@@ -346,41 +353,143 @@ function DraggableTag({ children, className }) {
   );
 }
 
+function ProjectCard({ project, index }) {
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return undefined;
+
+    const entrance = gsap.fromTo(
+      card,
+      { autoAlpha: 0, y: 34 },
+      { autoAlpha: 1, y: 0, duration: 0.8, delay: index * 0.07, ease: "power3.out" },
+    );
+    return () => entrance.kill();
+  }, [index]);
+
+  const animateCard = (state, event) => {
+    const card = cardRef.current;
+    if (!card) return;
+    if (event?.pointerType === "touch") return;
+
+    const bounds = card.getBoundingClientRect();
+    const pointerX = event ? (event.clientX - bounds.left) / bounds.width - 0.5 : 0;
+    const pointerY = event ? (event.clientY - bounds.top) / bounds.height - 0.5 : 0;
+
+    const states = {
+      rest: { y: 0, scale: 1, rotationX: 0, rotationY: 0, filter: "brightness(1)" },
+      hover: { y: 5, scale: 0.975, rotationX: pointerY * -7, rotationY: pointerX * 9, filter: "brightness(.94)" },
+      pressed: { y: 13, scale: 0.91, rotationX: pointerY * -4, rotationY: pointerX * 5, filter: "brightness(.82)" },
+    };
+
+    gsap.killTweensOf(card);
+    gsap.to(card, {
+      ...states[state],
+      duration: state === "pressed" ? 0.12 : 0.34,
+      ease: state === "rest" ? "back.out(1.7)" : "power3.out",
+      transformPerspective: 900,
+      overwrite: true,
+    });
+  };
+
+  return (
+    <a
+      ref={cardRef}
+      href={project.href}
+      target="_blank"
+      rel="noreferrer"
+      className="project-card"
+      aria-label={`Open ${project.name}`}
+      onPointerEnter={(event) => animateCard("hover", event)}
+      onPointerMove={(event) => animateCard("hover", event)}
+      onPointerLeave={() => animateCard("rest")}
+      onPointerDown={(event) => animateCard("pressed", event)}
+      onPointerUp={(event) => animateCard("hover", event)}
+      onPointerCancel={() => animateCard("rest")}
+      onFocus={() => animateCard("hover")}
+      onBlur={() => animateCard("rest")}
+    >
+      <span className="project-card__image">
+        <img
+          src={project.image}
+          alt={`${project.name} website preview`}
+          loading={index > 1 ? "lazy" : "eager"}
+        />
+      </span>
+      <span className="project-card__caption">
+        <span>
+          <strong>{project.name}</strong>
+          <small>{project.type}</small>
+        </span>
+        <em>{project.note}</em>
+      </span>
+    </a>
+  );
+}
+
+function ProjectRail({ className, children, label }) {
+  const railRef = useRef(null);
+
+  useEffect(() => {
+    const rail = railRef.current;
+    if (!rail) return undefined;
+
+    const redirectWheel = (event) => {
+      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+      const movingForward = event.deltaY > 0;
+      const canMove = movingForward
+        ? rail.scrollLeft < rail.scrollWidth - rail.clientWidth - 2
+        : rail.scrollLeft > 2;
+      if (!canMove) return;
+      event.preventDefault();
+      rail.scrollLeft += event.deltaY * 1.15;
+    };
+
+    rail.addEventListener("wheel", redirectWheel, { passive: false });
+    return () => rail.removeEventListener("wheel", redirectWheel);
+  }, []);
+
+  return <div ref={railRef} className={className} aria-label={label}>{children}</div>;
+}
+
 function WorkPage() {
+  const returnToSelectedWork = (event) => {
+    event.preventDefault();
+    const cameFromSelectedWork = window.sessionStorage.getItem("reine-selected-work-open") === "1";
+    if (cameFromSelectedWork && window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.assign("/?selected=1");
+    }
+  };
+
   return (
     <div className="site site--online work-page work-page--scrapbook">
       <CursorTrail />
       <ScrollReveals />
       <header className="topbar">
         <a className="topbar__id" href="/" aria-label="Back to Reine home">REINE</a>
-        <a className="work-page__back" href="/">← BACK HOME</a>
+        <a className="work-page__back" href="/?selected=1" onClick={returnToSelectedWork}>&lt; BACK TO SELECTED WORK</a>
         <div className="topbar__signal"><span className="signal-dot" /> AVAILABLE FOR SELECTED COMMISSIONS</div>
       </header>
 
       <main className="work-page__paper">
-        <section className="work-page__list" aria-label="Selected technical work">
+        <h1 className="work-page__title">All apps.</h1>
+        <ProjectRail className="work-page__list" label="Selected technical work">
           {fullWorkProjects.map((project, index) => (
-            <a key={project.name} href={project.href} target="_blank" rel="noreferrer" className="work-entry" data-reveal="row" style={{ "--reveal-delay": `${index * 70}ms` }}>
-              <span>{project.number}</span>
-              <div>
-                <h2>{project.name}</h2>
-                <p>{project.type}</p>
-              </div>
-              <small>{project.note}</small>
-            </a>
+            <ProjectCard key={project.name} project={project} index={index} />
           ))}
           <div className="work-page__archives">
             <a href="https://github.com/Rei-ne" target="_blank" rel="noreferrer">GITHUB</a>
           </div>
-        </section>
+        </ProjectRail>
 
-        <section className="writing" data-reveal="section" aria-label="Technical articles and other writing">
-          <div className="section-kicker">
-            <span>TECHNICAL ARTICLES + OTHER WRITING</span>
-          </div>
+        <section className="writing" data-reveal="section" aria-label="Written work">
+          <h2 className="writing__title">Written work.</h2>
           <div className="writing__list">
             {writing.map((article, index) => (
-              <a key={article.title} href={article.href} target="_blank" rel="noreferrer" className="writing-entry" data-reveal="row" style={{ "--reveal-delay": `${index * 65}ms` }}>
+              <a key={article.title} href={article.href} target="_blank" rel="noreferrer" className="writing-entry">
                 <span>{article.number}</span>
                 <h3>{article.title}</h3>
                 <small>{article.type} / {article.date}</small>
@@ -449,20 +558,12 @@ function ScrapbookArchive({ paperRef, onClose }) {
           <section className="online-work" id="work" aria-labelledby="online-work-title">
             <h2 id="online-work-title">My web apps.</h2>
 
-            <div className="project-list">
+            <ProjectRail className="project-list" label="My web apps">
               {onlineProjects.map((project, index) => (
-                <a key={project.name} href={project.href} target="_blank" rel="noreferrer" className="project-row" data-reveal="row" style={{ "--reveal-delay": `${index * 85}ms` }}>
-                  <span className="project-row__number">{project.number}</span>
-                  <span className="project-row__name">{project.name}</span>
-                  <span className="project-row__meta">
-                    <strong>{project.type}</strong>
-                    <small>{project.note}</small>
-                  </span>
-                  <Arrow />
-                </a>
+                <ProjectCard key={project.name} project={project} index={index} />
               ))}
-            </div>
-            <a className="all-work-link" href="/work">VIEW ALL TECHNICAL WORK <Arrow /></a>
+            </ProjectRail>
+            <a className="all-work-link" href="/work" onClick={() => window.sessionStorage.setItem("reine-selected-work-open", "1")}>VIEW ALL TECHNICAL WORK <Arrow /></a>
             <a className="all-work-link" href="/pitcher/">OPEN PITCHER <Arrow /></a>
           </section>
           <ContactSection />
@@ -478,7 +579,10 @@ function App() {
   const [world, setWorld] = useState("online");
   const [time, setTime] = useState("");
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [archiveOpen, setArchiveOpen] = useState(false);
+  const [archiveOpen, setArchiveOpen] = useState(() => (
+    window.sessionStorage.getItem("reine-selected-work-open") === "1"
+    || new URLSearchParams(window.location.search).get("selected") === "1"
+  ));
   const portraitRef = useRef(null);
   const paperRef = useRef(null);
   const portraitBounds = useRef(null);
@@ -539,14 +643,22 @@ function App() {
   };
 
   useEffect(() => {
-    if (!archiveOpen || !paperRef.current || !portraitBounds.current) return undefined;
+    const clearReturnState = () => window.sessionStorage.removeItem("reine-selected-work-open");
+    clearReturnState();
+    window.addEventListener("pageshow", clearReturnState);
+    if (window.location.search) window.history.replaceState({}, "", "/");
+    return () => window.removeEventListener("pageshow", clearReturnState);
+  }, []);
+
+  useEffect(() => {
+    if (!archiveOpen || !paperRef.current) return undefined;
     const paper = paperRef.current;
     const paperBounds = paper.getBoundingClientRect();
     const source = portraitBounds.current;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     document.body.classList.add("archive-is-open");
 
-    if (reducedMotion) {
+    if (reducedMotion || !source) {
       gsap.set([paper, ".scrapbook-paper__content", ".scrapbook-paper__bar", ".scrapbook-overlay__backdrop"], { clearProps: "all" });
     } else {
       gsap.set(paper, {
