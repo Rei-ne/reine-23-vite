@@ -149,6 +149,7 @@ body::after {
 .scrapbook-paper .identity { grid-template-columns: 150px 1fr; gap: clamp(28px, 5vw, 76px); padding-top: 110px; padding-bottom: 120px; border: 0; }
 .scrapbook-paper .identity__label { padding-top: 10px; color: var(--online); }
 .scrapbook-paper .identity__body h2 { max-width: 900px; margin-bottom: 55px; }
+.scrapbook-paper .identity__body h2 { white-space: nowrap; font-size: clamp(30px, 5vw, 74px); }
 .scrapbook-paper .identity__body { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
 .scrapbook-paper .identity__body h2 { grid-column: 1 / -1; }
 .scrapbook-paper .identity__item { position: relative; display: flex; min-height: 145px; padding: 24px; border: 0; background: #e9e3d5; color: #172019; cursor: default; align-items: flex-start; transform: rotate(-.5deg); }
@@ -457,6 +458,7 @@ body::after {
   .night-tile__caption { font-size: 7px; }
   .outside-card { min-height: 410px; }
   .identity { padding: 75px 18px; }
+  .scrapbook-paper .identity__body h2 { font-size: clamp(21px, 6.35vw, 29px); letter-spacing: -.06em; white-space: nowrap; }
   .identity__body p { font-size: 9px; }
   .footer { padding: 60px 18px 28px; }
   .footer nav { flex-wrap: wrap; }
