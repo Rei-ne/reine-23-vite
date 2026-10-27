@@ -360,6 +360,11 @@ function ProjectCard({ project, index }) {
     const card = cardRef.current;
     if (!card) return undefined;
 
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (!finePointer) {
+      gsap.set(card, { clearProps: "transform,filter" });
+    }
+
     const entrance = gsap.fromTo(
       card,
       { autoAlpha: 0, y: 34 },
@@ -371,7 +376,7 @@ function ProjectCard({ project, index }) {
   const animateCard = (state, event) => {
     const card = cardRef.current;
     if (!card) return;
-    if (event?.pointerType === "touch") return;
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
     const bounds = card.getBoundingClientRect();
     const pointerX = event ? (event.clientX - bounds.left) / bounds.width - 0.5 : 0;

@@ -146,19 +146,19 @@ body::after {
 .scrapbook-paper .all-work-link { background: #121815; }
 .scrapbook-paper .all-work-link:hover { background: var(--online); }
 .scrapbook-paper .footer { padding-bottom: 46px; }
-.scrapbook-paper .identity { grid-template-columns: 150px 1fr; gap: clamp(28px, 5vw, 76px); padding-top: 110px; padding-bottom: 120px; border: 0; }
+.scrapbook-paper .identity { grid-template-columns: 150px 1fr; gap: clamp(28px, 5vw, 76px); padding-top: 110px; padding-bottom: 0; border: 0; }
 .scrapbook-paper .identity__label { padding-top: 10px; color: var(--online); }
 .scrapbook-paper .identity__body h2 { max-width: 900px; margin-bottom: 55px; }
 .scrapbook-paper .identity__body h2 { white-space: nowrap; font-size: clamp(30px, 5vw, 74px); }
 .scrapbook-paper .identity__body { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
 .scrapbook-paper .identity__body h2 { grid-column: 1 / -1; }
-.scrapbook-paper .identity__item { position: relative; display: flex; min-height: 145px; padding: 24px; border: 0; background: #e9e3d5; color: #172019; cursor: default; align-items: flex-start; transform: rotate(-.5deg); }
-.scrapbook-paper .identity__body .identity__item { font-family: "Kaldera", Georgia, serif !important; font-size: clamp(36px, 4.2vw, 62px); font-weight: 400; font-style: italic; line-height: .75; letter-spacing: -.035em; text-transform: lowercase; }
+.scrapbook-paper .identity__item { position: relative; display: flex; min-height: clamp(190px, 15vw, 235px); padding: 28px 28px 82px; border: 0; background: #e9e3d5; color: #172019; cursor: default; align-items: flex-start; transform: rotate(-.5deg); }
+.scrapbook-paper .identity__body .identity__item { font-family: "Kaldera", Georgia, serif !important; font-size: clamp(36px, 4.2vw, 62px); font-weight: 400; font-style: italic; line-height: .82; letter-spacing: -.035em; text-transform: lowercase; }
 .scrapbook-paper .identity__item:nth-of-type(even) { background: #b8efb9; transform: rotate(.65deg); }
 .scrapbook-paper .identity__body .identity__item::after { position: absolute; right: 24px; bottom: 22px; left: 24px; max-width: none; color: #3d4a40; text-align: left; opacity: .8; transform: none; font-family: "GT Flexa", monospace; font-size: clamp(11px, 1vw, 14px); font-weight: 400; font-style: italic; line-height: 1.45; letter-spacing: .07em; text-transform: none; }
 .scrapbook-paper .identity__item:hover { transform: rotate(0) translateY(-3px); transition: transform 240ms cubic-bezier(.16,1,.3,1); }
 .scrapbook-paper .identity__item:hover::after { opacity: 1; transform: none; }
-.scrapbook-paper .footer { position: relative; grid-template-columns: 1.2fr 1fr; gap: 45px; align-items: center; margin: 0 4vw 38px; padding: 34px clamp(24px, 4vw, 60px) 55px; border: 0; background: #121815; }
+.scrapbook-paper .footer { position: relative; grid-template-columns: 1.2fr 1fr; gap: 45px; align-items: center; margin: 22px 4vw 38px; padding: 34px clamp(24px, 4vw, 60px) 55px; border: 0; background: #121815; }
 .scrapbook-paper .footer > div { align-items: flex-start; }
 .scrapbook-paper .footer__coffee { display: inline-block; padding: 9px 0 5px; color: var(--cream); font-family: "Kaldera", Georgia, serif; font-size: clamp(42px, 6vw, 88px); font-weight: 400; line-height: .8; transform: rotate(-2deg); transition: color 180ms ease, transform 240ms cubic-bezier(.16,1,.3,1); }
 .scrapbook-paper .footer__coffee:hover { color: var(--online); transform: rotate(0) scale(1.02); }
@@ -227,7 +227,16 @@ body::after {
 .project-card:hover { z-index: 2; }
 .project-card__image { position: relative; display: block; overflow: hidden; aspect-ratio: 4 / 3; background: #050607; }
 .project-card__image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: saturate(.82) contrast(1.02); transition: filter 350ms ease; }
-.project-card:hover .project-card__image img { filter: saturate(.9) contrast(1.02) brightness(.94); }
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover .project-card__image img { filter: saturate(.9) contrast(1.02) brightness(.94); }
+}
+@media (hover: none), (pointer: coarse) {
+  .project-card,
+  .project-card:hover,
+  .project-card:active { filter: none !important; }
+  .project-card__image img,
+  .project-card:hover .project-card__image img { filter: none !important; transform: none !important; }
+}
 .project-card__caption { display: grid; grid-template-columns: 1fr; gap: 18px; min-height: 142px; padding: 18px 8px 8px; align-content: space-between; }
 .project-card__caption > span { display: flex; flex-direction: column; gap: 9px; min-width: 0; }
 .project-card__caption strong { font-family: "Neue Montreal", sans-serif; font-size: clamp(27px, 3vw, 46px); font-weight: 400; line-height: .85; letter-spacing: -.045em; }
@@ -454,7 +463,7 @@ body::after {
   .scrapbook-paper .identity { grid-template-columns: 1fr; gap: 22px; }
   .scrapbook-paper .identity__body { grid-template-columns: 1fr; }
   .scrapbook-paper .identity__body h2 { margin-bottom: 26px; }
-  .scrapbook-paper .identity__item { min-height: 132px; }
+  .scrapbook-paper .identity__item { min-height: 175px; padding: 24px 24px 72px; }
   .scrapbook-paper .footer { grid-template-columns: 1fr; margin-right: 18px; margin-left: 18px; }
   .scrapbook-paper .footer nav { justify-content: flex-start; }
   .scrapbook-paper .footer > span { grid-column: auto; }
