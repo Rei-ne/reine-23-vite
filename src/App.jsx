@@ -383,9 +383,9 @@ function ProjectCard({ project, index }) {
     const pointerY = event ? (event.clientY - bounds.top) / bounds.height - 0.5 : 0;
 
     const states = {
-      rest: { y: 0, scale: 1, rotationX: 0, rotationY: 0, filter: "brightness(1)" },
-      hover: { y: 5, scale: 0.975, rotationX: pointerY * -7, rotationY: pointerX * 9, filter: "brightness(.94)" },
-      pressed: { y: 13, scale: 0.91, rotationX: pointerY * -4, rotationY: pointerX * 5, filter: "brightness(.82)" },
+      rest: { y: 0, scale: 1, rotationX: 0, rotationY: 0 },
+      hover: { y: 5, scale: 0.975, rotationX: pointerY * -7, rotationY: pointerX * 9 },
+      pressed: { y: 13, scale: 0.91, rotationX: pointerY * -4, rotationY: pointerX * 5 },
     };
 
     gsap.killTweensOf(card);

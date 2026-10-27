@@ -226,10 +226,7 @@ body::after {
 .project-card:nth-child(even) { background: #b8efb9; }
 .project-card:hover { z-index: 2; }
 .project-card__image { position: relative; display: block; overflow: hidden; aspect-ratio: 4 / 3; background: #050607; }
-.project-card__image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: saturate(.82) contrast(1.02); transition: filter 350ms ease; }
-@media (hover: hover) and (pointer: fine) {
-  .project-card:hover .project-card__image img { filter: saturate(.9) contrast(1.02) brightness(.94); }
-}
+.project-card__image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: none; }
 @media (hover: none), (pointer: coarse) {
   .project-card,
   .project-card:hover,
