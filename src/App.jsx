@@ -521,7 +521,7 @@ function IdentitySection() {
       <div className="identity__body">
         <h2 id="identity-title">TOYOSI “REINE” ODUKALE</h2>
         <p className="identity__item" data-detail="VIBESFACTORY / REINE’S RAVE / FACTORY RESET">CO-FOUNDER</p>
-        <p className="identity__item" data-detail="I BUILD B2B AND E-COMMERCE WEB APPS">FULL-STACK DEVELOPER</p>
+        <p className="identity__item" data-detail="REINE DEV ENTERPRISES">FULL-STACK DEVELOPER</p>
         <p className="identity__item" data-detail="MUSIC RELEASE STRATEGY AND PLANNING">CREATIVE STRATEGIST</p>
         <p className="identity__item" data-detail="I LOVE TO PARTAYYY">SERIOUS ABOUT A GOOD NIGHT OUT</p>
       </div>
